@@ -916,46 +916,22 @@ function Index() {
       <section id="sobre" className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/10 to-black" />
         
-        <div className="max-w-6xl mx-auto px-6 relative">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-amber-400 mb-8 leading-tight">
-                {t.about.title}
-              </h2>
-              <div className="space-y-6">
-                <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
-                  {t.about.text1}
-                </p>
-                <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
-                  {t.about.text2}
-                </p>
-                <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
-                  {t.about.text3}
-                </p>
-              </div>
-              <div className="mt-8 w-24 h-px bg-gradient-to-r from-amber-400 to-transparent" />
-            </div>
-            
-            {/* Reservation Button replacing colorful cow */}
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute -inset-8 bg-amber-400/10 rounded-full blur-3xl animate-pulse-slow" />
-                <a
-                  href="https://tinyurl.com/100cerimonias"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-block group"
-                >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-amber-600 to-amber-400 rounded opacity-50 blur group-hover:opacity-75 animate-reservation-glow transition-opacity" />
-                  <div className="relative px-10 py-5 bg-black border-2 border-amber-400 rounded group-hover:border-amber-300 transition-all group-hover:scale-105">
-                    <span className="font-serif text-xl md:text-2xl tracking-[0.3em] text-amber-400 group-hover:text-amber-300 transition-colors">
-                      {t.about.reserveButton}
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
+        <div className="max-w-4xl mx-auto px-6 relative text-center">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-amber-400 mb-8 leading-tight">
+            {t.about.title}
+          </h2>
+          <div className="space-y-6 max-w-3xl mx-auto">
+            <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+              {t.about.text1}
+            </p>
+            <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+              {t.about.text2}
+            </p>
+            <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+              {t.about.text3}
+            </p>
           </div>
+          <div className="mt-8 w-24 h-px bg-gradient-to-r from-amber-400 via-amber-400 to-amber-400 mx-auto" />
         </div>
       </section>
 
