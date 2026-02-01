@@ -24,9 +24,10 @@ const translations = {
       premium: "STEAKHOUSE PREMIUM",
     },
     about: {
-      title1: "SOMOS UNS",
-      title2: "APAIXONADOS",
-      text: "No 100 Cerimónias Steakhouse, a carne é o centro de tudo. Selecionamos cortes premium, trabalhados com rigor, respeito pelo produto e uma obsessão clara pela qualidade. Aqui, cada prato é uma celebração do sabor, da textura e do ponto perfeito.",
+      title: "SOBRE O GRUPO",
+      text1: "Somos um grupo de pessoas que se juntaram e que tentam fazer a vida valer da melhor maneira que conseguimos. Completamente diferentes, conseguimos encontrar o nosso equilíbrio e todas as noites conseguimos entregar refeições onde o objetivo é sempre um sorriso na cara das pessoas.",
+      text2: "Criámos um espaço elegante, confortável e sem cerimónias desnecessárias, onde o foco está na partilha — de comida, emoções e momentos.",
+      text3: "Inspiramo-nos nas grandes steakhouses internacionais, mas mantemos uma identidade própria, enraizada no Porto — uma cidade de carácter, tradição e autenticidade. Acreditamos que a excelência não precisa de excessos — precisa de consistência, conhecimento e paixão.",
       reserveButton: "RESERVAR MESA",
     },
     menu: {
@@ -104,9 +105,10 @@ const translations = {
       premium: "PREMIUM STEAKHOUSE",
     },
     about: {
-      title1: "WE ARE",
-      title2: "PASSIONATE",
-      text: "At 100 Cerimónias Steakhouse, meat is at the heart of everything. We select premium cuts, crafted with precision, respect for the product, and a clear obsession with quality. Here, every dish is a celebration of flavor, texture, and the perfect doneness.",
+      title: "ABOUT THE GROUP",
+      text1: "We are a group of people who came together trying to make life worthwhile in the best way we can. Completely different, we found our balance and every night we deliver meals where the goal is always a smile on people's faces.",
+      text2: "We created an elegant, comfortable space without unnecessary ceremonies, where the focus is on sharing — food, emotions and moments.",
+      text3: "We are inspired by the great international steakhouses, but we maintain our own identity, rooted in Porto — a city of character, tradition and authenticity. We believe that excellence doesn't need excess — it needs consistency, knowledge and passion.",
       reserveButton: "BOOK A TABLE",
     },
     menu: {
@@ -918,11 +920,19 @@ function Index() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-amber-400 mb-8 leading-tight">
-                {t.about.title1}<br />{t.about.title2}
+                {t.about.title}
               </h2>
-              <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
-                {t.about.text}
-              </p>
+              <div className="space-y-6">
+                <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+                  {t.about.text1}
+                </p>
+                <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+                  {t.about.text2}
+                </p>
+                <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+                  {t.about.text3}
+                </p>
+              </div>
               <div className="mt-8 w-24 h-px bg-gradient-to-r from-amber-400 to-transparent" />
             </div>
             
