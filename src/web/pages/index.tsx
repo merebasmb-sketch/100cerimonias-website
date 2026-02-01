@@ -37,14 +37,28 @@ const translations = {
         acompanhamentos: "Acompanhamentos",
         sobremesas: "Sobremesas",
         vinhos: "Vinhos",
-        cocktails: "Cocktails",
+        bebidas: "Bebidas",
       },
       categories: {
         brancos: "BRANCOS",
         tintos: "TINTOS",
-        assinatura: "ASSINATURA",
-        classicos: "CLÁSSICOS",
+        assinatura: "COCKTAILS DE ASSINATURA",
+        classicos: "COCKTAILS CLÁSSICOS",
+        mocktails: "MOCKTAILS",
+        destilados: "DESTILADOS",
+        cervejas: "CERVEJAS",
+        sumosNaturais: "SUMOS NATURAIS",
+        refrigerantes: "REFRIGERANTES",
+        sangrias: "SANGRIAS",
+        vodka: "VODKA",
+        rum: "RUM",
+        gin: "GIN",
+        whisky: "WHISKY",
+        cognac: "CONHAQUE",
+        vermouth: "VERMUTES",
+        tequila: "TEQUILA",
       },
+      vatNote: "Todos os preços incluem IVA à taxa legal em vigor",
     },
     atmosfera: {
       title: "ATMOSFERA",
@@ -73,6 +87,8 @@ const translations = {
       hours: "Terça a Domingo | 19h00 – 00h00",
       closed: "Encerrado à Segunda",
       copyright: "© 2023 100 Cerimónias Steakhouse. Todos os direitos reservados.",
+      reviews: "Avaliações",
+      complaints: "Livro de Reclamações",
     },
   },
   en: {
@@ -101,14 +117,28 @@ const translations = {
         acompanhamentos: "Sides",
         sobremesas: "Desserts",
         vinhos: "Wines",
-        cocktails: "Cocktails",
+        bebidas: "Drinks",
       },
       categories: {
         brancos: "WHITE WINES",
         tintos: "RED WINES",
-        assinatura: "SIGNATURE",
-        classicos: "CLASSICS",
+        assinatura: "SIGNATURE COCKTAILS",
+        classicos: "CLASSIC COCKTAILS",
+        mocktails: "MOCKTAILS",
+        destilados: "SPIRITS",
+        cervejas: "BEERS",
+        sumosNaturais: "NATURAL JUICES",
+        refrigerantes: "SOFT DRINKS",
+        sangrias: "SANGRIAS",
+        vodka: "VODKA",
+        rum: "RUM",
+        gin: "GIN",
+        whisky: "WHISKY",
+        cognac: "COGNAC",
+        vermouth: "VERMOUTH",
+        tequila: "TEQUILA",
       },
+      vatNote: "All prices include VAT",
     },
     atmosfera: {
       title: "ATMOSPHERE",
@@ -137,6 +167,8 @@ const translations = {
       hours: "Tuesday to Sunday | 7:00 PM – 12:00 AM",
       closed: "Closed on Monday",
       copyright: "© 2023 100 Cerimónias Steakhouse. All rights reserved.",
+      reviews: "Reviews",
+      complaints: "Complaints Book",
     },
   },
 };
@@ -184,19 +216,93 @@ const menuData = {
       { name: "Loek's Grande Reserva", price: "60" },
     ],
   },
-  cocktails: {
-    assinatura: [
-      { name: "Lick My Peach", price: "12" },
-      { name: "Em Brasa", price: "12" },
-      { name: "Special Mojito", price: "12" },
-      { name: "Cerimónias Mule", price: "12" },
+  bebidas: {
+    destilados: {
+      vodka: [
+        { name: "Grey Goose", price: "10" },
+        { name: "Cîroc", price: "10" },
+      ],
+      rum: [
+        { name: "Bacardi Carta Blanca", price: "8" },
+        { name: "Bacardi 8", price: "12" },
+      ],
+      gin: [
+        { name: "Bombay Sapphire", price: "10" },
+        { name: "Bombay Pressé", price: "10" },
+        { name: "Bombay Bramble", price: "10" },
+        { name: "Bulldog", price: "11" },
+        { name: "Hendrick's", price: "12" },
+        { name: "Bombay Premier Cru", price: "13" },
+        { name: "Monkey 47", price: "15" },
+      ],
+      whisky: [
+        { name: "Dewar's 8", price: "8" },
+        { name: "Johnnie Walker Red Label", price: "8" },
+        { name: "Jack Daniel's Apple", price: "10" },
+        { name: "Jack Daniel's Honey", price: "10" },
+        { name: "Jack Daniel's Tennessee", price: "10" },
+        { name: "Dewar's 21", price: "12" },
+        { name: "Jack Daniel's Single Barrel", price: "12" },
+        { name: "Cutty Sark Discovery 18", price: "13" },
+      ],
+      cognac: [
+        { name: "Hubert Rocheeboit Fine", price: "10" },
+        { name: "Courvoisier VSOP", price: "23" },
+      ],
+      vermouth: [
+        { name: "Martini Special Rubino", price: "8" },
+        { name: "Martini Special Ambrato", price: "8" },
+      ],
+      tequila: [
+        { name: "Patrón Silver", price: "10" },
+      ],
+    },
+    cervejas: [
+      { name: "Stella Artois", price: "3,50" },
+      { name: "Leffe Blond", price: "5,50" },
+      { name: "Franziskaner", price: "5,50" },
     ],
-    classicos: [
+    sumosNaturais: [
+      { name: "Limonada", price: "3" },
+      { name: "Sumo de Laranja Natural", price: "4" },
+    ],
+    refrigerantes: [
+      { name: "Coca Cola", price: "3" },
+      { name: "Coca Cola Zero", price: "3" },
+      { name: "Nestea Pêssego", price: "3" },
+      { name: "Água Tónica", price: "3" },
+      { name: "Ginger Beer", price: "3" },
+      { name: "Ginger Ale", price: "3" },
+    ],
+    sangrias: [
+      { name: "Espumante", description: "Maracujá, frutos vermelhos, maçã, mojito", descriptionEn: "Passion fruit, red fruits, apple, mojito", price: "35" },
+      { name: "Magic Bubbles (Mimadu)", price: "40" },
+      { name: "Champagne 100 Cerimónias", description: "Preço s/ consulta", descriptionEn: "Price on request", price: "—" },
+    ],
+    cocktailsAssinatura: [
+      { name: "Lick My Peach", description: "Vodka, licor de laranja, citrinos, pêssego, clara de ovo", descriptionEn: "Vodka, orange liqueur, citrus, peach, egg white", price: "12" },
+      { name: "Em Brasa", description: "Gin, puré de morango, sumo de laranja, soda e angustura", descriptionEn: "Gin, strawberry purée, orange juice, soda and angostura", price: "12" },
+      { name: "Special Mojito", description: "Vinho do Porto branco, tangerina, ginger ale, citrinos, hortelã", descriptionEn: "White Port wine, tangerine, ginger ale, citrus, mint", price: "12" },
+      { name: "Cerimónias Mule", description: "Vodka, ginger beer, citrinos, espuma de gengibre", descriptionEn: "Vodka, ginger beer, citrus, ginger foam", price: "12" },
+      { name: "Afrodite", description: "Vodka, licor de laranja, maracujá, framboesa, citrinos, clara de ovo", descriptionEn: "Vodka, orange liqueur, passion fruit, raspberry, citrus, egg white", price: "12" },
+      { name: "Invicta", description: "Vodka, blue curaçao, sumo de laranja, sumo de arando", descriptionEn: "Vodka, blue curaçao, orange juice, cranberry juice", price: "12" },
+    ],
+    cocktailsClassicos: [
       { name: "Margarita", price: "8" },
       { name: "Cosmopolitan", price: "8" },
       { name: "Mojito", price: "8" },
       { name: "Caipirinha", price: "8" },
+      { name: "Pornstar Martini", price: "8" },
       { name: "Negroni", price: "8" },
+      { name: "Espresso Martini", price: "8" },
+      { name: "Old Fashioned", price: "8" },
+      { name: "Daiquiri", price: "8" },
+      { name: "Aperol Spritz", price: "8" },
+    ],
+    mocktails: [
+      { name: "Belle Vie", description: "Abacaxi, sumo de lima, cereja marrasquino, puré de pêssego", descriptionEn: "Pineapple, lime juice, maraschino cherry, peach purée", price: "5" },
+      { name: "Ginger Swizzle", description: "Sumo de limão, xarope de gengibre, soda", descriptionEn: "Lemon juice, ginger syrup, soda", price: "5" },
+      { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "5" },
     ],
   },
 };
@@ -340,13 +446,13 @@ const Lightbox = ({
 
       {/* Image */}
       <div 
-        className="max-w-5xl max-h-[85vh] mx-4"
+        className="max-w-[90vw] max-h-[85vh] relative animate-lightbox-image"
         onClick={(e) => e.stopPropagation()}
       >
-        <img 
-          src={images[currentIndex]} 
+        <img
+          src={images[currentIndex]}
           alt={`Gallery image ${currentIndex + 1}`}
-          className="max-w-full max-h-[85vh] object-contain animate-lightbox-image"
+          className="max-w-full max-h-[85vh] object-contain"
         />
       </div>
 
@@ -365,6 +471,112 @@ const Lightbox = ({
   );
 };
 
+// Icon components for menu categories
+const WineGlassIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 3h6l-2.5 7.5c-.5 1.5-1.5 2.5-2.5 2.5s-2-.5-2.5-2.5L9 3zm3 10v8m-3 0h6" />
+  </svg>
+);
+
+const CocktailIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l-1.3 4.55a2.25 2.25 0 01-2.163 1.65h-8.674a2.25 2.25 0 01-2.163-1.65L5 14.5" />
+  </svg>
+);
+
+const BeerIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6 4h8v14a2 2 0 01-2 2H8a2 2 0 01-2-2V4zm8 3h4a2 2 0 012 2v4a2 2 0 01-2 2h-4" />
+  </svg>
+);
+
+const JuiceIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M8 3v2m8-2v2M6 7h12l-1 12a2 2 0 01-2 2H9a2 2 0 01-2-2L6 7zm3 4v6m4-6v6" />
+  </svg>
+);
+
+const SodaIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 3h6v3H9V3zm0 3l-1 15a1 1 0 001 1h6a1 1 0 001-1L15 6H9z" />
+  </svg>
+);
+
+const BottleIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M10 3h4v2h-4V3zm0 2l-2 3v13a1 1 0 001 1h6a1 1 0 001-1V8l-2-3h-4z" />
+  </svg>
+);
+
+const SangriaIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7 10h10a2 2 0 012 2v6a2 2 0 01-2 2H7a2 2 0 01-2-2v-6a2 2 0 012-2zm5-7v7m-3-4l3 4 3-4" />
+  </svg>
+);
+
+const ChevronIcon = ({ isOpen }: { isOpen: boolean }) => (
+  <svg 
+    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} 
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+);
+
+// Collapsible drink section component
+const CollapsibleDrinkSection = ({ 
+  title, 
+  icon, 
+  children, 
+  defaultOpen = false 
+}: { 
+  title: string; 
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="border border-amber-900/30 mb-3 overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between px-4 py-3 bg-amber-950/30 hover:bg-amber-950/50 transition-colors"
+      >
+        <div className="flex items-center gap-3 text-amber-400">
+          {icon}
+          <span className="font-serif text-lg tracking-wider">{title}</span>
+        </div>
+        <ChevronIcon isOpen={isOpen} />
+      </button>
+      <div
+        className={`transition-all duration-500 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="p-4 bg-black/40">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Simple drink item
+const DrinkItem = ({ name, price, description, descriptionEn, lang }: { name: string; price: string; description?: string; descriptionEn?: string; lang: Language }) => (
+  <div className="flex justify-between items-start py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2 group">
+    <div>
+      <span className="text-amber-100 group-hover:text-amber-300 transition-colors">{name}</span>
+      {(description || descriptionEn) && (
+        <p className="text-amber-200/50 text-xs mt-0.5">{lang === "pt" ? description : descriptionEn}</p>
+      )}
+    </div>
+    <span className="text-amber-400 ml-4">{price !== "—" ? `€${price}` : price}</span>
+  </div>
+);
+
 function Index() {
   const [activeTab, setActiveTab] = useState("entradas");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -382,7 +594,6 @@ function Index() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
-  const [heroTransitioning, setHeroTransitioning] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -402,7 +613,7 @@ function Index() {
     { id: "acompanhamentos", label: t.menu.tabs.acompanhamentos },
     { id: "sobremesas", label: t.menu.tabs.sobremesas },
     { id: "vinhos", label: t.menu.tabs.vinhos },
-    { id: "cocktails", label: t.menu.tabs.cocktails },
+    { id: "bebidas", label: t.menu.tabs.bebidas },
   ];
 
   // Language toggle
@@ -442,11 +653,7 @@ function Index() {
   // Hero slideshow effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setHeroTransitioning(true);
-      setTimeout(() => {
-        setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
-        setHeroTransitioning(false);
-      }, 1000); // Transition duration
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
     }, 5500); // Change every 5.5 seconds
 
     return () => clearInterval(interval);
@@ -815,7 +1022,10 @@ function Index() {
             {activeTab === "vinhos" && (
               <div className="animate-fade-in space-y-8">
                 <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.brancos}</h3>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                    <WineGlassIcon />
+                    {t.menu.categories.brancos}
+                  </h3>
                   {menuData.vinhos.brancos.map((item, i) => (
                     <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors">
                       <span className="text-amber-100">{item.name}</span>
@@ -824,7 +1034,10 @@ function Index() {
                   ))}
                 </div>
                 <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.tintos}</h3>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                    <WineGlassIcon />
+                    {t.menu.categories.tintos}
+                  </h3>
                   {menuData.vinhos.tintos.map((item, i) => (
                     <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors">
                       <span className="text-amber-100">{item.name}</span>
@@ -835,28 +1048,120 @@ function Index() {
               </div>
             )}
 
-            {activeTab === "cocktails" && (
-              <div className="animate-fade-in space-y-8">
-                <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.assinatura} • €12</h3>
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {menuData.cocktails.assinatura.map((item, i) => (
-                      <div key={i} className="text-amber-100 py-2 border-b border-amber-900/20 hover:text-amber-400 transition-colors">
-                        {item.name}
-                      </div>
+            {activeTab === "bebidas" && (
+              <div className="animate-fade-in space-y-4">
+                {/* Signature Cocktails */}
+                <CollapsibleDrinkSection title={`${t.menu.categories.assinatura} • €12`} icon={<CocktailIcon />} defaultOpen={true}>
+                  {menuData.bebidas.cocktailsAssinatura.map((item, i) => (
+                    <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
+                  ))}
+                </CollapsibleDrinkSection>
+
+                {/* Classic Cocktails */}
+                <CollapsibleDrinkSection title={`${t.menu.categories.classicos} • €8`} icon={<CocktailIcon />}>
+                  <div className="grid sm:grid-cols-2 gap-x-4">
+                    {menuData.bebidas.cocktailsClassicos.map((item, i) => (
+                      <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                     ))}
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.classicos} • €8</h3>
-                  <div className="grid sm:grid-cols-2 gap-2">
-                    {menuData.cocktails.classicos.map((item, i) => (
-                      <div key={i} className="text-amber-100 py-2 border-b border-amber-900/20 hover:text-amber-400 transition-colors">
-                        {item.name}
-                      </div>
+                </CollapsibleDrinkSection>
+
+                {/* Mocktails */}
+                <CollapsibleDrinkSection title={`${t.menu.categories.mocktails} • €5`} icon={<JuiceIcon />}>
+                  {menuData.bebidas.mocktails.map((item, i) => (
+                    <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
+                  ))}
+                </CollapsibleDrinkSection>
+
+                {/* Sangrias */}
+                <CollapsibleDrinkSection title={t.menu.categories.sangrias} icon={<SangriaIcon />}>
+                  {menuData.bebidas.sangrias.map((item, i) => (
+                    <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
+                  ))}
+                </CollapsibleDrinkSection>
+
+                {/* Spirits */}
+                <CollapsibleDrinkSection title={t.menu.categories.destilados} icon={<BottleIcon />}>
+                  <div className="space-y-6">
+                    {/* Vodka */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.vodka}</h4>
+                      {menuData.bebidas.destilados.vodka.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Rum */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.rum}</h4>
+                      {menuData.bebidas.destilados.rum.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Gin */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.gin}</h4>
+                      {menuData.bebidas.destilados.gin.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Whisky */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.whisky}</h4>
+                      {menuData.bebidas.destilados.whisky.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Cognac */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.cognac}</h4>
+                      {menuData.bebidas.destilados.cognac.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Vermouth */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.vermouth}</h4>
+                      {menuData.bebidas.destilados.vermouth.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Tequila */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.tequila}</h4>
+                      {menuData.bebidas.destilados.tequila.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                  </div>
+                </CollapsibleDrinkSection>
+
+                {/* Beers */}
+                <CollapsibleDrinkSection title={t.menu.categories.cervejas} icon={<BeerIcon />}>
+                  {menuData.bebidas.cervejas.map((item, i) => (
+                    <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                  ))}
+                </CollapsibleDrinkSection>
+
+                {/* Natural Juices */}
+                <CollapsibleDrinkSection title={t.menu.categories.sumosNaturais} icon={<JuiceIcon />}>
+                  {menuData.bebidas.sumosNaturais.map((item, i) => (
+                    <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                  ))}
+                </CollapsibleDrinkSection>
+
+                {/* Soft Drinks */}
+                <CollapsibleDrinkSection title={t.menu.categories.refrigerantes} icon={<SodaIcon />}>
+                  <div className="grid sm:grid-cols-2 gap-x-4">
+                    {menuData.bebidas.refrigerantes.map((item, i) => (
+                      <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                     ))}
                   </div>
-                </div>
+                </CollapsibleDrinkSection>
+
+                {/* VAT Note */}
+                <p className="text-center text-amber-200/40 text-xs mt-8 italic">
+                  {t.menu.vatNote}
+                </p>
               </div>
             )}
           </div>
@@ -1054,8 +1359,8 @@ function Index() {
             <div>
               <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider">{t.contactos.title}</h4>
               <div className="space-y-3 text-amber-200/70 text-sm">
-                <p>Rua de Santo Ildefonso 210</p>
-                <p>4000-507 Porto, Portugal</p>
+                <p>Rua de Santo Ildefonso, 210</p>
+                <p>Porto, Portugal</p>
                 <p>
                   <a href="tel:+351933156603" className="hover:text-amber-400 transition-colors">
                     +351 933 156 603
@@ -1069,23 +1374,13 @@ function Index() {
               </div>
             </div>
 
-            {/* Social */}
+            {/* Social & Links */}
             <div>
               <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider">{t.contactos.followUs}</h4>
-              <div className="flex gap-4">
-                {/* Facebook */}
-                <a
-                  href="#"
-                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"
-                  aria-label="Facebook"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/>
-                  </svg>
-                </a>
+              <div className="flex gap-3 mb-4">
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com/100.cerimonias.steakhouse"
+                  href="https://instagram.com/100cerimonias.steakhouse"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"
@@ -1095,21 +1390,49 @@ function Index() {
                     <path d="M12,2.16c3.2,0,3.58.01,4.85.07,3.25.15,4.77,1.69,4.92,4.92.06,1.27.07,1.65.07,4.85s-.01,3.58-.07,4.85c-.15,3.23-1.66,4.77-4.92,4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38,3.92,3.9,2.38,7.15,2.23,8.42,2.17,8.8,2.16,12,2.16ZM12,0C8.74,0,8.33.01,7.05.07c-4.35.2-6.78,2.62-6.98,6.98C.01,8.33,0,8.74,0,12s.01,3.67.07,4.95c.2,4.36,2.62,6.78,6.98,6.98,1.28.06,1.69.07,4.95.07s3.67-.01,4.95-.07c4.35-.2,6.78-2.62,6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01,15.26,0,12,0Zm0,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.41,4.15a1.44,1.44,0,1,0,1.44,1.44A1.44,1.44,0,0,0,18.41,4.15Z"/>
                   </svg>
                 </a>
-                {/* TripAdvisor */}
+                {/* Google Reviews */}
                 <a
-                  href="#"
+                  href="https://www.google.com/maps/search/100+Cerimonias+Steakhouse+Premium+Porto"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"
-                  aria-label="TripAdvisor"
+                  aria-label="Google Reviews"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10,10-4.48,10-10S17.52,2,12,2Zm0,18c-4.41,0-8-3.59-8-8s3.59-8,8-8,8,3.59,8,8-3.59,8-8,8Zm-3.5-6.5c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5-.67,1.5-1.5,1.5-1.5-.67-1.5-1.5Zm5,0c0-.83.67-1.5,1.5-1.5s1.5.67,1.5,1.5-.67,1.5-1.5,1.5-1.5-.67-1.5-1.5ZM12,8c-2.76,0-5,2.24-5,5h2c0-1.66,1.34-3,3-3s3,1.34,3,3h2c0-2.76-2.24-5-5-5Z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.41 16.09V8.27l5.66 4.91-5.66 4.91z"/>
                   </svg>
                 </a>
               </div>
               
-              <p className="mt-4 text-amber-200/50 text-sm">
-                @100.cerimonias.steakhouse
+              <p className="text-amber-200/50 text-sm mb-6">
+                @100cerimonias.steakhouse
               </p>
+
+              {/* Additional Links */}
+              <div className="space-y-2 text-sm">
+                <a
+                  href="https://www.google.com/maps/search/100+Cerimonias+Steakhouse+Premium+Porto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-amber-200/60 hover:text-amber-400 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                  {t.contactos.reviews}
+                </a>
+                <a
+                  href="https://www.livroreclamacoes.pt/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-amber-200/60 hover:text-amber-400 transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  {t.contactos.complaints}
+                </a>
+              </div>
             </div>
           </div>
 
