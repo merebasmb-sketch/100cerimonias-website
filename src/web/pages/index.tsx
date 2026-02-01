@@ -699,7 +699,7 @@ function Index() {
       >
         <div className="text-center">
           <img 
-            src="./a3cfa0aa1472.png" 
+            src="./logo-transparent.png" 
             alt="100 Cerimónias" 
             className="w-32 animate-pulse-slow"
           />
@@ -736,7 +736,7 @@ function Index() {
             className="flex-shrink-0 group"
           >
             <img 
-              src="./a3cfa0aa1472.png" 
+              src="./logo-transparent.png" 
               alt="100 Cerimónias" 
               className={`transition-all duration-300 group-hover:scale-105 ${isScrolled ? 'h-12' : 'h-16'}`}
             />
@@ -853,7 +853,7 @@ function Index() {
         <div className={`relative z-10 text-center px-6 ${isLoading ? "opacity-0" : "animate-hero-entrance"}`}>
           <div className="group">
             <img
-              src="./a3cfa0aa1472.png"
+              src="./logo-transparent.png"
               alt="100 Cerimónias Steakhouse Premium"
               className="w-64 sm:w-80 md:w-96 mx-auto mb-4 drop-shadow-2xl animate-logo-entrance group-hover:animate-logo-float transition-transform"
             />
@@ -1316,7 +1316,7 @@ function Index() {
             {/* Logo & Tagline */}
             <div className="lg:col-span-2">
               <img
-                src="./a3cfa0aa1472.png"
+                src="./logo-transparent.png"
                 alt="100 Cerimónias"
                 className="w-48 mb-6 opacity-70 hover:opacity-100 transition-opacity"
               />
