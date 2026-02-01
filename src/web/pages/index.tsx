@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+// Hero slideshow images
+const heroImages = [
+  "./8b93502b-3f37-4894-9695-18b59fe1c30e.jpg", // brasa viva
+  "./99620f26-b610-42b4-a5bf-d0d7df4b54d9.jpg", // tomahawk being cut
+  "./1b2d7f29-bff0-4c2e-98b4-14c29160e462.jpg", // stacked steaks
+  "./51921946-db12-4b63-b5e0-867f0d6e6b5e.jpg", // raw tomahawk
+  "./a5e37b97-57ed-4949-8d6c-84ecde77bf38.jpg", // sliced steak
+];
+
 // Translations
 const translations = {
   pt: {
@@ -372,6 +381,8 @@ function Index() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
+  const [heroTransitioning, setHeroTransitioning] = useState(false);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -426,6 +437,19 @@ function Index() {
       setIsLoading(false);
     }, 800);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Hero slideshow effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroTransitioning(true);
+      setTimeout(() => {
+        setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+        setHeroTransitioning(false);
+      }, 1000); // Transition duration
+    }, 5500); // Change every 5.5 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (href: string) => {
@@ -577,15 +601,43 @@ function Index() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Parallax */}
+        {/* Background Images Slideshow with Ken Burns effect */}
         <div className="absolute inset-0">
-          <img
-            src="./8b93502b-3f37-4894-9695-18b59fe1c30e.jpg"
-            alt="Brasa viva"
-            className="w-full h-full object-cover transition-transform duration-100"
-            style={{ transform: `translateY(${heroParallax}px) scale(1.1)` }}
-          />
+          {heroImages.map((img, index) => (
+            <div
+              key={img}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentHeroImage ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={img}
+                alt={`100 Cerimónias Steakhouse ${index + 1}`}
+                className={`w-full h-full object-cover animate-ken-burns ${
+                  index === currentHeroImage ? "animate-running" : "animate-paused"
+                }`}
+                style={{ 
+                  transform: `translateY(${heroParallax}px)`,
+                  animationPlayState: index === currentHeroImage ? "running" : "paused"
+                }}
+              />
+            </div>
+          ))}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black" />
+        </div>
+
+        {/* Slideshow indicators */}
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {heroImages.map((_, index) => (
+            <div
+              key={index}
+              className={`h-1 rounded-full transition-all duration-500 ${
+                index === currentHeroImage 
+                  ? "w-8 bg-amber-400" 
+                  : "w-2 bg-amber-400/30"
+              }`}
+            />
+          ))}
         </div>
 
         {/* Hero Content */}
@@ -603,9 +655,28 @@ function Index() {
             {t.hero.slogan}
           </p>
           
-          <p className="font-serif text-amber-400 text-xl md:text-2xl tracking-widest mb-12 opacity-90">
+          <p className="font-serif text-amber-400 text-xl md:text-2xl tracking-widest mb-8 opacity-90">
             {t.hero.premium}
           </p>
+
+          {/* Hero Reservation Button with shimmer effect */}
+          <div className="mb-12 animate-hero-button-entrance">
+            <a
+              href="https://tinyurl.com/100cerimonias"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-block group overflow-hidden"
+            >
+              <div className="relative px-8 py-4 bg-transparent border-2 border-amber-400 group-hover:border-amber-300 transition-all group-hover:scale-105">
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
+                <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-transparent via-amber-400/10 to-transparent" />
+                <span className="relative font-serif text-lg md:text-xl tracking-[0.25em] text-amber-400 group-hover:text-amber-300 transition-colors">
+                  {t.about.reserveButton}
+                </span>
+              </div>
+            </a>
+          </div>
           
           {/* Nav links under logo */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
@@ -653,7 +724,7 @@ function Index() {
               <div className="relative">
                 <div className="absolute -inset-8 bg-amber-400/10 rounded-full blur-3xl animate-pulse-slow" />
                 <a
-                  href="https://resy.com/cities/porto-portugal/venues/100-cerimonias-steakhouse-premium"
+                  href="https://tinyurl.com/100cerimonias"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block group"
@@ -970,7 +1041,7 @@ function Index() {
               
               {/* Reservation Button */}
               <a
-                href="https://resy.com/cities/porto-portugal/venues/100-cerimonias-steakhouse-premium"
+                href="https://tinyurl.com/100cerimonias"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block mt-6 px-6 py-3 border border-amber-400 text-amber-400 text-sm tracking-widest hover:bg-amber-400 hover:text-black transition-all hover:scale-105"
@@ -1249,6 +1320,60 @@ function Index() {
 
         .animate-lightbox-image {
           animation: lightbox-image 0.4s ease-out forwards;
+        }
+
+        /* Ken Burns effect for hero slideshow */
+        @keyframes ken-burns {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1.15);
+          }
+        }
+
+        .animate-ken-burns {
+          animation: ken-burns 6s ease-out forwards;
+        }
+
+        .animate-running {
+          animation-play-state: running;
+        }
+
+        .animate-paused {
+          animation-play-state: paused;
+        }
+
+        /* Shimmer effect for hero button */
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .animate-shimmer {
+          animation: shimmer 3s ease-in-out infinite;
+        }
+
+        /* Hero button entrance */
+        @keyframes hero-button-entrance {
+          from {
+            opacity: 0;
+            transform: translateY(15px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-hero-button-entrance {
+          animation: hero-button-entrance 0.8s ease-out forwards;
+          animation-delay: 1.4s;
+          opacity: 0;
         }
 
         html {
