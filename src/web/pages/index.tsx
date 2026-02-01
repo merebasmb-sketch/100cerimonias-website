@@ -852,11 +852,14 @@ function Index() {
         {/* Hero Content */}
         <div className={`relative z-10 text-center px-6 ${isLoading ? "opacity-0" : "animate-hero-entrance"}`}>
           <div className="group">
-            <img
-              src="./logo-transparent.png"
-              alt="100 Cerimónias Steakhouse Premium"
-              className="w-64 sm:w-80 md:w-96 mx-auto mb-4 drop-shadow-2xl animate-logo-entrance group-hover:animate-logo-float transition-transform"
-            />
+            {/* Square container for prominent logo display */}
+            <div className="w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] mx-auto mb-6 flex items-center justify-center">
+              <img
+                src="./logo-transparent.png"
+                alt="100 Cerimónias Steakhouse Premium"
+                className="w-full h-full object-contain drop-shadow-2xl animate-logo-entrance group-hover:animate-logo-float transition-transform"
+              />
+            </div>
           </div>
           
           {/* Slogan */}
