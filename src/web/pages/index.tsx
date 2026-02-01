@@ -1,34 +1,166 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+
+// Translations
+const translations = {
+  pt: {
+    nav: {
+      sobreNos: "SOBRE NÓS",
+      menu: "MENU",
+      atmosfera: "ATMOSFERA",
+      equipa: "A EQUIPA",
+      contactos: "CONTACTOS",
+    },
+    hero: {
+      slogan: "A arte da carne, servida com elegância",
+      premium: "STEAKHOUSE PREMIUM",
+    },
+    about: {
+      title1: "SOMOS UNS",
+      title2: "APAIXONADOS",
+      text: "No 100 Cerimónias Steakhouse, a carne é o centro de tudo. Selecionamos cortes premium, trabalhados com rigor, respeito pelo produto e uma obsessão clara pela qualidade. Aqui, cada prato é uma celebração do sabor, da textura e do ponto perfeito.",
+      reserveButton: "RESERVAR MESA",
+    },
+    menu: {
+      title: "MENU",
+      tabs: {
+        entradas: "Entradas",
+        naBrasa: "Na Brasa",
+        acompanhamentos: "Acompanhamentos",
+        sobremesas: "Sobremesas",
+        vinhos: "Vinhos",
+        cocktails: "Cocktails",
+      },
+      categories: {
+        brancos: "BRANCOS",
+        tintos: "TINTOS",
+        assinatura: "ASSINATURA",
+        classicos: "CLÁSSICOS",
+      },
+    },
+    atmosfera: {
+      title: "ATMOSFERA",
+    },
+    equipa: {
+      title: "A EQUIPA",
+      subtitle: "100 CERIMÓNIAS",
+      text: "Por trás de cada prato extraordinário existe uma equipa apaixonada. Profissionais dedicados que transformam ingredientes premium em experiências memoráveis, unindo técnica, tradição e criatividade em cada detalhe.",
+      chef: {
+        title: "Head Chef",
+        description: "Mestre da brasa, com anos de experiência nos melhores cortes do mundo. Cada peça é tratada com a precisão que só a paixão proporciona.",
+      },
+      sommelier: {
+        title: "Sommelier",
+        description: "Curador da nossa carta de vinhos, selecionando rótulos que complementam e elevam cada corte servido à mesa.",
+      },
+      gerente: {
+        title: "Gerente",
+        description: "O maestro que orquestra cada serviço, garantindo que cada visita seja uma cerimónia perfeita do início ao fim.",
+      },
+    },
+    contactos: {
+      title: "CONTACTOS",
+      followUs: "SIGA-NOS",
+      established: "Steakhouse Premium • Estabelecido 2023",
+      hours: "Terça a Domingo | 19h00 – 00h00",
+      closed: "Encerrado à Segunda",
+      copyright: "© 2023 100 Cerimónias Steakhouse. Todos os direitos reservados.",
+    },
+  },
+  en: {
+    nav: {
+      sobreNos: "ABOUT US",
+      menu: "MENU",
+      atmosfera: "ATMOSPHERE",
+      equipa: "THE TEAM",
+      contactos: "CONTACT",
+    },
+    hero: {
+      slogan: "The art of meat, served with elegance",
+      premium: "PREMIUM STEAKHOUSE",
+    },
+    about: {
+      title1: "WE ARE",
+      title2: "PASSIONATE",
+      text: "At 100 Cerimónias Steakhouse, meat is at the heart of everything. We select premium cuts, crafted with precision, respect for the product, and a clear obsession with quality. Here, every dish is a celebration of flavor, texture, and the perfect doneness.",
+      reserveButton: "BOOK A TABLE",
+    },
+    menu: {
+      title: "MENU",
+      tabs: {
+        entradas: "Starters",
+        naBrasa: "From the Grill",
+        acompanhamentos: "Sides",
+        sobremesas: "Desserts",
+        vinhos: "Wines",
+        cocktails: "Cocktails",
+      },
+      categories: {
+        brancos: "WHITE WINES",
+        tintos: "RED WINES",
+        assinatura: "SIGNATURE",
+        classicos: "CLASSICS",
+      },
+    },
+    atmosfera: {
+      title: "ATMOSPHERE",
+    },
+    equipa: {
+      title: "THE TEAM",
+      subtitle: "100 CERIMÓNIAS",
+      text: "Behind every extraordinary dish is a passionate team. Dedicated professionals who transform premium ingredients into memorable experiences, combining technique, tradition, and creativity in every detail.",
+      chef: {
+        title: "Head Chef",
+        description: "Master of the grill, with years of experience with the finest cuts in the world. Each piece is treated with the precision that only passion provides.",
+      },
+      sommelier: {
+        title: "Sommelier",
+        description: "Curator of our wine list, selecting labels that complement and elevate every cut served at the table.",
+      },
+      gerente: {
+        title: "Manager",
+        description: "The maestro who orchestrates every service, ensuring that each visit is a perfect ceremony from start to finish.",
+      },
+    },
+    contactos: {
+      title: "CONTACT",
+      followUs: "FOLLOW US",
+      established: "Premium Steakhouse • Established 2023",
+      hours: "Tuesday to Sunday | 7:00 PM – 12:00 AM",
+      closed: "Closed on Monday",
+      copyright: "© 2023 100 Cerimónias Steakhouse. All rights reserved.",
+    },
+  },
+};
 
 // Menu data
 const menuData = {
   entradas: [
-    { name: "Croquetes de Alheira", description: "Croquetes crocantes de alheira tradicional portuguesa", price: "8,50" },
-    { name: "Tacos de Xixinha", description: "Tacos recheados com carne desfiada temperada", price: "10,50" },
-    { name: "Ovos Rotos 100 Cerimónias", description: "Ovos estrelados sobre batata frita com presunto", price: "13", signature: true },
-    { name: "Tártaro de Novilho", description: "Carne de novilho picada à mão, temperada na hora", price: "15" },
-    { name: "Camarão 100 Cerimónias", description: "Camarão grelhado com alho e ervas aromáticas", price: "12", signature: true },
+    { name: "Croquetes de Alheira", description: "Croquetes crocantes de alheira tradicional portuguesa", descriptionEn: "Crispy alheira croquettes, traditional Portuguese style", price: "8,50" },
+    { name: "Tacos de Xixinha", description: "Tacos recheados com carne desfiada temperada", descriptionEn: "Tacos filled with seasoned shredded meat", price: "10,50" },
+    { name: "Ovos Rotos 100 Cerimónias", description: "Ovos estrelados sobre batata frita com presunto", descriptionEn: "Fried eggs over crispy potatoes with cured ham", price: "13", signature: true },
+    { name: "Tártaro de Novilho", description: "Carne de novilho picada à mão, temperada na hora", descriptionEn: "Hand-chopped beef tartare, freshly seasoned", price: "15" },
+    { name: "Camarão 100 Cerimónias", description: "Camarão grelhado com alho e ervas aromáticas", descriptionEn: "Grilled shrimp with garlic and aromatic herbs", price: "12", signature: true },
   ],
   naBrasa: [
-    { name: "Vazia", description: "Maturação de 22 dias", price: "28", weight: "250gr" },
-    { name: "Picanha", description: "Corte típico argentino com gordura lateral", price: "48", weight: "500gr", signature: true },
-    { name: "Txuletón", description: "Corte típico basco com osso", price: "79", weight: "1kg", bestseller: true },
-    { name: "Tomahawk", description: "Corte invulgar com osso extenso", price: "89", weight: "1kg", signature: true, bestseller: true },
-    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", price: "79", weight: "1kg" },
-    { name: "Tábua Premium 100 Cerimónias", description: "Carnes para todos os gostos", price: "172", weight: "2kg", signature: true },
+    { name: "Vazia", description: "Maturação de 22 dias", descriptionEn: "22-day aged", price: "28", weight: "250gr" },
+    { name: "Picanha", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "48", weight: "500gr", signature: true },
+    { name: "Txuletón", description: "Corte típico basco com osso", descriptionEn: "Typical Basque bone-in cut", price: "79", weight: "1kg", bestseller: true },
+    { name: "Tomahawk", description: "Corte invulgar com osso extenso", descriptionEn: "Distinctive cut with extended bone", price: "89", weight: "1kg", signature: true, bestseller: true },
+    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "79", weight: "1kg" },
+    { name: "Tábua Premium 100 Cerimónias", description: "Carnes para todos os gostos", descriptionEn: "Premium meats for all tastes", price: "172", weight: "2kg", signature: true },
   ],
   acompanhamentos: [
-    { name: "Batata Rústica", description: "", price: "4,50", veggie: true },
-    { name: "Salada Mista", description: "", price: "4", veggie: true },
-    { name: "Legumes Grelhados na Brasa", description: "", price: "4,50", veggie: true },
-    { name: "Arroz de Forno de Enchidos", description: "", price: "4" },
-    { name: "Puré de Batata Trufado", description: "", price: "7,50", veggie: true },
+    { name: "Batata Rústica", description: "", descriptionEn: "", price: "4,50", veggie: true },
+    { name: "Salada Mista", description: "", descriptionEn: "", price: "4", veggie: true },
+    { name: "Legumes Grelhados na Brasa", description: "", descriptionEn: "", price: "4,50", veggie: true },
+    { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "4" },
+    { name: "Puré de Batata Trufado", description: "", descriptionEn: "", price: "7,50", veggie: true },
   ],
   sobremesas: [
-    { name: "Bola de Gelado 100 Cerimónias", description: "", price: "4" },
-    { name: "Surpresa de Maracujá", description: "", price: "10" },
-    { name: "Fondant de Doce de Leite", description: "", price: "12", bestseller: true },
-    { name: "Brownie de Chocolate", description: "", price: "10" },
+    { name: "Bola de Gelado 100 Cerimónias", description: "", descriptionEn: "", price: "4" },
+    { name: "Surpresa de Maracujá", description: "", descriptionEn: "", price: "10" },
+    { name: "Fondant de Doce de Leite", description: "", descriptionEn: "", price: "12", bestseller: true },
+    { name: "Brownie de Chocolate", description: "", descriptionEn: "", price: "10" },
   ],
   vinhos: {
     brancos: [
@@ -60,23 +192,6 @@ const menuData = {
   },
 };
 
-const navLinks = [
-  { href: "#sobre", label: "SOBRE NÓS" },
-  { href: "#menu", label: "MENU" },
-  { href: "#atmosfera", label: "ATMOSFERA" },
-  { href: "#equipa", label: "A EQUIPA" },
-  { href: "#contactos", label: "CONTACTOS" },
-];
-
-const menuTabs = [
-  { id: "entradas", label: "Entradas" },
-  { id: "naBrasa", label: "Na Brasa" },
-  { id: "acompanhamentos", label: "Acompanhamentos" },
-  { id: "sobremesas", label: "Sobremesas" },
-  { id: "vinhos", label: "Vinhos" },
-  { id: "cocktails", label: "Cocktails" },
-];
-
 const atmosphereImages = [
   "./0d3ca745-bfea-410b-969b-7df83d9607af.jpg",
   "./85045d6c-1f52-42a3-8a59-565b62ec4b13.jpg",
@@ -89,6 +204,7 @@ const atmosphereImages = [
 interface MenuItem {
   name: string;
   description?: string;
+  descriptionEn?: string;
   price: string;
   weight?: string;
   signature?: boolean;
@@ -96,8 +212,14 @@ interface MenuItem {
   veggie?: boolean;
 }
 
-const MenuItemRow = ({ item }: { item: MenuItem }) => (
-  <div className="group border-b border-amber-900/30 py-4 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+type Language = "pt" | "en";
+
+const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language; isVisible: boolean }) => (
+  <div 
+    className={`group border-b border-amber-900/30 py-4 hover:bg-amber-950/20 transition-all duration-700 px-2 -mx-2 ${
+      isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+    }`}
+  >
     <div className="flex justify-between items-start gap-4">
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
@@ -123,54 +245,187 @@ const MenuItemRow = ({ item }: { item: MenuItem }) => (
             </span>
           )}
         </div>
-        {item.description && (
-          <p className="text-amber-200/60 text-sm mt-1">{item.description}</p>
+        {(item.description || item.descriptionEn) && (
+          <p className="text-amber-200/60 text-sm mt-1">
+            {lang === "pt" ? item.description : item.descriptionEn}
+          </p>
         )}
       </div>
-      <span className="font-serif text-xl text-amber-400 whitespace-nowrap">
+      <span className="font-serif text-xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">
         €{item.price}
       </span>
     </div>
   </div>
 );
 
-const ColorfulCow = () => (
-  <svg viewBox="0 0 200 160" className="w-48 h-auto">
-    {/* Body */}
-    <polygon points="40,100 80,60 140,60 160,100 140,140 60,140" fill="#FF6B35"/>
-    <polygon points="80,60 110,40 140,60 110,80" fill="#FFD93D"/>
-    <polygon points="40,100 60,140 80,120 60,90" fill="#6BCB77"/>
-    <polygon points="140,60 160,100 140,100 130,80" fill="#4D96FF"/>
-    <polygon points="60,140 100,140 80,120" fill="#FF6B9D"/>
-    <polygon points="100,140 140,140 120,120" fill="#C9B1FF"/>
-    {/* Head */}
-    <polygon points="110,40 130,20 150,40 140,60 110,60" fill="#FF6B35"/>
-    <polygon points="130,20 145,5 155,25 150,40" fill="#FFD93D"/>
-    {/* Horns */}
-    <polygon points="120,20 115,5 130,15" fill="#6BCB77"/>
-    <polygon points="145,15 155,0 150,20" fill="#4D96FF"/>
-    {/* Legs */}
-    <rect x="55" y="140" width="12" height="18" fill="#FF6B9D"/>
-    <rect x="85" y="140" width="12" height="18" fill="#C9B1FF"/>
-    <rect x="115" y="140" width="12" height="18" fill="#6BCB77"/>
-    <rect x="135" y="140" width="12" height="18" fill="#4D96FF"/>
-    {/* Tail */}
-    <path d="M40,100 Q20,90 25,70" stroke="#FFD93D" strokeWidth="4" fill="none"/>
-    <circle cx="25" cy="70" r="5" fill="#FFD93D"/>
-  </svg>
+// Elegant section divider
+const SectionDivider = () => (
+  <div className="flex items-center justify-center py-8">
+    <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-600/50" />
+    <div className="w-2 h-2 rotate-45 border border-amber-600/50 mx-4" />
+    <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-600/50" />
+  </div>
 );
+
+// Lightbox Component
+const Lightbox = ({ 
+  images, 
+  currentIndex, 
+  isOpen, 
+  onClose, 
+  onNext, 
+  onPrev 
+}: { 
+  images: string[];
+  currentIndex: number;
+  isOpen: boolean;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+}) => {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") onNext();
+      if (e.key === "ArrowLeft") onPrev();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose, onNext, onPrev]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div 
+      className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center animate-lightbox-in"
+      onClick={onClose}
+    >
+      {/* Close button */}
+      <button 
+        className="absolute top-6 right-6 text-amber-400 hover:text-amber-300 transition-colors z-10 p-2"
+        onClick={onClose}
+      >
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      {/* Navigation arrows */}
+      <button 
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-amber-400 hover:text-amber-300 transition-colors p-2 hover:scale-110"
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+      >
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button 
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-amber-400 hover:text-amber-300 transition-colors p-2 hover:scale-110"
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+      >
+        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Image */}
+      <div 
+        className="max-w-5xl max-h-[85vh] mx-4"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img 
+          src={images[currentIndex]} 
+          alt={`Gallery image ${currentIndex + 1}`}
+          className="max-w-full max-h-[85vh] object-contain animate-lightbox-image"
+        />
+      </div>
+
+      {/* Dots indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, i) => (
+          <div 
+            key={i}
+            className={`w-2 h-2 rounded-full transition-all ${
+              i === currentIndex ? "bg-amber-400 w-6" : "bg-amber-400/30"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 function Index() {
   const [activeTab, setActiveTab] = useState("entradas");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState<Language>(() => {
+    if (typeof window !== "undefined") {
+      return (localStorage.getItem("100cerimonias-lang") as Language) || "pt";
+    }
+    return "pt";
+  });
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [heroParallax, setHeroParallax] = useState(0);
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const t = translations[lang];
+
+  const navLinks = [
+    { href: "#sobre", label: t.nav.sobreNos },
+    { href: "#menu", label: t.nav.menu },
+    { href: "#atmosfera", label: t.nav.atmosfera },
+    { href: "#equipa", label: t.nav.equipa },
+    { href: "#contactos", label: t.nav.contactos },
+  ];
+
+  const menuTabs = [
+    { id: "entradas", label: t.menu.tabs.entradas },
+    { id: "naBrasa", label: t.menu.tabs.naBrasa },
+    { id: "acompanhamentos", label: t.menu.tabs.acompanhamentos },
+    { id: "sobremesas", label: t.menu.tabs.sobremesas },
+    { id: "vinhos", label: t.menu.tabs.vinhos },
+    { id: "cocktails", label: t.menu.tabs.cocktails },
+  ];
+
+  // Language toggle
+  const toggleLanguage = useCallback(() => {
+    const newLang = lang === "pt" ? "en" : "pt";
+    setLang(newLang);
+    localStorage.setItem("100cerimonias-lang", newLang);
+  }, [lang]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
+      setShowScrollTop(scrollY > 500);
+      setHeroParallax(scrollY * 0.5);
+
+      // Check if menu section is visible
+      if (menuRef.current) {
+        const rect = menuRef.current.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+          setMenuVisible(true);
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Loading animation
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToSection = (href: string) => {
@@ -181,20 +436,76 @@ function Index() {
     setMobileMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Lightbox handlers
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+  
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % atmosphereImages.length);
+  };
+  
+  const prevImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + atmosphereImages.length) % atmosphereImages.length);
+  };
+
   return (
-    <div className="min-h-screen bg-black text-amber-50 font-sans">
+    <div className="min-h-screen bg-black text-amber-50 font-sans relative">
+      {/* Loading Screen */}
+      <div 
+        className={`fixed inset-0 z-[200] bg-black flex items-center justify-center transition-opacity duration-1000 ${
+          isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="text-center">
+          <img 
+            src="./a3cfa0aa1472.png" 
+            alt="100 Cerimónias" 
+            className="w-32 animate-pulse-slow"
+          />
+          <div className="mt-6 flex gap-1 justify-center">
+            <div className="w-2 h-2 bg-amber-400 rounded-full animate-loading-dot" style={{ animationDelay: "0ms" }} />
+            <div className="w-2 h-2 bg-amber-400 rounded-full animate-loading-dot" style={{ animationDelay: "150ms" }} />
+            <div className="w-2 h-2 bg-amber-400 rounded-full animate-loading-dot" style={{ animationDelay: "300ms" }} />
+          </div>
+        </div>
+      </div>
+
+      {/* Grain texture overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[90] opacity-[0.03]">
+        <svg className="w-full h-full">
+          <filter id="grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="100%" height="100%" filter="url(#grain)" />
+        </svg>
+      </div>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "bg-black/95 backdrop-blur-md py-3" : "bg-transparent py-6"
+          isScrolled 
+            ? "bg-black/80 backdrop-blur-lg py-3 shadow-lg shadow-black/20" 
+            : "bg-transparent py-6"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <button onClick={() => scrollToSection("#hero")} className="flex-shrink-0">
+          <button 
+            onClick={() => scrollToSection("#hero")} 
+            className="flex-shrink-0 group"
+          >
             <img 
               src="./a3cfa0aa1472.png" 
               alt="100 Cerimónias" 
-              className={`transition-all duration-300 ${isScrolled ? 'h-12' : 'h-16'}`}
+              className={`transition-all duration-300 group-hover:scale-105 ${isScrolled ? 'h-12' : 'h-16'}`}
             />
           </button>
           
@@ -204,33 +515,49 @@ function Index() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-colors relative group"
+                className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-all hover:scale-105 relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="ml-4 px-3 py-1 border border-amber-600/50 text-amber-400 text-sm tracking-wider hover:bg-amber-600/20 hover:border-amber-400 transition-all hover:scale-105"
+            >
+              {lang === "pt" ? "EN" : "PT"}
+            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-amber-400 p-2"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile menu button + language toggle */}
+          <div className="lg:hidden flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              className="px-2 py-1 border border-amber-600/50 text-amber-400 text-xs tracking-wider"
+            >
+              {lang === "pt" ? "EN" : "PT"}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-amber-400 p-2"
+              aria-label="Toggle menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Nav */}
         <div
-          className={`lg:hidden absolute top-full left-0 right-0 bg-black/98 backdrop-blur-md border-t border-amber-900/30 transition-all duration-300 ${
+          className={`lg:hidden absolute top-full left-0 right-0 bg-black/98 backdrop-blur-lg border-t border-amber-900/30 transition-all duration-300 ${
             mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
@@ -250,25 +577,34 @@ function Index() {
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image with Parallax */}
         <div className="absolute inset-0">
           <img
             src="./8b93502b-3f37-4894-9695-18b59fe1c30e.jpg"
             alt="Brasa viva"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-100"
+            style={{ transform: `translateY(${heroParallax}px) scale(1.1)` }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 animate-fade-in">
-          <img
-            src="./a3cfa0aa1472.png"
-            alt="100 Cerimónias Steakhouse Premium"
-            className="w-64 sm:w-80 md:w-96 mx-auto mb-8 drop-shadow-2xl"
-          />
+        <div className={`relative z-10 text-center px-6 ${isLoading ? "opacity-0" : "animate-hero-entrance"}`}>
+          <div className="group">
+            <img
+              src="./a3cfa0aa1472.png"
+              alt="100 Cerimónias Steakhouse Premium"
+              className="w-64 sm:w-80 md:w-96 mx-auto mb-4 drop-shadow-2xl animate-logo-entrance group-hover:animate-logo-float transition-transform"
+            />
+          </div>
+          
+          {/* Slogan */}
+          <p className="font-serif text-amber-200/90 text-lg md:text-xl tracking-[0.3em] mb-6 animate-slogan-entrance italic">
+            {t.hero.slogan}
+          </p>
+          
           <p className="font-serif text-amber-400 text-xl md:text-2xl tracking-widest mb-12 opacity-90">
-            STEAKHOUSE PREMIUM
+            {t.hero.premium}
           </p>
           
           {/* Nav links under logo */}
@@ -277,7 +613,7 @@ function Index() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-xs md:text-sm tracking-[0.2em] text-amber-200/70 hover:text-amber-400 transition-colors"
+                className="text-xs md:text-sm tracking-[0.2em] text-amber-200/70 hover:text-amber-400 transition-all hover:scale-110"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 {link.label}
@@ -294,6 +630,8 @@ function Index() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* About / Passion Section */}
       <section id="sobre" className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/10 to-black" />
@@ -302,28 +640,41 @@ function Index() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-amber-400 mb-8 leading-tight">
-                SOMOS UNS<br />APAIXONADOS
+                {t.about.title1}<br />{t.about.title2}
               </h2>
               <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
-                No 100 Cerimónias Steakhouse, a carne é o centro de tudo. Selecionamos cortes premium, 
-                trabalhados com rigor, respeito pelo produto e uma obsessão clara pela qualidade. 
-                Aqui, cada prato é uma celebração do sabor, da textura e do ponto perfeito.
+                {t.about.text}
               </p>
               <div className="mt-8 w-24 h-px bg-gradient-to-r from-amber-400 to-transparent" />
             </div>
             
+            {/* Reservation Button replacing colorful cow */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="absolute -inset-8 bg-amber-400/5 rounded-full blur-3xl" />
-                <ColorfulCow />
+                <div className="absolute -inset-8 bg-amber-400/10 rounded-full blur-3xl animate-pulse-slow" />
+                <a
+                  href="https://resy.com/cities/porto-portugal/venues/100-cerimonias-steakhouse-premium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-block group"
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-amber-600 to-amber-400 rounded opacity-50 blur group-hover:opacity-75 animate-reservation-glow transition-opacity" />
+                  <div className="relative px-10 py-5 bg-black border-2 border-amber-400 rounded group-hover:border-amber-300 transition-all group-hover:scale-105">
+                    <span className="font-serif text-xl md:text-2xl tracking-[0.3em] text-amber-400 group-hover:text-amber-300 transition-colors">
+                      {t.about.reserveButton}
+                    </span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Menu Section */}
-      <section id="menu" className="py-24 md:py-32 relative">
+      <section id="menu" className="py-24 md:py-32 relative" ref={menuRef}>
         {/* Background */}
         <div className="absolute inset-0">
           <img
@@ -336,7 +687,7 @@ function Index() {
 
         <div className="max-w-5xl mx-auto px-6 relative">
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-center text-amber-400 mb-16">
-            MENU
+            {t.menu.title}
           </h2>
 
           {/* Tab Navigation */}
@@ -345,9 +696,9 @@ function Index() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 text-sm tracking-[0.15em] transition-all border ${
+                className={`px-4 py-2 text-sm tracking-[0.15em] transition-all border hover:scale-105 ${
                   activeTab === tab.id
-                    ? "bg-amber-400 text-black border-amber-400"
+                    ? "bg-amber-400 text-black border-amber-400 shadow-lg shadow-amber-400/20"
                     : "bg-transparent text-amber-200/70 border-amber-900/50 hover:border-amber-400 hover:text-amber-400"
                 }`}
               >
@@ -361,7 +712,7 @@ function Index() {
             {activeTab === "entradas" && (
               <div className="animate-fade-in">
                 {menuData.entradas.map((item, i) => (
-                  <MenuItemRow key={i} item={item} />
+                  <MenuItemRow key={i} item={item} lang={lang} isVisible={menuVisible} />
                 ))}
               </div>
             )}
@@ -369,7 +720,7 @@ function Index() {
             {activeTab === "naBrasa" && (
               <div className="animate-fade-in">
                 {menuData.naBrasa.map((item, i) => (
-                  <MenuItemRow key={i} item={item} />
+                  <MenuItemRow key={i} item={item} lang={lang} isVisible={menuVisible} />
                 ))}
               </div>
             )}
@@ -377,7 +728,7 @@ function Index() {
             {activeTab === "acompanhamentos" && (
               <div className="animate-fade-in">
                 {menuData.acompanhamentos.map((item, i) => (
-                  <MenuItemRow key={i} item={item} />
+                  <MenuItemRow key={i} item={item} lang={lang} isVisible={menuVisible} />
                 ))}
               </div>
             )}
@@ -385,7 +736,7 @@ function Index() {
             {activeTab === "sobremesas" && (
               <div className="animate-fade-in">
                 {menuData.sobremesas.map((item, i) => (
-                  <MenuItemRow key={i} item={item} />
+                  <MenuItemRow key={i} item={item} lang={lang} isVisible={menuVisible} />
                 ))}
               </div>
             )}
@@ -393,18 +744,18 @@ function Index() {
             {activeTab === "vinhos" && (
               <div className="animate-fade-in space-y-8">
                 <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">BRANCOS</h3>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.brancos}</h3>
                   {menuData.vinhos.brancos.map((item, i) => (
-                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20">
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors">
                       <span className="text-amber-100">{item.name}</span>
                       <span className="text-amber-400">€{item.price}</span>
                     </div>
                   ))}
                 </div>
                 <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">TINTOS</h3>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.tintos}</h3>
                   {menuData.vinhos.tintos.map((item, i) => (
-                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20">
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors">
                       <span className="text-amber-100">{item.name}</span>
                       <span className="text-amber-400">€{item.price}</span>
                     </div>
@@ -416,20 +767,20 @@ function Index() {
             {activeTab === "cocktails" && (
               <div className="animate-fade-in space-y-8">
                 <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">ASSINATURA • €12</h3>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.assinatura} • €12</h3>
                   <div className="grid sm:grid-cols-2 gap-2">
                     {menuData.cocktails.assinatura.map((item, i) => (
-                      <div key={i} className="text-amber-100 py-2 border-b border-amber-900/20">
+                      <div key={i} className="text-amber-100 py-2 border-b border-amber-900/20 hover:text-amber-400 transition-colors">
                         {item.name}
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">CLÁSSICOS • €8</h3>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider">{t.menu.categories.classicos} • €8</h3>
                   <div className="grid sm:grid-cols-2 gap-2">
                     {menuData.cocktails.classicos.map((item, i) => (
-                      <div key={i} className="text-amber-100 py-2 border-b border-amber-900/20">
+                      <div key={i} className="text-amber-100 py-2 border-b border-amber-900/20 hover:text-amber-400 transition-colors">
                         {item.name}
                       </div>
                     ))}
@@ -445,7 +796,7 @@ function Index() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-amber-200/50 hover:text-amber-400 transition-colors"
+                className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
               >
                 {link.label}
               </button>
@@ -454,11 +805,13 @@ function Index() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Atmosfera Section */}
       <section id="atmosfera" className="py-24 md:py-32 bg-gradient-to-b from-black via-amber-950/5 to-black">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-center text-amber-400 mb-16">
-            ATMOSFERA
+            {t.atmosfera.title}
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
@@ -466,13 +819,21 @@ function Index() {
               <div
                 key={i}
                 className="relative aspect-[4/5] overflow-hidden group cursor-pointer"
+                onClick={() => openLightbox(i)}
               >
                 <img
                   src={img}
                   alt={`100 Cerimónias atmosphere ${i + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-12 h-12 border-2 border-amber-400 rounded-full flex items-center justify-center bg-black/50">
+                    <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -483,7 +844,7 @@ function Index() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-amber-200/50 hover:text-amber-400 transition-colors"
+                className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
               >
                 {link.label}
               </button>
@@ -492,22 +853,22 @@ function Index() {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* A Equipa Section */}
       <section id="equipa" className="py-24 md:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/10 to-black" />
         
         <div className="max-w-6xl mx-auto px-6 relative">
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-center text-amber-400 mb-6">
-            A EQUIPA
+            {t.equipa.title}
           </h2>
           <h3 className="font-serif text-xl md:text-2xl text-center text-amber-200/60 mb-8">
-            100 CERIMÓNIAS
+            {t.equipa.subtitle}
           </h3>
           
           <p className="text-center text-amber-100/70 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
-            Por trás de cada prato extraordinário existe uma equipa apaixonada. 
-            Profissionais dedicados que transformam ingredientes premium em experiências memoráveis, 
-            unindo técnica, tradição e criatividade em cada detalhe.
+            {t.equipa.text}
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -517,14 +878,16 @@ function Index() {
                 <img
                   src="./1b8daf33-f44a-4004-9a78-9ac0575641d1.jpg"
                   alt="Head Chef"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/30 transition-colors" />
               </div>
-              <h4 className="font-serif text-2xl text-amber-400 mb-2">Head Chef</h4>
+              <h4 className="font-serif text-2xl text-amber-400 mb-2 group-hover:text-amber-300 transition-colors">
+                {t.equipa.chef.title}
+              </h4>
               <p className="text-amber-100/60 text-sm leading-relaxed">
-                Mestre da brasa, com anos de experiência nos melhores cortes do mundo. 
-                Cada peça é tratada com a precisão que só a paixão proporciona.
+                {t.equipa.chef.description}
               </p>
             </div>
 
@@ -534,14 +897,16 @@ function Index() {
                 <img
                   src="./85045d6c-1f52-42a3-8a59-565b62ec4b13.jpg"
                   alt="Sommelier"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/30 transition-colors" />
               </div>
-              <h4 className="font-serif text-2xl text-amber-400 mb-2">Sommelier</h4>
+              <h4 className="font-serif text-2xl text-amber-400 mb-2 group-hover:text-amber-300 transition-colors">
+                {t.equipa.sommelier.title}
+              </h4>
               <p className="text-amber-100/60 text-sm leading-relaxed">
-                Curador da nossa carta de vinhos, selecionando rótulos que 
-                complementam e elevam cada corte servido à mesa.
+                {t.equipa.sommelier.description}
               </p>
             </div>
 
@@ -551,14 +916,16 @@ function Index() {
                 <img
                   src="./39e5e286-7685-49e6-893a-385744302fdb.jpg"
                   alt="Gerente"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/30 transition-colors" />
               </div>
-              <h4 className="font-serif text-2xl text-amber-400 mb-2">Gerente</h4>
+              <h4 className="font-serif text-2xl text-amber-400 mb-2 group-hover:text-amber-300 transition-colors">
+                {t.equipa.gerente.title}
+              </h4>
               <p className="text-amber-100/60 text-sm leading-relaxed">
-                O maestro que orquestra cada serviço, garantindo que cada 
-                visita seja uma cerimónia perfeita do início ao fim.
+                {t.equipa.gerente.description}
               </p>
             </div>
           </div>
@@ -569,7 +936,7 @@ function Index() {
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-amber-200/50 hover:text-amber-400 transition-colors"
+                className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
               >
                 {link.label}
               </button>
@@ -577,6 +944,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* Contactos / Footer */}
       <footer id="contactos" className="py-24 md:py-32 bg-gradient-to-b from-black to-amber-950/20 relative">
@@ -587,21 +956,38 @@ function Index() {
               <img
                 src="./a3cfa0aa1472.png"
                 alt="100 Cerimónias"
-                className="w-48 mb-6 opacity-70"
+                className="w-48 mb-6 opacity-70 hover:opacity-100 transition-opacity"
               />
-              <p className="text-amber-200/50 text-sm">
-                Steakhouse Premium • Estabelecido 2023
+              <p className="text-amber-200/50 text-sm mb-4">
+                {t.contactos.established}
               </p>
+              <p className="text-amber-200/70 text-sm">
+                {t.contactos.hours}
+              </p>
+              <p className="text-amber-400/70 text-sm">
+                {t.contactos.closed}
+              </p>
+              
+              {/* Reservation Button */}
+              <a
+                href="https://resy.com/cities/porto-portugal/venues/100-cerimonias-steakhouse-premium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-6 px-6 py-3 border border-amber-400 text-amber-400 text-sm tracking-widest hover:bg-amber-400 hover:text-black transition-all hover:scale-105"
+              >
+                {t.about.reserveButton}
+              </a>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider">CONTACTOS</h4>
+              <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider">{t.contactos.title}</h4>
               <div className="space-y-3 text-amber-200/70 text-sm">
-                <p>Porto, Portugal</p>
+                <p>Rua de Santo Ildefonso 210</p>
+                <p>4000-507 Porto, Portugal</p>
                 <p>
-                  <a href="tel:+351222000100" className="hover:text-amber-400 transition-colors">
-                    +351 222 000 100
+                  <a href="tel:+351933156603" className="hover:text-amber-400 transition-colors">
+                    +351 933 156 603
                   </a>
                 </p>
                 <p>
@@ -614,12 +1000,12 @@ function Index() {
 
             {/* Social */}
             <div>
-              <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider">SIGA-NOS</h4>
+              <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider">{t.contactos.followUs}</h4>
               <div className="flex gap-4">
                 {/* Facebook */}
                 <a
                   href="#"
-                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 transition-colors"
+                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"
                   aria-label="Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -628,8 +1014,10 @@ function Index() {
                 </a>
                 {/* Instagram */}
                 <a
-                  href="#"
-                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 transition-colors"
+                  href="https://instagram.com/100.cerimonias.steakhouse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"
                   aria-label="Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -639,7 +1027,7 @@ function Index() {
                 {/* TripAdvisor */}
                 <a
                   href="#"
-                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 transition-colors"
+                  className="w-10 h-10 border border-amber-900/50 flex items-center justify-center text-amber-200/70 hover:text-amber-400 hover:border-amber-400 hover:scale-110 transition-all"
                   aria-label="TripAdvisor"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -647,20 +1035,24 @@ function Index() {
                   </svg>
                 </a>
               </div>
+              
+              <p className="mt-4 text-amber-200/50 text-sm">
+                @100.cerimonias.steakhouse
+              </p>
             </div>
           </div>
 
           {/* Bottom bar */}
           <div className="border-t border-amber-900/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-amber-200/30 text-xs">
-              © 2023 100 Cerimónias Steakhouse. Todos os direitos reservados.
+              {t.contactos.copyright}
             </p>
             <div className="flex gap-8 text-xs tracking-[0.15em]">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-amber-200/40 hover:text-amber-400 transition-colors"
+                  className="text-amber-200/40 hover:text-amber-400 transition-all hover:scale-110"
                 >
                   {link.label}
                 </button>
@@ -669,6 +1061,29 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 w-12 h-12 bg-black/80 border border-amber-600/50 rounded-full flex items-center justify-center text-amber-400 hover:bg-amber-400 hover:text-black hover:scale-110 transition-all duration-300 backdrop-blur-sm ${
+          showScrollTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
+        }`}
+        aria-label="Scroll to top"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
+
+      {/* Lightbox */}
+      <Lightbox 
+        images={atmosphereImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={closeLightbox}
+        onNext={nextImage}
+        onPrev={prevImage}
+      />
 
       {/* Global Styles */}
       <style>{`
@@ -695,6 +1110,145 @@ function Index() {
 
         .animate-fade-in {
           animation: fade-in 0.6s ease-out forwards;
+        }
+
+        /* Hero entrance animation */
+        @keyframes hero-entrance {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .animate-hero-entrance {
+          animation: hero-entrance 1.5s ease-out forwards;
+          animation-delay: 0.5s;
+          opacity: 0;
+        }
+
+        /* Logo entrance animation */
+        @keyframes logo-entrance {
+          0% {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-logo-entrance {
+          animation: logo-entrance 1s ease-out forwards;
+          animation-delay: 0.7s;
+          opacity: 0;
+        }
+
+        /* Logo float animation on hover */
+        @keyframes logo-float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+
+        .group:hover .animate-logo-float {
+          animation: logo-float 2s ease-in-out infinite;
+        }
+
+        /* Slogan entrance animation */
+        @keyframes slogan-entrance {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-slogan-entrance {
+          animation: slogan-entrance 1s ease-out forwards;
+          animation-delay: 1.2s;
+          opacity: 0;
+        }
+
+        /* Reservation button glow */
+        @keyframes reservation-glow {
+          0%, 100% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+
+        .animate-reservation-glow {
+          animation: reservation-glow 2s ease-in-out infinite;
+        }
+
+        /* Pulse slow */
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 3s ease-in-out infinite;
+        }
+
+        /* Loading dots */
+        @keyframes loading-dot {
+          0%, 100% {
+            transform: translateY(0);
+            opacity: 0.5;
+          }
+          50% {
+            transform: translateY(-8px);
+            opacity: 1;
+          }
+        }
+
+        .animate-loading-dot {
+          animation: loading-dot 1s ease-in-out infinite;
+        }
+
+        /* Lightbox animations */
+        @keyframes lightbox-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .animate-lightbox-in {
+          animation: lightbox-in 0.3s ease-out forwards;
+        }
+
+        @keyframes lightbox-image {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-lightbox-image {
+          animation: lightbox-image 0.4s ease-out forwards;
         }
 
         html {
