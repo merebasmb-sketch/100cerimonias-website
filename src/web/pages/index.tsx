@@ -26,8 +26,8 @@ const translations = {
     about: {
       title: "SOBRE O GRUPO",
       text1: "Somos um grupo de pessoas que se juntaram e que tentam fazer a vida valer da melhor maneira que conseguimos. Completamente diferentes, conseguimos encontrar o nosso equilíbrio e todas as noites conseguimos entregar refeições onde o objetivo é sempre um sorriso na cara das pessoas.",
-      text2: "Criámos um espaço elegante, confortável e sem cerimónias desnecessárias, onde o foco está na partilha — de comida, emoções e momentos.",
-      text3: "Inspiramo-nos nas grandes steakhouses internacionais, mas mantemos uma identidade própria, enraizada no Porto — uma cidade de carácter, tradição e autenticidade. Acreditamos que a excelência não precisa de excessos — precisa de consistência, conhecimento e paixão.",
+      text2: "Criámos um espaço elegante, confortável e sem cerimónias desnecessárias, onde o foco está na partilha de comida, emoções e momentos.",
+      text3: "Inspiramo-nos nas grandes steakhouses internacionais, mas mantemos uma identidade própria, enraizada no Porto, uma cidade de carácter, tradição e autenticidade. Acreditamos que a excelência não precisa de excessos, precisa de consistência, conhecimento e paixão.",
       reserveButton: "RESERVAR MESA",
     },
     menu: {
@@ -107,8 +107,8 @@ const translations = {
     about: {
       title: "ABOUT THE GROUP",
       text1: "We are a group of people who came together trying to make life worthwhile in the best way we can. Completely different, we found our balance and every night we deliver meals where the goal is always a smile on people's faces.",
-      text2: "We created an elegant, comfortable space without unnecessary ceremonies, where the focus is on sharing — food, emotions and moments.",
-      text3: "We are inspired by the great international steakhouses, but we maintain our own identity, rooted in Porto — a city of character, tradition and authenticity. We believe that excellence doesn't need excess — it needs consistency, knowledge and passion.",
+      text2: "We created an elegant, comfortable space without unnecessary ceremonies, where the focus is on sharing food, emotions and moments.",
+      text3: "We are inspired by the great international steakhouses, but we maintain our own identity, rooted in Porto, a city of character, tradition and authenticity. We believe that excellence doesn't need excess, it needs consistency, knowledge and passion.",
       reserveButton: "BOOK A TABLE",
     },
     menu: {
