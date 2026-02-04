@@ -16,7 +16,6 @@ const translations = {
       sobreNos: "SOBRE NÓS",
       menu: "MENU",
       atmosfera: "ATMOSFERA",
-      equipa: "A EQUIPA",
       contactos: "CONTACTOS",
     },
     hero: {
@@ -67,23 +66,6 @@ const translations = {
     atmosfera: {
       title: "ATMOSFERA",
     },
-    equipa: {
-      title: "A EQUIPA",
-      subtitle: "100 CERIMÓNIAS",
-      text: "Por trás de cada prato extraordinário existe uma equipa apaixonada. Profissionais dedicados que transformam ingredientes premium em experiências memoráveis, unindo técnica, tradição e criatividade em cada detalhe.",
-      chef: {
-        title: "Head Chef",
-        description: "Mestre da brasa, com anos de experiência nos melhores cortes do mundo. Cada peça é tratada com a precisão que só a paixão proporciona.",
-      },
-      sommelier: {
-        title: "Sommelier",
-        description: "Curador da nossa carta de vinhos, selecionando rótulos que complementam e elevam cada corte servido à mesa.",
-      },
-      gerente: {
-        title: "Gerente",
-        description: "O maestro que orquestra cada serviço, garantindo que cada visita seja uma cerimónia perfeita do início ao fim.",
-      },
-    },
     contactos: {
       title: "CONTACTOS",
       followUs: "SIGA-NOS",
@@ -100,7 +82,6 @@ const translations = {
       sobreNos: "ABOUT US",
       menu: "MENU",
       atmosfera: "ATMOSPHERE",
-      equipa: "THE TEAM",
       contactos: "CONTACT",
     },
     hero: {
@@ -150,23 +131,6 @@ const translations = {
     },
     atmosfera: {
       title: "ATMOSPHERE",
-    },
-    equipa: {
-      title: "THE TEAM",
-      subtitle: "100 CERIMÓNIAS",
-      text: "Behind every extraordinary dish is a passionate team. Dedicated professionals who transform premium ingredients into memorable experiences, combining technique, tradition, and creativity in every detail.",
-      chef: {
-        title: "Head Chef",
-        description: "Master of the grill, with years of experience with the finest cuts in the world. Each piece is treated with the precision that only passion provides.",
-      },
-      sommelier: {
-        title: "Sommelier",
-        description: "Curator of our wine list, selecting labels that complement and elevate every cut served at the table.",
-      },
-      gerente: {
-        title: "Manager",
-        description: "The maestro who orchestrates every service, ensuring that each visit is a perfect ceremony from start to finish.",
-      },
     },
     contactos: {
       title: "CONTACT",
@@ -626,7 +590,6 @@ function Index() {
     { href: "#sobre", label: t.nav.sobreNos },
     { href: "#menu", label: t.nav.menu },
     { href: "#atmosfera", label: t.nav.atmosfera },
-    { href: "#equipa", label: t.nav.equipa },
     { href: "#contactos", label: t.nav.contactos },
   ];
 
@@ -1282,98 +1245,6 @@ function Index() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Floating nav */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-16 text-xs tracking-[0.15em]">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider />
-
-      {/* A Equipa Section */}
-      <section id="equipa" className="py-24 md:py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/10 to-black" />
-        
-        <div className="max-w-6xl mx-auto px-6 relative">
-          <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-center text-amber-400 mb-6">
-            {t.equipa.title}
-          </h2>
-          <h3 className="font-serif text-xl md:text-2xl text-center text-amber-200/60 mb-8">
-            {t.equipa.subtitle}
-          </h3>
-          
-          <p className="text-center text-amber-100/70 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
-            {t.equipa.text}
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Chef */}
-            <div className="group">
-              <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                <img
-                  src="./1b8daf33-f44a-4004-9a78-9ac0575641d1.jpg"
-                  alt="Head Chef"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/30 transition-colors" />
-              </div>
-              <h4 className="font-serif text-2xl text-amber-400 mb-2 group-hover:text-amber-300 transition-colors">
-                {t.equipa.chef.title}
-              </h4>
-              <p className="text-amber-100/60 text-sm leading-relaxed">
-                {t.equipa.chef.description}
-              </p>
-            </div>
-
-            {/* Sommelier */}
-            <div className="group">
-              <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                <img
-                  src="./85045d6c-1f52-42a3-8a59-565b62ec4b13.jpg"
-                  alt="Sommelier"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/30 transition-colors" />
-              </div>
-              <h4 className="font-serif text-2xl text-amber-400 mb-2 group-hover:text-amber-300 transition-colors">
-                {t.equipa.sommelier.title}
-              </h4>
-              <p className="text-amber-100/60 text-sm leading-relaxed">
-                {t.equipa.sommelier.description}
-              </p>
-            </div>
-
-            {/* Gerente */}
-            <div className="group">
-              <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                <img
-                  src="./39e5e286-7685-49e6-893a-385744302fdb.jpg"
-                  alt="Gerente"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-amber-400/30 transition-colors" />
-              </div>
-              <h4 className="font-serif text-2xl text-amber-400 mb-2 group-hover:text-amber-300 transition-colors">
-                {t.equipa.gerente.title}
-              </h4>
-              <p className="text-amber-100/60 text-sm leading-relaxed">
-                {t.equipa.gerente.description}
-              </p>
-            </div>
           </div>
 
           {/* Floating nav */}
