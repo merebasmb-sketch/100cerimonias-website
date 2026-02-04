@@ -41,8 +41,11 @@ const translations = {
         bebidas: "Bebidas",
       },
       categories: {
-        brancos: "BRANCOS",
-        tintos: "TINTOS",
+        brancos: "VINHOS BRANCOS",
+        tintos: "VINHOS TINTOS",
+        rose: "ROSÉ",
+        espumante: "ESPUMANTE",
+        copo: "VINHO A COPO",
         assinatura: "COCKTAILS DE ASSINATURA",
         classicos: "COCKTAILS CLÁSSICOS",
         mocktails: "MOCKTAILS",
@@ -124,6 +127,9 @@ const translations = {
       categories: {
         brancos: "WHITE WINES",
         tintos: "RED WINES",
+        rose: "ROSÉ",
+        espumante: "SPARKLING",
+        copo: "WINE BY THE GLASS",
         assinatura: "SIGNATURE COCKTAILS",
         classicos: "CLASSIC COCKTAILS",
         mocktails: "MOCKTAILS",
@@ -207,15 +213,30 @@ const menuData = {
   ],
   vinhos: {
     brancos: [
-      { name: "Vale do Homem Aditivo", price: "20" },
+      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "20" },
       { name: "Contacto Alvarinho", price: "28" },
-      { name: "Dote Simplesmente", price: "22" },
+      { name: "Dote Simplesmente Batonnage", region: "Douro", price: "22" },
+      { name: "Quinta Vale D'Aldeia Grande", region: "Douro", price: "45" },
     ],
     tintos: [
-      { name: "Zip Unoaked", price: "20" },
-      { name: "Vale da Aldeia", price: "26" },
-      { name: "Vallado", price: "28" },
-      { name: "Loek's Grande Reserva", price: "60" },
+      { name: "ZIP Unoaked", region: "Douro", price: "20" },
+      { name: "Vale da Aldeia", region: "Douro", price: "20" },
+      { name: "Vallado", region: "Douro", price: "28" },
+      { name: "Loek's Grande Reserva", region: "Douro", price: "60" },
+      { name: "Quinta da Lapa Pinot Noir Reserva", region: "Tejo", price: "28" },
+      { name: "Quinta da Lapa Reserva Cabernet Sauvignon", region: "Tejo", price: "28" },
+      { name: "Quinta do Paral", region: "Alentejo", price: "32" },
+    ],
+    rose: [
+      { name: "Quinta do Paral", price: "25" },
+    ],
+    espumante: [
+      { name: "Lagoa Velha", region: "Bairrada", price: "22" },
+    ],
+    copo: [
+      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
+      { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
+      { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
     ],
   },
   bebidas: {
@@ -1010,26 +1031,86 @@ function Index() {
 
             {activeTab === "vinhos" && (
               <div className="animate-fade-in space-y-8">
+                {/* White Wines */}
                 <div>
                   <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
                     <WineGlassIcon />
                     {t.menu.categories.brancos}
                   </h3>
                   {menuData.vinhos.brancos.map((item, i) => (
-                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors">
-                      <span className="text-amber-100">{item.name}</span>
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                      <div className="flex flex-col">
+                        <span className="text-amber-100">{item.name}</span>
+                        {item.region && <span className="text-amber-600/70 text-sm">({item.region})</span>}
+                      </div>
                       <span className="text-amber-400">€{item.price}</span>
                     </div>
                   ))}
                 </div>
+
+                {/* Red Wines */}
                 <div>
                   <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
                     <WineGlassIcon />
                     {t.menu.categories.tintos}
                   </h3>
                   {menuData.vinhos.tintos.map((item, i) => (
-                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors">
-                      <span className="text-amber-100">{item.name}</span>
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                      <div className="flex flex-col">
+                        <span className="text-amber-100">{item.name}</span>
+                        {item.region && <span className="text-amber-600/70 text-sm">({item.region})</span>}
+                      </div>
+                      <span className="text-amber-400">€{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Rosé */}
+                <div>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                    <WineGlassIcon />
+                    {t.menu.categories.rose}
+                  </h3>
+                  {menuData.vinhos.rose.map((item, i) => (
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                      <div className="flex flex-col">
+                        <span className="text-amber-100">{item.name}</span>
+                        {item.region && <span className="text-amber-600/70 text-sm">({item.region})</span>}
+                      </div>
+                      <span className="text-amber-400">€{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Sparkling */}
+                <div>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                    <WineGlassIcon />
+                    {t.menu.categories.espumante}
+                  </h3>
+                  {menuData.vinhos.espumante.map((item, i) => (
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                      <div className="flex flex-col">
+                        <span className="text-amber-100">{item.name}</span>
+                        {item.region && <span className="text-amber-600/70 text-sm">({item.region})</span>}
+                      </div>
+                      <span className="text-amber-400">€{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Wine by the Glass */}
+                <div>
+                  <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                    <WineGlassIcon />
+                    {t.menu.categories.copo}
+                  </h3>
+                  {menuData.vinhos.copo.map((item, i) => (
+                    <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                      <div className="flex flex-col">
+                        <span className="text-amber-100">{item.name}</span>
+                        {item.region && <span className="text-amber-600/70 text-sm">({item.region})</span>}
+                      </div>
                       <span className="text-amber-400">€{item.price}</span>
                     </div>
                   ))}
