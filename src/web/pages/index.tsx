@@ -907,14 +907,14 @@ function Index() {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-amber-400 mb-8 leading-tight">
             {t.about.title}
           </h2>
-          <div className="space-y-6 max-w-3xl mx-auto">
-            <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+          <div className="space-y-5 max-w-3xl mx-auto">
+            <p className="text-amber-100/80 text-sm md:text-base leading-relaxed font-light tracking-wide">
               {t.about.text1}
             </p>
-            <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+            <p className="text-amber-100/80 text-sm md:text-base leading-relaxed font-light tracking-wide">
               {t.about.text2}
             </p>
-            <p className="text-amber-100/80 text-lg md:text-xl leading-relaxed font-light">
+            <p className="text-amber-100/80 text-sm md:text-base leading-relaxed font-light tracking-wide">
               {t.about.text3}
             </p>
           </div>
