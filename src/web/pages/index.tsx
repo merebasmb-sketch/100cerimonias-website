@@ -9,6 +9,14 @@ const heroImages = [
   "./a5e37b97-57ed-4949-8d6c-84ecde77bf38.jpg", // sliced steak
 ];
 
+// Menu section background slideshow images
+const menuBackgroundImages = [
+  "./0d3ca745-bfea-410b-969b-7df83d9607af.jpg", // dining room with neon
+  "./39e5e286-7685-49e6-893a-385744302fdb.jpg", // bar area
+  "./85045d6c-1f52-42a3-8a59-565b62ec4b13.jpg", // wine cellar with neon
+  "./1277703a-2b54-4bf2-ac50-a3cddc437347.jpg", // dining room
+];
+
 // Translations
 const translations = {
   pt: {
@@ -581,6 +589,7 @@ function Index() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
+  const [currentMenuBgImage, setCurrentMenuBgImage] = useState(0);
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -641,6 +650,15 @@ function Index() {
     const interval = setInterval(() => {
       setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
     }, 5500); // Change every 5.5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Menu background slideshow effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMenuBgImage((prev) => (prev + 1) % menuBackgroundImages.length);
+    }, 6000); // Change every 6 seconds (slightly offset from hero)
 
     return () => clearInterval(interval);
   }, []);
@@ -925,15 +943,30 @@ function Index() {
       <SectionDivider />
 
       {/* Menu Section */}
-      <section id="menu" className="py-24 md:py-32 relative" ref={menuRef}>
-        {/* Background */}
+      <section id="menu" className="py-24 md:py-32 relative overflow-hidden" ref={menuRef}>
+        {/* Background Slideshow with Ken Burns effect */}
         <div className="absolute inset-0">
-          <img
-            src="./1277703a-2b54-4bf2-ac50-a3cddc437347.jpg"
-            alt="Restaurant atmosphere"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
+          {menuBackgroundImages.map((img, index) => (
+            <div
+              key={img}
+              className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
+                index === currentMenuBgImage ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={img}
+                alt={`Restaurant atmosphere ${index + 1}`}
+                className={`w-full h-full object-cover ${
+                  index === currentMenuBgImage ? "animate-menu-ken-burns" : ""
+                }`}
+                style={{ 
+                  animationPlayState: index === currentMenuBgImage ? "running" : "paused"
+                }}
+              />
+            </div>
+          ))}
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/80 to-black/90" />
         </div>
 
         <div className="max-w-5xl mx-auto px-6 relative">
@@ -1620,6 +1653,20 @@ function Index() {
           animation: ken-burns 6s ease-out forwards;
         }
 
+        /* Ken Burns effect for menu background slideshow - slightly different timing and zoom */
+        @keyframes menu-ken-burns {
+          0% {
+            transform: scale(1.05);
+          }
+          100% {
+            transform: scale(1.2);
+          }
+        }
+
+        .animate-menu-ken-burns {
+          animation: menu-ken-burns 7s ease-out forwards;
+        }
+
         .animate-running {
           animation-play-state: running;
         }
@@ -1662,6 +1709,11 @@ function Index() {
 
         html {
           scroll-behavior: smooth;
+        }
+
+        /* Custom transition duration for smooth crossfade */
+        .duration-1500 {
+          transition-duration: 1500ms;
         }
 
         /* Custom scrollbar */
