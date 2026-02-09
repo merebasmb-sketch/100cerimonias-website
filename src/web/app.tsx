@@ -1,5 +1,6 @@
 import { Route, Switch } from "wouter";
 import Index from "./pages/index";
+import SobrePage from "./pages/sobre";
 import { Provider } from "./components/provider";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
 		<Provider>
 			<Switch>
 				<Route path="/" component={Index} />
+				<Route path="/sobre" component={SobrePage} />
 			</Switch>
 		</Provider>
 	);

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Link, useLocation } from "wouter";
 
 // Hero slideshow images
 const heroImages = [
@@ -596,10 +597,10 @@ function Index() {
   const t = translations[lang];
 
   const navLinks = [
-    { href: "#sobre", label: t.nav.sobreNos },
-    { href: "#menu", label: t.nav.menu },
-    { href: "#atmosfera", label: t.nav.atmosfera },
-    { href: "#contactos", label: t.nav.contactos },
+    { href: "/sobre", label: t.nav.sobreNos, isPage: true },
+    { href: "#menu", label: t.nav.menu, isPage: false },
+    { href: "#atmosfera", label: t.nav.atmosfera, isPage: false },
+    { href: "#contactos", label: t.nav.contactos, isPage: false },
   ];
 
   const menuTabs = [
@@ -747,14 +748,25 @@ function Index() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-all hover:scale-105 relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-300" />
-              </button>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-all hover:scale-105 relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-300" />
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-all hover:scale-105 relative group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-300" />
+                </button>
+              )
             ))}
             
             {/* Language Toggle */}
@@ -798,13 +810,24 @@ function Index() {
         >
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-colors text-left py-2"
-              >
-                {link.label}
-              </button>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-colors text-left py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-sm tracking-[0.2em] text-amber-200/80 hover:text-amber-400 transition-colors text-left py-2"
+                >
+                  {link.label}
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -895,14 +918,25 @@ function Index() {
           {/* Nav links under logo */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {navLinks.map((link, i) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-xs md:text-sm tracking-[0.2em] text-amber-200/70 hover:text-amber-400 transition-all hover:scale-110"
-                style={{ animationDelay: `${i * 100}ms` }}
-              >
-                {link.label}
-              </button>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs md:text-sm tracking-[0.2em] text-amber-200/70 hover:text-amber-400 transition-all hover:scale-110"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-xs md:text-sm tracking-[0.2em] text-amber-200/70 hover:text-amber-400 transition-all hover:scale-110"
+                  style={{ animationDelay: `${i * 100}ms` }}
+                >
+                  {link.label}
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -912,31 +946,6 @@ function Index() {
           <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </div>
-      </section>
-
-      <SectionDivider />
-
-      {/* About / Passion Section */}
-      <section id="sobre" className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/10 to-black" />
-        
-        <div className="max-w-4xl mx-auto px-6 relative text-center">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-amber-400 mb-8 leading-tight">
-            {t.about.title}
-          </h2>
-          <div className="space-y-5 max-w-3xl mx-auto">
-            <p className="text-amber-100/80 text-sm md:text-base leading-relaxed font-light tracking-wide">
-              {t.about.text1}
-            </p>
-            <p className="text-amber-100/80 text-sm md:text-base leading-relaxed font-light tracking-wide">
-              {t.about.text2}
-            </p>
-            <p className="text-amber-100/80 text-sm md:text-base leading-relaxed font-light tracking-wide">
-              {t.about.text3}
-            </p>
-          </div>
-          <div className="mt-8 w-24 h-px bg-gradient-to-r from-amber-400 via-amber-400 to-amber-400 mx-auto" />
         </div>
       </section>
 
@@ -1235,13 +1244,23 @@ function Index() {
           {/* Floating nav in menu */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-12 text-xs tracking-[0.15em]">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
-              >
-                {link.label}
-              </button>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
+                >
+                  {link.label}
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -1283,13 +1302,23 @@ function Index() {
           {/* Floating nav */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-16 text-xs tracking-[0.15em]">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
-              >
-                {link.label}
-              </button>
+              link.isPage ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-amber-200/50 hover:text-amber-400 transition-all hover:scale-110"
+                >
+                  {link.label}
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -1437,13 +1466,23 @@ function Index() {
             </p>
             <div className="flex gap-8 text-xs tracking-[0.15em]">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-amber-200/40 hover:text-amber-400 transition-all hover:scale-110"
-                >
-                  {link.label}
-                </button>
+                link.isPage ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-amber-200/40 hover:text-amber-400 transition-all hover:scale-110"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-amber-200/40 hover:text-amber-400 transition-all hover:scale-110"
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
             </div>
           </div>
