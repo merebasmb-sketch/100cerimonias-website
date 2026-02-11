@@ -157,19 +157,19 @@ const translations = {
 // Menu data
 const menuData = {
   entradas: [
-    { name: "Croquetes de Alheira", description: "Croquetes crocantes de alheira tradicional portuguesa", descriptionEn: "Crispy alheira croquettes, traditional Portuguese style", price: "8,50" },
-    { name: "Tacos de Xixinha", description: "Tacos recheados com carne desfiada temperada", descriptionEn: "Tacos filled with seasoned shredded meat", price: "10,50" },
-    { name: "Ovos Rotos 100 Cerimónias", description: "Ovos estrelados sobre batata frita com presunto", descriptionEn: "Fried eggs over crispy potatoes with cured ham", price: "13", signature: true },
-    { name: "Tártaro de Novilho", description: "Carne de novilho picada à mão, temperada na hora", descriptionEn: "Hand-chopped beef tartare, freshly seasoned", price: "15" },
-    { name: "Camarão 100 Cerimónias", description: "Camarão grelhado com alho e ervas aromáticas", descriptionEn: "Grilled shrimp with garlic and aromatic herbs", price: "12", signature: true },
+    { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "8,50" },
+    { name: "Tacos de Xixinha", description: "Tacos com carne e maionese de sriracha", descriptionEn: "Tacos with meat and sriracha mayonnaise", price: "10,50" },
+    { name: "Ovos Rotos 100 Cerimónias", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "13", signature: true },
+    { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "15" },
+    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "12", signature: true },
   ],
   naBrasa: [
-    { name: "Vazia", description: "Maturação de 22 dias", descriptionEn: "22-day aged", price: "28", weight: "250gr" },
-    { name: "Picanha", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "48", weight: "500gr", signature: true },
-    { name: "Txuletón", description: "Corte típico basco com osso", descriptionEn: "Typical Basque bone-in cut", price: "79", weight: "1kg", bestseller: true },
-    { name: "Tomahawk", description: "Corte invulgar com osso extenso", descriptionEn: "Distinctive cut with extended bone", price: "89", weight: "1kg", signature: true, bestseller: true },
+    { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "28", weight: "250gr" },
+    { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "48", weight: "500gr", signature: true },
+    { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "79", weight: "1kg", bestseller: true },
+    { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "89", weight: "1kg", signature: true, bestseller: true },
     { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "79", weight: "1kg" },
-    { name: "Tábua Premium 100 Cerimónias", description: "Carnes para todos os gostos", descriptionEn: "Premium meats for all tastes", price: "172", weight: "2kg", signature: true },
+    { name: "Tábua Premium 100 Cerimónias", description: "500g de vazia black angus, 500g de picanha, 1kg de tomahawk", descriptionEn: "500g black angus sirloin, 500g picanha, 1kg tomahawk", price: "172", weight: "2kg", signature: true },
   ],
   acompanhamentos: [
     { name: "Batata Rústica", description: "", descriptionEn: "", price: "4,50", veggie: true },
