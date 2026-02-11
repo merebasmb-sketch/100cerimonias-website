@@ -12,7 +12,7 @@ const translations = {
       voltar: "VOLTAR",
     },
     about: {
-      title: "SOBRE O GRUPO",
+      title: "SOBRE O RESTAURANTE",
       subtitle: "A nossa história",
       text1: "Somos um grupo de pessoas que se juntaram e que tentam fazer a vida valer da melhor maneira que conseguimos. Completamente diferentes, conseguimos encontrar o nosso equilíbrio e todas as noites conseguimos entregar refeições onde o objetivo é sempre um sorriso na cara das pessoas.",
       text2: "Criámos um espaço elegante, confortável e sem cerimónias desnecessárias, onde o foco está na partilha de comida, emoções e momentos.",
@@ -39,7 +39,7 @@ const translations = {
       voltar: "BACK",
     },
     about: {
-      title: "ABOUT THE GROUP",
+      title: "ABOUT THE RESTAURANT",
       subtitle: "Our story",
       text1: "We are a group of people who came together trying to make life worthwhile in the best way we can. Completely different, we found our balance and every night we deliver meals where the goal is always a smile on people's faces.",
       text2: "We created an elegant, comfortable space without unnecessary ceremonies, where the focus is on sharing food, emotions and moments.",
