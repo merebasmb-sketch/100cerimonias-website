@@ -55,11 +55,9 @@ const translations = {
         espumante: "ESPUMANTE",
         copo: "VINHO A COPO",
         assinatura: "COCKTAILS DE ASSINATURA",
-        classicos: "COCKTAILS CLÁSSICOS",
         mocktails: "MOCKTAILS",
         destilados: "DESTILADOS",
         cervejas: "CERVEJAS",
-        sumosNaturais: "SUMOS NATURAIS",
         refrigerantes: "REFRIGERANTES",
         sangrias: "SANGRIAS",
         vodka: "VODKA",
@@ -121,11 +119,9 @@ const translations = {
         espumante: "SPARKLING",
         copo: "WINE BY THE GLASS",
         assinatura: "SIGNATURE COCKTAILS",
-        classicos: "CLASSIC COCKTAILS",
         mocktails: "MOCKTAILS",
         destilados: "SPIRITS",
         cervejas: "BEERS",
-        sumosNaturais: "NATURAL JUICES",
         refrigerantes: "SOFT DRINKS",
         sangrias: "SANGRIAS",
         vodka: "VODKA",
@@ -157,148 +153,127 @@ const translations = {
 // Menu data
 const menuData = {
   entradas: [
-    { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "8,50" },
-    { name: "Tacos de Xixinha", description: "Tacos com carne e maionese de sriracha", descriptionEn: "Tacos with meat and sriracha mayonnaise", price: "10,50" },
-    { name: "Ovos Rotos 100 Cerimónias", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "13", signature: true },
-    { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "15" },
-    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "12", signature: true },
+    { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "16" },
+    { name: "Tacos de Xixinha", description: "Tacos com carne e maionese de sriracha", descriptionEn: "Tacos with meat and sriracha mayonnaise", price: "19" },
+    { name: "Ovos Rotos 100 Cerimónias", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "23", signature: true },
+    { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "25" },
+    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "14", signature: true },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "28", weight: "250gr" },
-    { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "48", weight: "500gr", signature: true },
-    { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "79", weight: "1kg", bestseller: true },
-    { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "89", weight: "1kg", signature: true, bestseller: true },
-    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "79", weight: "1kg" },
-    { name: "Tábua Premium 100 Cerimónias", description: "500g de vazia black angus, 500g de picanha, 1kg de tomahawk", descriptionEn: "500g black angus sirloin, 500g picanha, 1kg tomahawk", price: "172", weight: "2kg", signature: true },
+    { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "42", weight: "250g" },
+    { name: "Costeleta Vazia Baixa", description: "Vazia baixa com osso", descriptionEn: "Short rib with bone", price: "77", weight: "500g" },
+    { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "77", weight: "500g", signature: true },
+    { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "117", weight: "1kg", bestseller: true },
+    { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "104", weight: "1kg", signature: true, bestseller: true },
+    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "117", weight: "1kg" },
+    { name: "Tábua Premium 100 Cerimónias", description: "1kg Tomahawk, 500g vazia, 500g picanha", descriptionEn: "1kg Tomahawk, 500g sirloin, 500g picanha", price: "247", weight: "2kg", signature: true },
   ],
   acompanhamentos: [
-    { name: "Batata Rústica", description: "", descriptionEn: "", price: "4,50", veggie: true },
-    { name: "Salada Mista", description: "", descriptionEn: "", price: "4", veggie: true },
-    { name: "Legumes Grelhados na Brasa", description: "", descriptionEn: "", price: "4,50", veggie: true },
-    { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "4" },
-    { name: "Puré de Batata Trufado", description: "", descriptionEn: "", price: "7,50", veggie: true },
+    { name: "Batata Frita Rústica", description: "", descriptionEn: "", price: "8", veggie: true },
+    { name: "Salada", description: "", descriptionEn: "", price: "8", veggie: true },
+    { name: "Legumes Grelhados com Redução de Vinho", description: "", descriptionEn: "Grilled vegetables with wine reduction", price: "8", veggie: true },
+    { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "8" },
+    { name: "Puré de Batata Trufado", description: "", descriptionEn: "", price: "9", veggie: true },
+    { name: "Tagliatelle Legumes e Pesto", description: "", descriptionEn: "Tagliatelle with vegetables and pesto", price: "33", veggie: true },
   ],
   sobremesas: [
-    { name: "Bola de Gelado 100 Cerimónias", description: "", descriptionEn: "", price: "4" },
-    { name: "Surpresa de Maracujá", description: "", descriptionEn: "", price: "10" },
-    { name: "Fondant de Doce de Leite", description: "", descriptionEn: "", price: "12", bestseller: true },
-    { name: "Brownie de Chocolate", description: "", descriptionEn: "", price: "10" },
+    { name: "Bola de Gelado 100 Cerimónias", description: "", descriptionEn: "", price: "7" },
+    { name: "Surpresa de Maracujá", description: "", descriptionEn: "", price: "16" },
+    { name: "Fondant de Doce de Leite", description: "", descriptionEn: "", price: "17", bestseller: true },
+    { name: "Brownie de Chocolate", description: "", descriptionEn: "", price: "17" },
   ],
   vinhos: {
     brancos: [
-      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "20" },
-      { name: "Contacto Alvarinho", price: "28" },
-      { name: "Dote Simplesmente Batonnage", region: "Douro", price: "22" },
-      { name: "Quinta Vale D'Aldeia Grande", region: "Douro", price: "45" },
+      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "26" },
+      { name: "Contacto Alvarinho", price: "36" },
+      { name: "Dote Simplesmente Batonnage", region: "Douro", price: "29" },
+      { name: "Quinta Vale D'Aldeia Grande", region: "Douro", price: "59" },
     ],
     tintos: [
-      { name: "ZIP Unoaked", region: "Douro", price: "20" },
-      { name: "Vale da Aldeia", region: "Douro", price: "20" },
-      { name: "Vallado", region: "Douro", price: "28" },
-      { name: "Loek's Grande Reserva", region: "Douro", price: "60" },
-      { name: "Quinta da Lapa Pinot Noir Reserva", region: "Tejo", price: "28" },
-      { name: "Quinta da Lapa Reserva Cabernet Sauvignon", region: "Tejo", price: "28" },
-      { name: "Quinta do Paral", region: "Alentejo", price: "32" },
+      { name: "ZIP Unoaked", region: "Douro", price: "26" },
+      { name: "Vale da Aldeia", region: "Douro", price: "26" },
+      { name: "Loek's Grande Reserva", region: "Douro", price: "78" },
+      { name: "Quinta da Lapa Pinot Noir Reserva", region: "Tejo", price: "36" },
+      { name: "Quinta da Lapa Reserva Cabernet Sauvignon", region: "Tejo", price: "36" },
+      { name: "Quinta do Paral", region: "Alentejo", price: "42" },
     ],
     rose: [
-      { name: "Quinta do Paral", price: "25" },
+      { name: "Quinta do Paral", price: "33" },
     ],
     espumante: [
-      { name: "Lagoa Velha", region: "Bairrada", price: "22" },
+      { name: "Lagoa Velha", region: "Bairrada", price: "29" },
     ],
     copo: [
-      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
-      { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
-      { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
+      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "8" },
+      { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "8" },
+      { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "8" },
     ],
   },
   bebidas: {
     destilados: {
       vodka: [
-        { name: "Grey Goose", price: "10" },
-        { name: "Cîroc", price: "10" },
+        { name: "Grey Goose", price: "13" },
+        { name: "Cîroc", price: "13" },
       ],
       rum: [
-        { name: "Bacardi Carta Blanca", price: "8" },
-        { name: "Bacardi 8", price: "12" },
+        { name: "Bacardi Carta Blanca", price: "10" },
+        { name: "Bacardi 8", price: "16" },
       ],
       gin: [
-        { name: "Bombay Sapphire", price: "10" },
-        { name: "Bombay Pressé", price: "10" },
-        { name: "Bombay Bramble", price: "10" },
-        { name: "Bulldog", price: "11" },
-        { name: "Hendrick's", price: "12" },
-        { name: "Bombay Premier Cru", price: "13" },
-        { name: "Monkey 47", price: "15" },
+        { name: "Bombay Sapphire", price: "13" },
+        { name: "Bombay Pressé", price: "13" },
+        { name: "Bombay Bramble", price: "13" },
+        { name: "Bulldog", price: "14" },
+        { name: "Hendrick's", price: "16" },
+        { name: "Bombay Premier Cru", price: "17" },
+        { name: "Monkey 47", price: "20" },
       ],
       whisky: [
-        { name: "Dewar's 8", price: "8" },
-        { name: "Johnnie Walker Red Label", price: "8" },
-        { name: "Jack Daniel's Apple", price: "10" },
-        { name: "Jack Daniel's Honey", price: "10" },
-        { name: "Jack Daniel's Tennessee", price: "10" },
-        { name: "Dewar's 21", price: "12" },
-        { name: "Jack Daniel's Single Barrel", price: "12" },
-        { name: "Cutty Sark Discovery 18", price: "13" },
+        { name: "Dewar's 8", price: "10" },
+        { name: "Johnnie Walker Red Label", price: "10" },
+        { name: "Jack Daniel's Apple", price: "13" },
+        { name: "Jack Daniel's Honey", price: "13" },
+        { name: "Jack Daniel's Tennessee", price: "13" },
+        { name: "Dewar's 21", price: "16" },
+        { name: "Jack Daniel's Single Barrel", price: "16" },
+        { name: "Cutty Sark Discovery 18", price: "17" },
       ],
       cognac: [
-        { name: "Hubert Rocheeboit Fine", price: "10" },
-        { name: "Courvoisier VSOP", price: "23" },
+        { name: "Hubert Rocheeboit Fine", price: "13" },
+        { name: "Courvoisier VSOP", price: "30" },
       ],
       vermouth: [
-        { name: "Martini Special Rubino", price: "8" },
-        { name: "Martini Special Ambrato", price: "8" },
+        { name: "Martini Special Rubino", price: "10" },
+        { name: "Martini Special Ambrato", price: "10" },
       ],
       tequila: [
-        { name: "Patrón Silver", price: "10" },
+        { name: "Patrón Silver", price: "13" },
       ],
     },
     cervejas: [
-      { name: "Stella Artois", price: "3,50" },
-      { name: "Leffe Blond", price: "5,50" },
-      { name: "Franziskaner", price: "5,50" },
-    ],
-    sumosNaturais: [
-      { name: "Limonada", price: "3" },
-      { name: "Sumo de Laranja Natural", price: "4" },
+      { name: "Stella Artois", price: "5" },
+      { name: "Leffe Blond", price: "7" },
+      { name: "Franziskaner", price: "7" },
     ],
     refrigerantes: [
-      { name: "Coca Cola", price: "3" },
-      { name: "Coca Cola Zero", price: "3" },
-      { name: "Nestea Pêssego", price: "3" },
-      { name: "Água Tónica", price: "3" },
-      { name: "Ginger Beer", price: "3" },
-      { name: "Ginger Ale", price: "3" },
+      { name: "Coca Cola", price: "4" },
+      { name: "Coca Cola Zero", price: "4" },
+      { name: "Nestea Pêssego", price: "4" },
+      { name: "Água Tónica", price: "4" },
+      { name: "Ginger Beer", price: "4" },
+      { name: "Ginger Ale", price: "4" },
     ],
     sangrias: [
-      { name: "Espumante", description: "Maracujá, frutos vermelhos, maçã, mojito", descriptionEn: "Passion fruit, red fruits, apple, mojito", price: "35" },
-      { name: "Magic Bubbles (Mimadu)", price: "40" },
-      { name: "Champagne 100 Cerimónias", description: "Preço s/ consulta", descriptionEn: "Price on request", price: "—" },
+      { name: "Espumante", description: "Maracujá, frutos vermelhos, maçã, mojito", descriptionEn: "Passion fruit, red fruits, apple, mojito", price: "46" },
     ],
     cocktailsAssinatura: [
-      { name: "Lick My Peach", description: "Vodka, licor de laranja, citrinos, pêssego, clara de ovo", descriptionEn: "Vodka, orange liqueur, citrus, peach, egg white", price: "12" },
-      { name: "Em Brasa", description: "Gin, puré de morango, sumo de laranja, soda e angustura", descriptionEn: "Gin, strawberry purée, orange juice, soda and angostura", price: "12" },
-      { name: "Special Mojito", description: "Vinho do Porto branco, tangerina, ginger ale, citrinos, hortelã", descriptionEn: "White Port wine, tangerine, ginger ale, citrus, mint", price: "12" },
-      { name: "Cerimónias Mule", description: "Vodka, ginger beer, citrinos, espuma de gengibre", descriptionEn: "Vodka, ginger beer, citrus, ginger foam", price: "12" },
-      { name: "Afrodite", description: "Vodka, licor de laranja, maracujá, framboesa, citrinos, clara de ovo", descriptionEn: "Vodka, orange liqueur, passion fruit, raspberry, citrus, egg white", price: "12" },
-      { name: "Invicta", description: "Vodka, blue curaçao, sumo de laranja, sumo de arando", descriptionEn: "Vodka, blue curaçao, orange juice, cranberry juice", price: "12" },
-    ],
-    cocktailsClassicos: [
-      { name: "Margarita", price: "8" },
-      { name: "Cosmopolitan", price: "8" },
-      { name: "Mojito", price: "8" },
-      { name: "Caipirinha", price: "8" },
-      { name: "Pornstar Martini", price: "8" },
-      { name: "Negroni", price: "8" },
-      { name: "Espresso Martini", price: "8" },
-      { name: "Old Fashioned", price: "8" },
-      { name: "Daiquiri", price: "8" },
-      { name: "Aperol Spritz", price: "8" },
+      { name: "Lick My Peach", description: "Vodka, licor de laranja, citrinos, pêssego, clara de ovo", descriptionEn: "Vodka, orange liqueur, citrus, peach, egg white", price: "16" },
+      { name: "Special Mojito", description: "Vinho do Porto branco, tangerina, ginger ale, citrinos, hortelã", descriptionEn: "White Port wine, tangerine, ginger ale, citrus, mint", price: "16" },
+      { name: "Cerimónias Mule", description: "Vodka, ginger beer, citrinos, espuma de gengibre", descriptionEn: "Vodka, ginger beer, citrus, ginger foam", price: "16" },
+      { name: "Afrodite", description: "Vodka, licor de laranja, maracujá, framboesa, citrinos, clara de ovo", descriptionEn: "Vodka, orange liqueur, passion fruit, raspberry, citrus, egg white", price: "16" },
     ],
     mocktails: [
-      { name: "Belle Vie", description: "Abacaxi, sumo de lima, cereja marrasquino, puré de pêssego", descriptionEn: "Pineapple, lime juice, maraschino cherry, peach purée", price: "5" },
-      { name: "Ginger Swizzle", description: "Sumo de limão, xarope de gengibre, soda", descriptionEn: "Lemon juice, ginger syrup, soda", price: "5" },
-      { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "5" },
+      { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "7" },
     ],
   },
 };
@@ -1126,23 +1101,14 @@ function Index() {
             {activeTab === "bebidas" && (
               <div className="animate-fade-in space-y-4">
                 {/* Signature Cocktails */}
-                <CollapsibleDrinkSection title={`${t.menu.categories.assinatura} • €12`} icon={<CocktailIcon />} defaultOpen={true}>
+                <CollapsibleDrinkSection title={`${t.menu.categories.assinatura} • €16`} icon={<CocktailIcon />} defaultOpen={true}>
                   {menuData.bebidas.cocktailsAssinatura.map((item, i) => (
                     <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
                   ))}
                 </CollapsibleDrinkSection>
 
-                {/* Classic Cocktails */}
-                <CollapsibleDrinkSection title={`${t.menu.categories.classicos} • €8`} icon={<CocktailIcon />}>
-                  <div className="grid sm:grid-cols-2 gap-x-4">
-                    {menuData.bebidas.cocktailsClassicos.map((item, i) => (
-                      <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
-                    ))}
-                  </div>
-                </CollapsibleDrinkSection>
-
                 {/* Mocktails */}
-                <CollapsibleDrinkSection title={`${t.menu.categories.mocktails} • €5`} icon={<JuiceIcon />}>
+                <CollapsibleDrinkSection title={`${t.menu.categories.mocktails} • €7`} icon={<JuiceIcon />}>
                   {menuData.bebidas.mocktails.map((item, i) => (
                     <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
                   ))}
@@ -1213,13 +1179,6 @@ function Index() {
                 {/* Beers */}
                 <CollapsibleDrinkSection title={t.menu.categories.cervejas} icon={<BeerIcon />}>
                   {menuData.bebidas.cervejas.map((item, i) => (
-                    <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
-                  ))}
-                </CollapsibleDrinkSection>
-
-                {/* Natural Juices */}
-                <CollapsibleDrinkSection title={t.menu.categories.sumosNaturais} icon={<JuiceIcon />}>
-                  {menuData.bebidas.sumosNaturais.map((item, i) => (
                     <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                   ))}
                 </CollapsibleDrinkSection>
