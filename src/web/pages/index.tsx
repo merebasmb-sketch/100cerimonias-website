@@ -155,9 +155,9 @@ const menuData = {
   entradas: [
     { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "16" },
     { name: "Tacos de Xixinha", description: "Tacos com carne e maionese de sriracha", descriptionEn: "Tacos with meat and sriracha mayonnaise", price: "19" },
-    { name: "Ovos Rotos 100 Cerimónias", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "23", signature: true },
+    { name: "Ovos Rotos 100 Cerimónias", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "23", signature: true, bestseller: true },
     { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "25" },
-    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "14", signature: true },
+    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "14" },
   ],
   naBrasa: [
     { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "42", weight: "250g" },
