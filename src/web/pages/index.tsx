@@ -256,12 +256,12 @@ const menuData = {
       { name: "Franziskaner", price: "5,50" },
     ],
     refrigerantes: [
-      { name: "Coca Cola", price: "3" },
-      { name: "Coca Cola Zero", price: "3" },
-      { name: "Nestea Pêssego", price: "3" },
-      { name: "Água Tónica", price: "3" },
-      { name: "Ginger Beer", price: "3" },
-      { name: "Ginger Ale", price: "3" },
+      { name: "Coca Cola", price: "3,50" },
+      { name: "Coca Cola Zero", price: "3,50" },
+      { name: "Nestea Pêssego", price: "3,50" },
+      { name: "Água Tónica", price: "3,50" },
+      { name: "Ginger Beer", price: "3,50" },
+      { name: "Ginger Ale", price: "3,50" },
     ],
     sangrias: [
       { name: "Espumante", description: "Maracujá, frutos vermelhos, maçã, mojito", descriptionEn: "Passion fruit, red fruits, apple, mojito", price: "35" },
