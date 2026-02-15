@@ -174,6 +174,7 @@ const menuData = {
     { name: "Legumes Grelhados com Redução de Vinho", description: "", descriptionEn: "Grilled vegetables with wine reduction", price: "6", veggie: true },
     { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "6" },
     { name: "Puré de Batata Trufado", description: "", descriptionEn: "", price: "7", veggie: true },
+    { name: "Feijão", description: "", descriptionEn: "Beans", price: "6", veggie: true },
     { name: "Tagliatelle Legumes e Pesto", description: "", descriptionEn: "Tagliatelle with vegetables and pesto", price: "25", veggie: true },
   ],
   sobremesas: [
