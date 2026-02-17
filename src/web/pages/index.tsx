@@ -177,7 +177,6 @@ const menuData = {
     { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "6" },
     { name: "Puré de Batata Trufado", description: "", descriptionEn: "", price: "7", veggie: true },
     { name: "Feijão", description: "Feijão preto com enchidos", descriptionEn: "Black beans with sausages", price: "6" },
-    { name: "Tagliatelle Legumes e Pesto", description: "", descriptionEn: "Tagliatelle with vegetables and pesto", price: "25", veggie: true },
   ],
   pasta: [
     { 
