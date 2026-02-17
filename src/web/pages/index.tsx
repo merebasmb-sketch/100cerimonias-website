@@ -44,6 +44,7 @@ const translations = {
         entradas: "Entradas",
         naBrasa: "Na Brasa",
         acompanhamentos: "Acompanhamentos",
+        pasta: "Pasta",
         sobremesas: "Sobremesas",
         vinhos: "Vinhos",
         bebidas: "Bebidas",
@@ -108,6 +109,7 @@ const translations = {
         entradas: "Starters",
         naBrasa: "From the Grill",
         acompanhamentos: "Sides",
+        pasta: "Pasta",
         sobremesas: "Desserts",
         vinhos: "Wines",
         bebidas: "Drinks",
@@ -176,6 +178,15 @@ const menuData = {
     { name: "Puré de Batata Trufado", description: "", descriptionEn: "", price: "7", veggie: true },
     { name: "Feijão", description: "Feijão preto com enchidos", descriptionEn: "Black beans with sausages", price: "6" },
     { name: "Tagliatelle Legumes e Pesto", description: "", descriptionEn: "Tagliatelle with vegetables and pesto", price: "25", veggie: true },
+  ],
+  pasta: [
+    { 
+      name: "Tagliatelle do Bosque", 
+      description: "Molho de pesto com legumes", 
+      descriptionEn: "Forest Tagliatelle with pesto sauce and grilled vegetables", 
+      price: "25", 
+      veggie: true 
+    }
   ],
   sobremesas: [
     { name: "Bola de Gelado 100 Cerimónias", description: "", descriptionEn: "", price: "5" },
@@ -583,6 +594,7 @@ function Index() {
     { id: "entradas", label: t.menu.tabs.entradas },
     { id: "naBrasa", label: t.menu.tabs.naBrasa },
     { id: "acompanhamentos", label: t.menu.tabs.acompanhamentos },
+    { id: "pasta", label: t.menu.tabs.pasta },
     { id: "sobremesas", label: t.menu.tabs.sobremesas },
     { id: "vinhos", label: t.menu.tabs.vinhos },
     { id: "bebidas", label: t.menu.tabs.bebidas },
@@ -997,6 +1009,14 @@ function Index() {
             {activeTab === "acompanhamentos" && (
               <div className="animate-fade-in">
                 {menuData.acompanhamentos.map((item, i) => (
+                  <MenuItemRow key={i} item={item} lang={lang} isVisible={menuVisible} />
+                ))}
+              </div>
+            )}
+
+            {activeTab === "pasta" && (
+              <div className="animate-fade-in">
+                {menuData.pasta.map((item, i) => (
                   <MenuItemRow key={i} item={item} lang={lang} isVisible={menuVisible} />
                 ))}
               </div>
