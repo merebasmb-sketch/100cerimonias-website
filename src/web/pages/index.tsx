@@ -284,7 +284,7 @@ const menuData = {
       { name: "Afrodite", description: "Vodka, licor de laranja, maracujá, framboesa, citrinos, clara de ovo", descriptionEn: "Vodka, orange liqueur, passion fruit, raspberry, citrus, egg white", price: "12" },
     ],
     mocktails: [
-      { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "5" },
+      { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "7" },
       { name: "Belle Vie", description: "Abacaxi, sumo de lima, cereja marrasquino, puré de pêssego", descriptionEn: "Pineapple, lime juice, maraschino cherry, peach puree", price: "7" },
     ],
   },
