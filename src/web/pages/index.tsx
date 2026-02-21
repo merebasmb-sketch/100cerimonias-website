@@ -202,8 +202,8 @@ const menuData = {
     ],
     tintos: [
       { name: "ZIP Unoaked", region: "Douro", price: "20" },
-      { name: "Vale da Aldeia", region: "Douro", price: "20" },
-      { name: "Loek's Grande Reserva", region: "Douro", price: "60" },
+      { name: "Vale da Aldeia", region: "Douro", price: "26" },
+      { name: "Look's Grande Reserva", region: "Douro", price: "60" },
       { name: "Quinta da Lapa Pinot Noir Reserva", region: "Tejo", price: "28" },
       { name: "Quinta da Lapa Reserva Cabernet Sauvignon", region: "Tejo", price: "28" },
       { name: "Quinta do Paral", region: "Alentejo", price: "32" },
@@ -1122,7 +1122,7 @@ function Index() {
             {activeTab === "bebidas" && (
               <div className="animate-fade-in space-y-4">
                 {/* Signature Cocktails */}
-                <CollapsibleDrinkSection title={`${t.menu.categories.assinatura} • €16`} icon={<CocktailIcon />} defaultOpen={true}>
+                <CollapsibleDrinkSection title={t.menu.categories.assinatura} icon={<CocktailIcon />} defaultOpen={true}>
                   {menuData.bebidas.cocktailsAssinatura.map((item, i) => (
                     <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
                   ))}
