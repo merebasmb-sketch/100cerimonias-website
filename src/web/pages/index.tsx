@@ -164,11 +164,11 @@ const menuData = {
   naBrasa: [
     { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "32", weight: "250g" },
     { name: "Costeleta Vazia Baixa", description: "Vazia baixa com osso", descriptionEn: "Short rib with bone", price: "59", weight: "500g" },
-    { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "59", weight: "500g", signature: true },
-    { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "90", weight: "1kg", bestseller: true },
-    { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "80", weight: "1kg", signature: true, bestseller: true },
-    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "90", weight: "1kg" },
-    { name: "Tábua Premium 100 Cerimónias", description: "1kg Tomahawk, 500g vazia, 500g picanha", descriptionEn: "1kg Tomahawk, 500g sirloin, 500g picanha", price: "190", weight: "2kg", signature: true },
+    { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "59", weight: "500g" },
+    { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "90", weight: "1kg" },
+    { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "80", weight: "1kg" },
+    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "85", weight: "1kg" },
+    { name: "Tábua Premium 100 Cerimónias", description: "1kg Tomahawk, 500g vazia, 500g picanha", descriptionEn: "1kg Tomahawk, 500g sirloin, 500g picanha", price: "190", weight: "2kg" },
   ],
   acompanhamentos: [
     { name: "Batata Frita Rústica", description: "", descriptionEn: "", price: "6", veggie: true },
