@@ -1345,13 +1345,8 @@ function Index() {
                 <p>Rua de Santo Ildefonso, 210</p>
                 <p>Porto, Portugal</p>
                 <p>
-                  <a href="tel:+351933156603" className="hover:text-amber-400 transition-colors">
-                    +351 933 156 603
-                  </a>
-                </p>
-                <p>
-                  <a href="mailto:reservas@100cerimonias.pt" className="hover:text-amber-400 transition-colors">
-                    reservas@100cerimonias.pt
+                  <a href="tel:+351936337848" className="hover:text-amber-400 transition-colors">
+                    +351 936 337 848
                   </a>
                 </p>
               </div>

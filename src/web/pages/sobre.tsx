@@ -436,8 +436,8 @@ function SobrePage() {
               <p className="text-amber-200/70 text-sm mb-2">
                 Porto, Portugal
               </p>
-              <a href="tel:+351933156603" className="text-amber-400 text-sm hover:text-amber-300 transition-colors">
-                +351 933 156 603
+              <a href="tel:+351936337848" className="text-amber-400 text-sm hover:text-amber-300 transition-colors">
+                +351 936 337 848
               </a>
             </div>
           </div>
