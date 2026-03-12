@@ -1448,6 +1448,25 @@ function Index() {
             </div>
           </div>
 
+          {/* Google Maps */}
+          <div className="mb-12">
+            <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider text-center">
+              {lang === "pt" ? "COMO CHEGAR" : "HOW TO GET THERE"}
+            </h4>
+            <div className="w-full h-64 md:h-80 border border-amber-900/30 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.3!2d-8.6059!3d41.1479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2464a9d4e5b8c7%3A0xab8a6f4d4f9dacac!2sRua%20de%20Santo%20Ildef%C3%B4nso%20210%2C%204000-541%20Porto!5e0!3m2!1spt!2spt!4v1700000000000!5m2!1spt!2spt"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "grayscale(30%) invert(5%) contrast(95%)" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="100 Cerimónias Steakhouse - Localização"
+              />
+            </div>
+          </div>
+
           {/* Bottom bar */}
           <div className="border-t border-amber-900/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-amber-200/30 text-xs">
