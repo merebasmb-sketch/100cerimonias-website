@@ -1321,7 +1321,143 @@ function Index() {
       <SectionDivider />
 
       {/* Porque nos escolher + Avaliações */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-black via-amber-950/5 to-black">
+      <section className="py-24 md:py-36 relative overflow-hidden">
+        {/* Subtle background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/[0.07] to-black" />
+        
+        <div className="max-w-6xl mx-auto px-6 relative">
+
+          {/* Título */}
+          <div className="text-center mb-20">
+            <p className="text-amber-600 text-xs tracking-[0.4em] uppercase mb-4">
+              {lang === "pt" ? "O melhor steakhouse do Porto" : "Porto's finest steakhouse"}
+            </p>
+            <h2 className="font-serif text-5xl md:text-6xl text-amber-400 tracking-wide">
+              {lang === "pt" ? "PORQUE NOS ESCOLHER" : "WHY CHOOSE US"}
+            </h2>
+            <div className="flex items-center justify-center mt-6 gap-4">
+              <div className="h-px w-24 bg-gradient-to-r from-transparent to-amber-600/50" />
+              <div className="w-1.5 h-1.5 rotate-45 bg-amber-600/50" />
+              <div className="h-px w-24 bg-gradient-to-l from-transparent to-amber-600/50" />
+            </div>
+          </div>
+
+          {/* Diferenciais — layout horizontal elegante */}
+          <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-amber-900/30 mb-24">
+            {[
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                  </svg>
+                ),
+                title: lang === "pt" ? "Brasa Viva" : "Live Grill",
+                text: lang === "pt" 
+                  ? "Cortes preparados na brasa viva para o sabor e textura perfeitos em cada prato." 
+                  : "Cuts prepared on a live grill for perfect flavor and texture in every dish.",
+              },
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                ),
+                title: lang === "pt" ? "Cortes Premium" : "Premium Cuts",
+                text: lang === "pt" 
+                  ? "Tomahawk, T-Bone e Picanha Black Angus — selecionados para uma experiência gastronómica única." 
+                  : "Tomahawk, T-Bone and Black Angus Picanha — selected for a unique gastronomic experience.",
+              },
+              {
+                icon: (
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                  </svg>
+                ),
+                title: lang === "pt" ? "Jantares de Grupo" : "Group Dinners",
+                text: lang === "pt" 
+                  ? "O espaço ideal para jantares de grupo e empresa no Porto. Uma experiência memorável para toda a equipa." 
+                  : "The ideal space for group and corporate dinners in Porto. A memorable experience for the whole team.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center px-8 py-10 group">
+                <div className="text-amber-600/70 group-hover:text-amber-400 transition-colors duration-500 mb-5">
+                  {item.icon}
+                </div>
+                <h3 className="font-serif text-xl text-amber-400 mb-3 tracking-[0.15em]">{item.title}</h3>
+                <p className="text-amber-200/50 text-sm leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Avaliações Google */}
+          <div>
+            {/* Header avaliações */}
+            <div className="flex flex-col items-center mb-12">
+              <div className="flex items-center gap-2 mb-3">
+                {[...Array(5)].map((_, s) => (
+                  <svg key={s} className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-amber-200/40 text-xs tracking-[0.3em] uppercase">
+                {lang === "pt" ? "Avaliações Google" : "Google Reviews"}
+              </p>
+            </div>
+
+            {/* Cards avaliações */}
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                { name: "João M.", text: lang === "pt" ? "Uma experiência incrível! O Tomahawk estava perfeito e o ambiente é simplesmente espetacular. Voltarei certamente." : "An incredible experience! The Tomahawk was perfect and the atmosphere is simply spectacular. I will definitely return.", date: "Jan 2025" },
+                { name: "Ana S.", text: lang === "pt" ? "O melhor steakhouse do Porto, sem dúvida. Cortes de qualidade excepcional e um serviço irrepreensível. Recomendo a todos!" : "The best steakhouse in Porto, without a doubt. Exceptional quality cuts and impeccable service. I recommend to everyone!", date: "Fev 2025" },
+                { name: "Carlos R.", text: lang === "pt" ? "Fizemos um jantar de grupo aqui e foi memorável. O espaço, a comida e a atenção ao detalhe fazem deste lugar algo único no Porto." : "We had a group dinner here and it was memorable. The space, food and attention to detail make this place unique in Porto.", date: "Mar 2025" },
+              ].map((review, i) => (
+                <div key={i} className="relative border border-amber-900/20 p-7 bg-gradient-to-b from-amber-950/10 to-transparent hover:border-amber-800/40 transition-all duration-500 group">
+                  {/* Quote mark */}
+                  <div className="absolute top-5 right-6 text-amber-800/20 font-serif text-6xl leading-none select-none">"</div>
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-4">
+                    {[...Array(5)].map((_, s) => (
+                      <svg key={s} className="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-amber-100/60 text-sm leading-relaxed mb-6 italic relative z-10">"{review.text}"</p>
+                  <div className="flex justify-between items-center border-t border-amber-900/20 pt-4">
+                    <span className="text-amber-400/80 text-sm tracking-wider">{review.name}</span>
+                    <span className="text-amber-200/25 text-xs">{review.date}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="text-center mt-10">
+              <a
+                href="https://g.page/r/Ccra-11PcYKrEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-amber-200/40 hover:text-amber-400 transition-colors duration-300 text-xs tracking-[0.25em] uppercase"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                {lang === "pt" ? "Ver todas as avaliações" : "See all reviews"}
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* Contactos / Footer */}
         <div className="max-w-5xl mx-auto px-6">
 
           {/* Título */}
