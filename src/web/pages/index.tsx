@@ -590,7 +590,7 @@ function Index() {
       const timer = setTimeout(() => {
         setShowReviewPopup(true);
         sessionStorage.setItem("review-popup-seen", "true");
-      }, 8000);
+      }, 30 * 60 * 1000); // 30 minutos
       return () => clearTimeout(timer);
     }
   }, []);
