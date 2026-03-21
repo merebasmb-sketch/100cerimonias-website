@@ -169,7 +169,7 @@ const menuData = {
     { name: "Tomahawk", description: "1kg | 2-3 Pax | Tenro e suculento", descriptionEn: "1kg | 2-3 Pax | Tender and juicy", price: "80" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
     { name: "Tábua Premium 100 Cerimónias", description: "1kg Tomahawk, 500g vazia, 500g picanha", descriptionEn: "1kg Tomahawk, 500g sirloin, 500g picanha", price: "190" },
-    { name: "Wagyu", description: "300g | 2 Pax | A melhor experiência", descriptionEn: "300g | 2 Pax | The best experience", price: "75" },
+    { name: "Wagyu", description: "300g | 2 Pax | A melhor experiência", descriptionEn: "300g | 2 Pax | The best experience", price: "76" },
   ],
   acompanhamentos: [
     { name: "Batata Frita Rústica", description: "", descriptionEn: "", price: "6", veggie: true },
