@@ -166,7 +166,7 @@ const menuData = {
     { name: "Costeleta Vazia Baixa", description: "500g | 2 Pax | Maturação de 31 dias", descriptionEn: "500g | 2 Pax | 31-day aged", price: "59" },
     { name: "Picanha Black Angus", description: "500g | 2 Pax | Fatty", descriptionEn: "500g | 2 Pax | Fatty", price: "59" },
     { name: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
-    { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "80", weight: "1kg" },
+    { name: "Tomahawk", description: "1kg | 2-3 Pax | Tenro e suculento", descriptionEn: "1kg | 2-3 Pax | Tender and juicy", price: "80" },
     { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "85", weight: "1kg" },
     { name: "Tábua Premium 100 Cerimónias", description: "1kg Tomahawk, 500g vazia, 500g picanha", descriptionEn: "1kg Tomahawk, 500g sirloin, 500g picanha", price: "190", weight: "2kg" },
   ],
