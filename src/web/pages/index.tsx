@@ -164,7 +164,7 @@ const menuData = {
   naBrasa: [
     { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "32", weight: "250g" },
     { name: "Costeleta Vazia Baixa", description: "Vazia baixa com osso", descriptionEn: "Short rib with bone", price: "59", weight: "500g" },
-    { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "59", weight: "500g" },
+    { name: "Ribeye", description: "Corte marmoreado com sabor intenso", descriptionEn: "Marbled cut with intense flavor", price: "59", weight: "500g" },
     { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "85", weight: "1kg" },
     { name: "Tomahawk", description: "Corte com forma de machado, tenro e saboroso", descriptionEn: "Axe-shaped cut, tender and flavorful", price: "80", weight: "1kg" },
     { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "85", weight: "1kg" },
