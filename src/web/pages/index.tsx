@@ -162,7 +162,7 @@ const menuData = {
     { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus", description: "Suculento!", descriptionEn: "Succulent!", price: "32", weight: "250g" },
+    { name: "Vazia Black Angus", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
     { name: "Costeleta Vazia Baixa", description: "Vazia baixa com osso", descriptionEn: "Short rib with bone", price: "59", weight: "500g" },
     { name: "Picanha Black Angus", description: "Corte típico argentino com gordura lateral", descriptionEn: "Typical Argentine cut with side fat cap", price: "59", weight: "500g" },
     { name: "Txuletón", description: "Corte grande com osso", descriptionEn: "Large bone-in cut", price: "85", weight: "1kg" },
