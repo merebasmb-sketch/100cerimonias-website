@@ -167,7 +167,7 @@ const menuData = {
     { name: "Picanha Black Angus", description: "500g | 2 Pax | Fatty", descriptionEn: "500g | 2 Pax | Fatty", price: "59" },
     { name: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "Tomahawk", description: "1kg | 2-3 Pax | Tenro e suculento", descriptionEn: "1kg | 2-3 Pax | Tender and juicy", price: "80" },
-    { name: "T-Bone", description: "Osso em T que separa vazia e lombo", descriptionEn: "T-shaped bone separating sirloin and tenderloin", price: "85", weight: "1kg" },
+    { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
     { name: "Tábua Premium 100 Cerimónias", description: "1kg Tomahawk, 500g vazia, 500g picanha", descriptionEn: "1kg Tomahawk, 500g sirloin, 500g picanha", price: "190", weight: "2kg" },
   ],
   acompanhamentos: [
