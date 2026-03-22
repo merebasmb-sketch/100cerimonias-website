@@ -164,7 +164,6 @@ const menuData = {
   naBrasa: [
     { name: "Vazia Black Angus", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
     { name: "Costeleta Vazia Baixa", description: "500g | 2 Pax | Maturação de 31 dias", descriptionEn: "500g | 2 Pax | 31-day aged", price: "59" },
-    { name: "Picanha Black Angus", description: "500g | 2 Pax | Fatty", descriptionEn: "500g | 2 Pax | Fatty", price: "59" },
     { name: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "Tomahawk", description: "1kg | 2-3 Pax | Tenro e suculento", descriptionEn: "1kg | 2-3 Pax | Tender and juicy", price: "80" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
