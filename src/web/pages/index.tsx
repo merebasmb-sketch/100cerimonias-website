@@ -191,8 +191,8 @@ const menuData = {
   sobremesas: [
     { name: "Bola de Gelado 100 Cerimónias", description: "", descriptionEn: "", price: "5" },
     { name: "Surpresa de Maracujá", description: "", descriptionEn: "", price: "12" },
-    { name: "Fondant de Doce de Leite", description: "", descriptionEn: "", price: "13", bestseller: true },
-    { name: "Brownie de Chocolate", description: "", descriptionEn: "", price: "13" },
+    { name: "Fondant de Doce de Leite", description: "E gelado de noz pecã e caramelo", descriptionEn: "With pecan and caramel ice cream", price: "13" },
+    { name: "Brownie de Chocolate", description: "E gelado de stracciatella", descriptionEn: "With stracciatella ice cream", price: "13" },
   ],
   vinhos: {
     brancos: [
