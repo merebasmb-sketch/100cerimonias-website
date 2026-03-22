@@ -156,7 +156,7 @@ const translations = {
 const menuData = {
   entradas: [
     { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
-    { name: "Tacos de Xixinha", description: "Tacos com carne e maionese de sriracha", descriptionEn: "Tacos with meat and sriracha mayonnaise", price: "14.50" },
+    { name: "Tacos de Xixinha", description: "Tacos com carne mexicana e maionese de sriracha", descriptionEn: "Tacos with mexican meat and sriracha mayonnaise", price: "14.50" },
     { name: "Huevos Rotos com Trufa", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "18" },
     { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "19" },
     { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
