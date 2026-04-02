@@ -42,7 +42,7 @@ const translations = {
       title: "MENU",
       tabs: {
         entradas: "Entradas",
-        naBrasa: "Na Brasa",
+        naBrasa: "Cortes",
         acompanhamentos: "Acompanhamentos",
         pasta: "Pasta",
         sobremesas: "Sobremesas",
@@ -107,7 +107,7 @@ const translations = {
       title: "MENU",
       tabs: {
         entradas: "Starters",
-        naBrasa: "From the Grill",
+        naBrasa: "Cuts",
         acompanhamentos: "Sides",
         pasta: "Pasta",
         sobremesas: "Desserts",
