@@ -1365,8 +1365,8 @@ function Index() {
                 ),
                 title: lang === "pt" ? "Cortes Premium" : "Premium Cuts",
                 text: lang === "pt" 
-                  ? "Tomahawk, T-Bone e Picanha Black Angus — selecionados para uma experiência gastronómica única." 
-                  : "Tomahawk, T-Bone and Black Angus Picanha — selected for a unique gastronomic experience.",
+                  ? "T-Bone, El Txuletón e Wagyu — selecionados para uma experiência gastronómica única." 
+                  : "T-Bone, El Txuletón and Wagyu — selected for a unique gastronomic experience.",
               },
               {
                 icon: (
@@ -1409,7 +1409,7 @@ function Index() {
             {/* Cards avaliações */}
             <div className="grid md:grid-cols-3 gap-5">
               {[
-                { name: "João M.", text: lang === "pt" ? "Uma experiência incrível! O Tomahawk estava perfeito e o ambiente é simplesmente espetacular. Voltarei certamente." : "An incredible experience! The Tomahawk was perfect and the atmosphere is simply spectacular. I will definitely return.", date: "Jan 2025" },
+                { name: "João M.", text: lang === "pt" ? "Uma experiência incrível! O T-Bone estava perfeito e o ambiente é simplesmente espetacular. Voltarei certamente." : "An incredible experience! The T-Bone was perfect and the atmosphere is simply spectacular. I will definitely return.", date: "Jan 2025" },
                 { name: "Ana S.", text: lang === "pt" ? "O melhor steakhouse do Porto, sem dúvida. Cortes de qualidade excepcional e um serviço irrepreensível. Recomendo a todos!" : "The best steakhouse in Porto, without a doubt. Exceptional quality cuts and impeccable service. I recommend to everyone!", date: "Fev 2025" },
                 { name: "Carlos R.", text: lang === "pt" ? "Fizemos um jantar de grupo aqui e foi memorável. O espaço, a comida e a atenção ao detalhe fazem deste lugar algo único no Porto." : "We had a group dinner here and it was memorable. The space, food and attention to detail make this place unique in Porto.", date: "Mar 2025" },
               ].map((review, i) => (
