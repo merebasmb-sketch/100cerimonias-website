@@ -155,18 +155,18 @@ const translations = {
 // Menu data
 const menuData = {
   entradas: [
+    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
     { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
     { name: "Tacos de Xixinha", description: "Tacos com carne mexicana e maionese de sriracha", descriptionEn: "Tacos with mexican meat and sriracha mayonnaise", price: "14.50" },
     { name: "Huevos Rotos com Trufa", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "18" },
     { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "19" },
-    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
   ],
   naBrasa: [
     { name: "Vazia Black Angus", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
     { name: "Costeleta Vazia Baixa", description: "500g | 2 Pax | Maturação de 31 dias", descriptionEn: "500g | 2 Pax | 31-day aged", price: "59" },
     { name: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture", price: "62" },
-    { name: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "Tomahawk", description: "1kg | 2-3 Pax | Tenro e suculento", descriptionEn: "1kg | 2-3 Pax | Tender and juicy", price: "80" },
+    { name: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
     { name: "Costeletão Rúbia Gallega", description: "2kg | 4-6 Pax | Ideal para grupos | *Limitado ao stock existente", descriptionEn: "2kg | 4-6 Pax | Ideal for groups | *Limited to existing stock", price: "155" },
@@ -176,8 +176,8 @@ const menuData = {
     { name: "Salada", description: "", descriptionEn: "", price: "6", veggie: true },
     { name: "Legumes Grelhados com Redução de Vinho", description: "", descriptionEn: "Grilled vegetables with wine reduction", price: "6", veggie: true },
     { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "6" },
-    { name: "Puré Cremoso Trufado", description: "", descriptionEn: "", price: "7", veggie: true },
     { name: "Feijão com Enchidos", description: "", descriptionEn: "", price: "6" },
+    { name: "Puré Cremoso Trufado", description: "", descriptionEn: "", price: "7", veggie: true },
   ],
   pasta: [
     { 
