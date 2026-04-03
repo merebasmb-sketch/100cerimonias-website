@@ -158,8 +158,8 @@ const menuData = {
     { name: "Camarão 100 Cerimónias", nameEn: "100 Cerimónias Shrimp", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
     { name: "Croquetes de Alheira", nameEn: "Alheira Croquettes", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
     { name: "Tacos de Xixinha", nameEn: "Xixinha Tacos", description: "Tacos com carne mexicana e maionese de sriracha", descriptionEn: "Tacos with mexican meat and sriracha mayonnaise", price: "14.50" },
-    { name: "Huevos Rotos com Trufa", nameEn: "Huevos Rotos with Truffle", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "18" },
-    { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "19" },
+    { name: "Huevos Rotos com Trufa", nameEn: "Huevos Rotos with Truffle", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "17" },
+    { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "18" },
   ],
   naBrasa: [
     { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
