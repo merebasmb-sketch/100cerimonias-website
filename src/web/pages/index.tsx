@@ -155,32 +155,33 @@ const translations = {
 // Menu data
 const menuData = {
   entradas: [
-    { name: "Camarão 100 Cerimónias", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
-    { name: "Croquetes de Alheira", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
-    { name: "Tacos de Xixinha", description: "Tacos com carne mexicana e maionese de sriracha", descriptionEn: "Tacos with mexican meat and sriracha mayonnaise", price: "14.50" },
-    { name: "Huevos Rotos com Trufa", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "18" },
-    { name: "Tártaro de Novilho", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "19" },
+    { name: "Camarão 100 Cerimónias", nameEn: "100 Cerimónias Shrimp", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
+    { name: "Croquetes de Alheira", nameEn: "Alheira Croquettes", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
+    { name: "Tacos de Xixinha", nameEn: "Xixinha Tacos", description: "Tacos com carne mexicana e maionese de sriracha", descriptionEn: "Tacos with mexican meat and sriracha mayonnaise", price: "14.50" },
+    { name: "Huevos Rotos com Trufa", nameEn: "Huevos Rotos with Truffle", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "18" },
+    { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "19" },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
-    { name: "Costeleta Vazia Baixa", description: "500g | 2 Pax | Maturação de 31 dias", descriptionEn: "500g | 2 Pax | 31-day aged", price: "59" },
+    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
+    { name: "Costeleta Vazia Baixa", nameEn: "Low Rib Sirloin", description: "500g | 2 Pax | Maturação de 31 dias", descriptionEn: "500g | 2 Pax | 31-day aged", price: "59" },
     { name: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture", price: "62" },
-    { name: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
+    { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
-    { name: "Costeletão Rúbia Gallega", description: "2kg | 4-6 Pax | Ideal para grupos | *Limitado ao stock existente", descriptionEn: "2kg | 4-6 Pax | Ideal for groups | *Limited to existing stock", price: "155" },
+    { name: "Costeletão Rúbia Gallega", nameEn: "Rubia Gallega Côte de Boeuf", description: "2kg | 4-6 Pax | Ideal para grupos | *Limitado ao stock existente", descriptionEn: "2kg | 4-6 Pax | Ideal for groups | *Limited to existing stock", price: "155" },
   ],
   acompanhamentos: [
-    { name: "Batata Frita Rústica", description: "", descriptionEn: "", price: "6", veggie: true },
-    { name: "Salada", description: "", descriptionEn: "", price: "6", veggie: true },
-    { name: "Legumes Grelhados com Redução de Vinho", description: "", descriptionEn: "Grilled vegetables with wine reduction", price: "6", veggie: true },
-    { name: "Arroz de Forno de Enchidos", description: "", descriptionEn: "", price: "6" },
-    { name: "Feijão com Enchidos", description: "", descriptionEn: "", price: "6" },
-    { name: "Puré Cremoso de Batata Trufada", description: "", descriptionEn: "", price: "7", veggie: true },
+    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "6", veggie: true },
+    { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "6", veggie: true },
+    { name: "Legumes Grelhados com Redução de Vinho", nameEn: "Grilled Vegetables with Wine Reduction", description: "", descriptionEn: "", price: "6", veggie: true },
+    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
+    { name: "Feijão com Enchidos", nameEn: "Beans with Sausage", description: "", descriptionEn: "", price: "6" },
+    { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "7", veggie: true },
   ],
   pasta: [
     { 
       name: "Tagliatelle do Bosque", 
+      nameEn: "Forest Tagliatelle",
       description: "Molho pesto com legumes", 
       descriptionEn: "Pesto sauce with vegetables", 
       price: "25", 
@@ -188,10 +189,10 @@ const menuData = {
     }
   ],
   sobremesas: [
-    { name: "Bola de Gelado 100 Cerimónias", description: "", descriptionEn: "", price: "5" },
-    { name: "Surpresa de Maracujá", description: "", descriptionEn: "", price: "12" },
-    { name: "Fondant de Doce de Leite", description: "E gelado de noz pecã e caramelo", descriptionEn: "With pecan and caramel ice cream", price: "13" },
-    { name: "Brownie de Chocolate", description: "E gelado de stracciatella", descriptionEn: "With stracciatella ice cream", price: "13" },
+    { name: "Bola de Gelado 100 Cerimónias", nameEn: "100 Cerimónias Ice Cream", description: "", descriptionEn: "", price: "5" },
+    { name: "Surpresa de Maracujá", nameEn: "Passion Fruit Surprise", description: "", descriptionEn: "", price: "12" },
+    { name: "Fondant de Doce de Leite", nameEn: "Dulce de Leche Fondant", description: "E gelado de noz pecã e caramelo", descriptionEn: "With pecan and caramel ice cream", price: "13" },
+    { name: "Brownie de Chocolate", nameEn: "Chocolate Brownie", description: "E gelado de stracciatella", descriptionEn: "With stracciatella ice cream", price: "13" },
   ],
   vinhos: {
     brancos: [
@@ -301,6 +302,7 @@ const atmosphereImages = [
 
 interface MenuItem {
   name: string;
+  nameEn?: string;
   description?: string;
   descriptionEn?: string;
   price: string;
@@ -322,7 +324,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="font-serif text-lg text-amber-50 group-hover:text-amber-400 transition-colors">
-            {item.name}
+            {lang === "en" && item.nameEn ? item.nameEn : item.name}
           </span>
           {item.weight && (
             <span className="text-amber-600 text-sm">({item.weight})</span>
