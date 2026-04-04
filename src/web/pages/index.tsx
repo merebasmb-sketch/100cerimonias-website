@@ -157,7 +157,7 @@ const menuData = {
   entradas: [
     { name: "Camarão 100 Cerimónias", nameEn: "100 Cerimónias Shrimp", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
     { name: "Croquetes de Alheira", nameEn: "Alheira Croquettes", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
-    { name: "Tacos de Xixinha", nameEn: "Xixinha Tacos", description: "Tacos com carne mexicana e maionese de sriracha", descriptionEn: "Tacos with mexican meat and sriracha mayonnaise", price: "14.50" },
+    { name: "Tomate Seco, Avelã e Salsa", nameEn: "Sun-dried Tomato, Hazelnut & Parsley", description: "Tosta de pão artesanal, tomate seco, avelã tostada, maionese de salsa e parmesão", descriptionEn: "Artisan bread toast, sun-dried tomato, toasted hazelnut, parsley mayonnaise and parmesan", price: "13.50" },
     { name: "Huevos Rotos com Trufa", nameEn: "Huevos Rotos with Truffle", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "17" },
     { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "18" },
   ],
