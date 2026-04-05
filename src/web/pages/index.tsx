@@ -167,7 +167,6 @@ const menuData = {
     { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
-    { name: "Costeletão Rúbia Gallega", nameEn: "Rubia Gallega Côte de Boeuf", description: "2kg | 4-6 Pax | Ideal para grupos | *Limitado ao stock existente", descriptionEn: "2kg | 4-6 Pax | Ideal for groups | *Limited to existing stock", price: "155" },
   ],
   acompanhamentos: [
     { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "6", veggie: true },
