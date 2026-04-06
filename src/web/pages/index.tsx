@@ -162,7 +162,7 @@ const menuData = {
     { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "18" },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e pouca gordura", descriptionEn: "250g | 1 Pax | Tender and low fat", price: "32" },
+    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e suculento", descriptionEn: "250g | 1 Pax | Tender and juicy", price: "32" },
     { name: "Costeleta Vazia Baixa", nameEn: "Low Rib Sirloin", description: "500g | 1-2 Pax | 31 dias de maturação", descriptionEn: "500g | 1-2 Pax | 31-day aged", price: "59" },
     { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
