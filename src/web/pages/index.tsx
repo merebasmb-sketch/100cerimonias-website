@@ -313,7 +313,7 @@ interface MenuItem {
 }
 
 const PersonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#C9A84C" stroke="none" className="inline w-3.5 h-3.5 translate-y-0.5">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#C9A84C" stroke="none" className="inline w-3.5 h-3.5 translate-y-px">
     <circle cx="12" cy="7" r="4" />
     <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
   </svg>
