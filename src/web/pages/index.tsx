@@ -162,8 +162,7 @@ const menuData = {
     { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "18" },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus 250g", nameEn: "Black Angus Sirloin 250g", description: "250g | 1 Pax | Tenro e suculento", descriptionEn: "250g | 1 Pax | Tender and juicy", price: "34" },
-    { name: "Vazia Black Angus 500g", nameEn: "Black Angus Sirloin 500g", description: "500g | 1-2 Pax | Tenro e suculento", descriptionEn: "500g | 1-2 Pax | Tender and juicy", price: "66" },
+    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "Tenro e suculento", descriptionEn: "Tender and juicy", price: "34", prices: [{ label: "250g | 1 Pax", labelEn: "250g | 1 Pax", price: "34" }, { label: "500g | 1-2 Pax", labelEn: "500g | 1-2 Pax", price: "66" }] },
     { name: "Costeleta Vazia Baixa", nameEn: "Low Rib Sirloin", description: "500g | 1-2 Pax | 31 dias de maturação", descriptionEn: "500g | 1-2 Pax | 31-day aged", price: "59" },
     { name: "Ribeye Premium", nameEn: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture", price: "64" },
     { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
@@ -306,6 +305,7 @@ interface MenuItem {
   description?: string;
   descriptionEn?: string;
   price: string;
+  prices?: { label: string; labelEn?: string; price: string }[];
   weight?: string;
   signature?: boolean;
   bestseller?: boolean;
@@ -351,9 +351,22 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
           </p>
         )}
       </div>
-      <span className="font-serif text-xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">
-        €{item.price}
-      </span>
+      <div className="text-right">
+        {item.prices ? (
+          <div className="flex flex-col gap-1 items-end">
+            {item.prices.map((p, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className="text-amber-200/50 text-xs">{lang === "en" && p.labelEn ? p.labelEn : p.label}</span>
+                <span className="font-serif text-lg text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">€{p.price}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <span className="font-serif text-xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">
+            €{item.price}
+          </span>
+        )}
+      </div>
     </div>
   </div>
 );
