@@ -313,7 +313,7 @@ interface MenuItem {
 }
 
 const PersonIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline w-3.5 h-3.5 mb-0.5">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline w-3.5 h-3.5 mb-0.5">
     <circle cx="12" cy="7" r="4" />
     <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
   </svg>
@@ -333,12 +333,11 @@ const RenderDescription = ({ text }: { text: string }) => {
         const match = part.match(/__PAX__(\d+(?:-\d+)?)__/);
         if (match) {
           const num = match[1];
-          const icons = num.includes("-") ? (
-            <>{num.split("-").map((_, j) => <PersonIcon key={j} />)}</>
-          ) : (
-            <>{Array.from({ length: parseInt(num) }).map((_, j) => <PersonIcon key={j} />)}</>
+          return (
+            <span key={i} className="inline-flex items-center gap-0.5">
+              {num}<PersonIcon />
+            </span>
           );
-          return <span key={i} className="inline-flex items-center gap-0.5">{icons}</span>;
         }
         return <span key={i}>{part}</span>;
       })}
