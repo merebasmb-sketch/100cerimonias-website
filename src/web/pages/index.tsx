@@ -351,7 +351,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
       isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
     }`}
   >
-    <div className="flex justify-between items-start gap-4">
+    <div className="flex justify-between items-center gap-4">
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="font-serif text-xl text-amber-50 group-hover:text-amber-400 transition-colors">
