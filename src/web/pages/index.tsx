@@ -312,7 +312,38 @@ interface MenuItem {
   veggie?: boolean;
 }
 
-type Language = "pt" | "en";
+const PersonIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline w-3.5 h-3.5 mb-0.5">
+    <circle cx="12" cy="7" r="4" />
+    <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+  </svg>
+);
+
+const formatPax = (text: string) => {
+  // Substitui "1 Pax", "2 Pax", "1-2 Pax", "2-3 Pax", "4-6 Pax" por ícones
+  return text.replace(/(\d(?:-\d)?) Pax/g, (_, n) => `__PAX__${n}__`);
+};
+
+const RenderDescription = ({ text }: { text: string }) => {
+  const parts = text.split(/(__PAX__\d(?:-\d)?__)/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/__PAX__(\d(?:-\d)?)__/);
+        if (match) {
+          const num = match[1];
+          const icons = num.includes("-") ? (
+            <>{num.split("-").map((_, j) => <PersonIcon key={j} />)}</>
+          ) : (
+            <>{Array.from({ length: parseInt(num) }).map((_, j) => <PersonIcon key={j} />)}</>
+          );
+          return <span key={i} className="inline-flex items-center gap-0.5">{icons}</span>;
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </>
+  );
+};
 
 const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language; isVisible: boolean }) => (
   <div 
@@ -347,7 +378,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
         </div>
         {(item.description || item.descriptionEn) && (
           <p className="text-amber-200/60 text-sm mt-1">
-            {lang === "pt" ? item.description : item.descriptionEn}
+            <RenderDescription text={lang === "pt" ? item.description ?? "" : item.descriptionEn ?? ""} />
           </p>
         )}
       </div>
@@ -356,7 +387,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
           <div className="flex flex-col gap-1 items-end">
             {item.prices.map((p, i) => (
               <div key={i} className="flex items-center gap-2">
-                <span className="text-amber-200/50 text-sm">{lang === "en" && p.labelEn ? p.labelEn : p.label}</span>
+                <span className="text-amber-200/50 text-sm"><RenderDescription text={lang === "en" && p.labelEn ? p.labelEn : p.label} /></span>
                 <span className="font-serif text-xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">€{p.price}</span>
               </div>
             ))}
