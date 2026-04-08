@@ -354,7 +354,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
     <div className="flex justify-between items-start gap-4">
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="font-serif text-lg text-amber-50 group-hover:text-amber-400 transition-colors">
+          <span className="font-serif text-xl text-amber-50 group-hover:text-amber-400 transition-colors">
             {lang === "en" && item.nameEn ? item.nameEn : item.name}
           </span>
           {item.weight && (
@@ -377,7 +377,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
           )}
         </div>
         {(item.description || item.descriptionEn) && (
-          <p className="text-amber-200/60 text-sm mt-1">
+          <p className="text-amber-200/60 text-base mt-1">
             <RenderDescription text={lang === "pt" ? item.description ?? "" : item.descriptionEn ?? ""} />
           </p>
         )}
@@ -387,13 +387,13 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
           <div className="flex flex-col gap-1 items-end">
             {item.prices.map((p, i) => (
               <div key={i} className="flex items-center gap-2">
-                <span className="text-amber-200/50 text-sm"><RenderDescription text={lang === "en" && p.labelEn ? p.labelEn : p.label} /></span>
-                <span className="font-serif text-xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">€{p.price}</span>
+                <span className="text-amber-200/50 text-base"><RenderDescription text={lang === "en" && p.labelEn ? p.labelEn : p.label} /></span>
+                <span className="font-serif text-2xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">€{p.price}</span>
               </div>
             ))}
           </div>
         ) : (
-          <span className="font-serif text-xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">
+          <span className="font-serif text-2xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">
             €{item.price}
           </span>
         )}
