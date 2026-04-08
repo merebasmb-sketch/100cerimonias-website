@@ -164,6 +164,7 @@ const menuData = {
   naBrasa: [
     { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e suculento", descriptionEn: "250g | 1 Pax | Tender and juicy", price: "32" },
     { name: "Costeleta Vazia Baixa", nameEn: "Low Rib Sirloin", description: "500g | 1-2 Pax | 31 dias de maturação", descriptionEn: "500g | 1-2 Pax | 31-day aged", price: "59" },
+    { name: "Ribeye Premium", nameEn: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture", price: "62" },
     { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
     { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
@@ -174,6 +175,7 @@ const menuData = {
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
     { name: "Feijão com Enchidos", nameEn: "Beans with Sausage", description: "", descriptionEn: "", price: "6" },
     { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "7", veggie: true },
+    { name: "Legumes Grelhados com Redução de Vinho", nameEn: "Grilled Vegetables with Wine Reduction", description: "", descriptionEn: "", price: "6", veggie: true },
   ],
   pasta: [
     { 
