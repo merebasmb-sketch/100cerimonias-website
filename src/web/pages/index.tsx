@@ -325,11 +325,12 @@ const formatPax = (text: string) => {
 };
 
 const RenderDescription = ({ text }: { text: string }) => {
-  const parts = text.split(/(__PAX__\d(?:-\d)?__)/g);
+  const processed = text.replace(/(\d+(?:-\d+)?) Pax/g, (_, n) => `__PAX__${n}__`);
+  const parts = processed.split(/(__PAX__\d+(?:-\d+)?__)/g);
   return (
     <>
       {parts.map((part, i) => {
-        const match = part.match(/__PAX__(\d(?:-\d)?)__/);
+        const match = part.match(/__PAX__(\d+(?:-\d+)?)__/);
         if (match) {
           const num = match[1];
           const icons = num.includes("-") ? (
