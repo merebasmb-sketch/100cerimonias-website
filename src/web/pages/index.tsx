@@ -162,11 +162,11 @@ const menuData = {
     { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "18" },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e suculento", descriptionEn: "250g | 1 Pax | Tender and juicy", price: "32" },
+    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "250g | 1 Pax | Tenro e suculento | Também disponível 500g por €66", descriptionEn: "250g | 1 Pax | Tender and juicy | Also available 500g for €66", price: "34" },
     { name: "Costeleta Vazia Baixa", nameEn: "Low Rib Sirloin", description: "500g | 1-2 Pax | 31 dias de maturação", descriptionEn: "500g | 1-2 Pax | 31-day aged", price: "59" },
-    { name: "Ribeye Premium", nameEn: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture", price: "62" },
+    { name: "Ribeye Premium", nameEn: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture", price: "64" },
     { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
-    { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "85" },
+    { name: "T-Bone", description: "1kg | 2-3 Pax | Vazia e lombo com osso", descriptionEn: "1kg | 2-3 Pax | Sirloin and tenderloin with bone", price: "86" },
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
   ],
   acompanhamentos: [
