@@ -277,7 +277,6 @@ const menuData = {
     sangrias: [
       { name: "Sangria de Maracujá", nameEn: "Passion Fruit Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
       { name: "Sangria de Frutos Vermelhos", nameEn: "Red Fruits Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
-      { name: "Sangria de Maçã", nameEn: "Apple Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
       { name: "Sangria Mojito", nameEn: "Mojito Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
     ],
     cocktailsAssinatura: [
