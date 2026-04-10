@@ -207,7 +207,6 @@ const menuData = {
       { name: "Quinta da Lapa Pinot Noir Reserva", region: "Tejo", price: "28" },
       { name: "Quinta da Lapa Reserva Cabernet Sauvignon", region: "Tejo", price: "28" },
       { name: "Quinta do Paral", region: "Alentejo", price: "32" },
-      { name: "Vallado (2024)", region: "Douro", price: "28" },
     ],
     rose: [
       { name: "Quinta do Paral", price: "25" },
