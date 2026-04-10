@@ -175,7 +175,7 @@ const menuData = {
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
     { name: "Feijão com Enchidos", nameEn: "Beans with Sausage", description: "", descriptionEn: "", price: "6" },
     { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "7", veggie: true },
-    { name: "Legumes Grelhados com Redução de Vinho", nameEn: "Grilled Vegetables with Wine Reduction", description: "", descriptionEn: "", price: "6", veggie: true },
+    { name: "Legumes Grelhados com Redução de Vinho", nameEn: "Grilled Vegetables with Wine Reduction", description: "Vinho do Porto", descriptionEn: "Port Wine", price: "6", veggie: true },
   ],
   pasta: [
     { 
@@ -1191,7 +1191,7 @@ function Index() {
                 </CollapsibleDrinkSection>
 
                 {/* Mocktails */}
-                <CollapsibleDrinkSection title={`${t.menu.categories.mocktails} • €7`} icon={<JuiceIcon />}>
+                <CollapsibleDrinkSection title={t.menu.categories.mocktails} icon={<JuiceIcon />}>
                   {menuData.bebidas.mocktails.map((item, i) => (
                     <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
                   ))}
