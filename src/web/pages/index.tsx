@@ -171,8 +171,8 @@ const menuData = {
   ],
   acompanhamentos: [
     { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "6", veggie: true },
-    { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "6", veggie: true },
-    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
+    { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "4.50", veggie: true },
+    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "5.50" },
     { name: "Feijão com Enchidos", nameEn: "Beans with Sausage", description: "", descriptionEn: "", price: "6" },
     { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "7", veggie: true },
     { name: "Legumes Grelhados com Redução de Vinho", nameEn: "Grilled Vegetables with Wine Reduction", description: "Vinho do Porto", descriptionEn: "Port Wine", price: "6", veggie: true },
