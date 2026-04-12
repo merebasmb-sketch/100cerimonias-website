@@ -201,7 +201,6 @@ const menuData = {
     ],
     tintos: [
       { name: "ZIP Unoaked", region: "Douro", price: "20" },
-      { name: "Vale da Aldeia", region: "Douro", price: "26" },
       { name: "Look's Grande Reserva", region: "Douro", price: "60" },
       { name: "Quinta da Lapa Pinot Noir Reserva", region: "Tejo", price: "28" },
       { name: "Quinta da Lapa Reserva Cabernet Sauvignon", region: "Tejo", price: "28" },
