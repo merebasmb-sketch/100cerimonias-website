@@ -206,10 +206,10 @@ const menuData = {
         regiao: "Douro",
         regiaoEn: "Douro",
         vinhosData: [
-          { name: "Dote Simplesmente Batonnage", tipo: "Branco", tipoEn: "White", price: "22" },
-          { name: "Quinta Vale D'Aldeia Grande", tipo: "Branco", tipoEn: "White", price: "45" },
           { name: "ZIP Unoaked", tipo: "Branco", tipoEn: "White", price: "20" },
           { name: "ZIP Unoaked", tipo: "Tinto", tipoEn: "Red", price: "20" },
+          { name: "Dote Simplesmente Batonnage", tipo: "Branco", tipoEn: "White", price: "22" },
+          { name: "Quinta Vale D'Aldeia Grande", tipo: "Branco", tipoEn: "White", price: "45" },
           { name: "Look's Grande Reserva", tipo: "Tinto", tipoEn: "Red", price: "60" },
         ]
       },
@@ -225,8 +225,8 @@ const menuData = {
         regiao: "Alentejo",
         regiaoEn: "Alentejo",
         vinhosData: [
-          { name: "Quinta do Paral", tipo: "Tinto", tipoEn: "Red", price: "32" },
           { name: "Quinta do Paral", tipo: "Rosé", tipoEn: "Rosé", price: "25" },
+          { name: "Quinta do Paral", tipo: "Tinto", tipoEn: "Red", price: "32" },
         ]
       },
       {
