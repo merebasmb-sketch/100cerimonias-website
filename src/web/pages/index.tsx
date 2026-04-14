@@ -208,6 +208,7 @@ const menuData = {
         vinhosData: [
           { name: "Dote Simplesmente Batonnage", tipo: "Branco", tipoEn: "White", price: "22" },
           { name: "Quinta Vale D'Aldeia Grande", tipo: "Branco", tipoEn: "White", price: "45" },
+          { name: "ZIP Unoaked", tipo: "Branco", tipoEn: "White", price: "20" },
           { name: "ZIP Unoaked", tipo: "Tinto", tipoEn: "Red", price: "20" },
           { name: "Look's Grande Reserva", tipo: "Tinto", tipoEn: "Red", price: "60" },
         ]
