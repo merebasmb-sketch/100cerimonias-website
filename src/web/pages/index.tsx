@@ -312,9 +312,9 @@ const menuData = {
       { name: "Ginger Beer", price: "3,50" },
     ],
     sangrias: [
-      { name: "Sangria de Maracujá", nameEn: "Passion Fruit Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
+      { name: "Sangria de Maracujá", nameEn: "Passion Fruit Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "37" },
       { name: "Sangria de Frutos Vermelhos", nameEn: "Red Fruits Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
-      { name: "Sangria Mojito", nameEn: "Mojito Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "35" },
+      { name: "Sangria Mojito", nameEn: "Mojito Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "33" },
     ],
     cocktailsAssinatura: [
       { name: "Lick My Peach", description: "Vodka, licor de laranja, citrinos, pêssego, clara de ovo", descriptionEn: "Vodka, orange liqueur, citrus, peach, egg white", price: "12" },
