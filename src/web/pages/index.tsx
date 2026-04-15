@@ -257,16 +257,6 @@ const menuData = {
       { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
     ],
   },
-    brancos: [],
-    tintos: [],
-    rose: [],
-    espumante: [],
-    copo: [
-      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
-      { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
-      { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
-    ],
-  },
   bebidas: {
     destilados: {
       vodka: [
