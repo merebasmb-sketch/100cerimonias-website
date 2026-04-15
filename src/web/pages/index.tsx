@@ -285,10 +285,7 @@ const menuData = {
         { name: "Jack Daniel's Single Barrel", price: "12" },
         { name: "Cutty Sark Discovery 18", price: "13" },
       ],
-      cognac: [
-        { name: "Hubert Rocheeboit Fine", price: "10" },
-        { name: "Courvoisier VSOP", price: "23" },
-      ],
+      cognac: [],
       vermouth: [
         { name: "Martini Special Rubino", price: "8" },
         { name: "Martini Special Ambrato", price: "8" },
@@ -1227,12 +1224,14 @@ function Index() {
                       ))}
                     </div>
                     {/* Cognac */}
+                    {menuData.bebidas.destilados.cognac.length > 0 && (
                     <div>
                       <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.cognac}</h4>
                       {menuData.bebidas.destilados.cognac.map((item, i) => (
                         <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                       ))}
                     </div>
+                    )}
                     {/* Vermouth */}
                     <div>
                       <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.vermouth}</h4>
