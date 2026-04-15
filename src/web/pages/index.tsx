@@ -320,7 +320,7 @@ const menuData = {
       { name: "Lick My Peach", description: "Vodka, licor de laranja, citrinos, pêssego, clara de ovo", descriptionEn: "Vodka, orange liqueur, citrus, peach, egg white", price: "12" },
       { name: "Special Mojito", description: "Vinho do Porto branco, tangerina, ginger ale, citrinos, hortelã", descriptionEn: "White Port wine, tangerine, ginger ale, citrus, mint", price: "12" },
       { name: "Cerimónias Mule", description: "Vodka, ginger beer, citrinos, espuma de gengibre", descriptionEn: "Vodka, ginger beer, citrus, ginger foam", price: "12" },
-      { name: "Afrodite", description: "Vodka, licor de laranja, maracujá, framboesa, citrinos, clara de ovo", descriptionEn: "Vodka, orange liqueur, passion fruit, raspberry, citrus, egg white", price: "12" },
+      { name: "New York Sour", description: "Whiskey, limão, vinho tinto", descriptionEn: "Whiskey, lemon, red wine", price: "12" },
     ],
     mocktails: [
       { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "7" },
