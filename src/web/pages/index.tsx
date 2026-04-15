@@ -255,6 +255,7 @@ const menuData = {
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
       { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
       { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
+      { name: "Quinta do Paral", region: "Rosé Alentejo", price: "6" },
     ],
   },
   bebidas: {
