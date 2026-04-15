@@ -278,12 +278,10 @@ const menuData = {
         { name: "Monkey 47", price: "15" },
       ],
       whisky: [
-        { name: "Dewar's 8", price: "8" },
         { name: "Johnnie Walker Red Label", price: "8" },
         { name: "Jack Daniel's Apple", price: "10" },
         { name: "Jack Daniel's Honey", price: "10" },
         { name: "Jack Daniel's Tennessee", price: "10" },
-        { name: "Dewar's 21", price: "12" },
         { name: "Jack Daniel's Single Barrel", price: "12" },
         { name: "Cutty Sark Discovery 18", price: "13" },
       ],
