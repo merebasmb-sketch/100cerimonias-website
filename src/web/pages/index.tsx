@@ -210,7 +210,6 @@ const menuData = {
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "ZIP Unoaked", price: "20" },
             { name: "Dote Simplesmente Batonnage", price: "22" },
-            { name: "Quinta Vale D'Aldeia Grande", price: "45" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "ZIP Unoaked", price: "20" },
@@ -240,6 +239,9 @@ const menuData = {
       {
         regiao: "Bairrada", regiaoEn: "Bairrada",
         tipos: [
+          { tipo: "Branco", tipoEn: "White", vinhosData: [
+            { name: "Quinta da Lagoa Velha", price: "45" },
+          ]},
           { tipo: "Espumante", tipoEn: "Sparkling", vinhosData: [
             { name: "Lagoa Velha", price: "22" },
           ]},
