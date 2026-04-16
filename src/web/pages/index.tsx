@@ -213,6 +213,7 @@ const menuData = {
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "ZIP Unoaked", price: "20" },
+            { name: "Grous", price: "37" },
             { name: "Look's Grande Reserva", price: "60" },
           ]},
         ]
