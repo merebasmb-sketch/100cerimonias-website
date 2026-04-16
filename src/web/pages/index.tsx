@@ -214,7 +214,6 @@ const menuData = {
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Chryseia", price: "118" },
             { name: "Look's Grande Reserva", price: "60" },
-            { name: "Grous", price: "37" },
             { name: "Solar dos Dragos Colheita", price: "24" },
             { name: "ZIP Unoaked", price: "20" },
           ]},
@@ -235,6 +234,7 @@ const menuData = {
             { name: "Esporão Reserva", price: "40" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
+            { name: "Grous", price: "37" },
             { name: "Quinta do Paral", price: "32" },
           ]},
           { tipo: "Rosé", tipoEn: "Rosé", vinhosData: [
