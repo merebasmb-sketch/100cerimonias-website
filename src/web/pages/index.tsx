@@ -199,8 +199,8 @@ const menuData = {
         regiao: "Vinho Verde", regiaoEn: "Vinho Verde",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Vale do Homem Arinto", price: "20" },
             { name: "Contacto Alvarinho", price: "28" },
+            { name: "Vale do Homem Arinto", price: "20" },
           ]},
         ]
       },
@@ -208,15 +208,15 @@ const menuData = {
         regiao: "Douro", regiaoEn: "Douro",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "ZIP Unoaked", price: "20" },
             { name: "Dote Simplesmente Batonnage", price: "22" },
+            { name: "ZIP Unoaked", price: "20" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "ZIP Unoaked", price: "20" },
-            { name: "Solar dos Dragos Colheita", price: "24" },
-            { name: "Grous", price: "37" },
-            { name: "Look's Grande Reserva", price: "60" },
             { name: "Chryseia", price: "118" },
+            { name: "Look's Grande Reserva", price: "60" },
+            { name: "Grous", price: "37" },
+            { name: "Solar dos Dragos Colheita", price: "24" },
+            { name: "ZIP Unoaked", price: "20" },
           ]},
         ]
       },
@@ -234,11 +234,11 @@ const menuData = {
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "Esporão Reserva", price: "40" },
           ]},
-          { tipo: "Rosé", tipoEn: "Rosé", vinhosData: [
-            { name: "Quinta do Paral", price: "25" },
-          ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Quinta do Paral", price: "32" },
+          ]},
+          { tipo: "Rosé", tipoEn: "Rosé", vinhosData: [
+            { name: "Quinta do Paral", price: "25" },
           ]},
         ]
       },
@@ -283,25 +283,25 @@ const menuData = {
         { name: "Cîroc", price: "10" },
       ],
       rum: [
-        { name: "Bacardi Carta Blanca", price: "8" },
         { name: "Bacardi 8", price: "12" },
+        { name: "Bacardi Carta Blanca", price: "8" },
       ],
       gin: [
+        { name: "Monkey 47", price: "15" },
+        { name: "Bombay Premier Cru", price: "13" },
+        { name: "Hendrick's", price: "12" },
+        { name: "Bulldog", price: "11" },
         { name: "Bombay Sapphire", price: "10" },
         { name: "Bombay Pressé", price: "10" },
         { name: "Bombay Bramble", price: "10" },
-        { name: "Bulldog", price: "11" },
-        { name: "Hendrick's", price: "12" },
-        { name: "Bombay Premier Cru", price: "13" },
-        { name: "Monkey 47", price: "15" },
       ],
       whisky: [
-        { name: "Johnnie Walker Red Label", price: "8" },
+        { name: "Cutty Sark Discovery 18", price: "13" },
+        { name: "Jack Daniel's Single Barrel", price: "12" },
         { name: "Jack Daniel's Apple", price: "10" },
         { name: "Jack Daniel's Honey", price: "10" },
         { name: "Jack Daniel's Tennessee", price: "10" },
-        { name: "Jack Daniel's Single Barrel", price: "12" },
-        { name: "Cutty Sark Discovery 18", price: "13" },
+        { name: "Johnnie Walker Red Label", price: "8" },
       ],
       cognac: [],
       vermouth: [
@@ -313,9 +313,9 @@ const menuData = {
       ],
     },
     cervejas: [
-      { name: "Stella Artois", price: "3,50" },
       { name: "Leffe Blond", price: "5,50" },
       { name: "Franziskaner", price: "5,50" },
+      { name: "Stella Artois", price: "3,50" },
     ],
     refrigerantes: [
       { name: "Coca Cola", price: "3,50" },
@@ -330,10 +330,10 @@ const menuData = {
       { name: "Sangria Mojito", nameEn: "Mojito Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "33" },
     ],
     cocktailsAssinatura: [
+      { name: "New York Sour", description: "Whiskey, limão, vinho tinto", descriptionEn: "Whiskey, lemon, red wine", price: "14" },
+      { name: "Cerimónias Mule", description: "Vodka, ginger beer, citrinos, espuma de gengibre", descriptionEn: "Vodka, ginger beer, citrus, ginger foam", price: "13" },
       { name: "Lick My Peach", description: "Vodka, licor de laranja, citrinos, pêssego, clara de ovo", descriptionEn: "Vodka, orange liqueur, citrus, peach, egg white", price: "12" },
       { name: "Special Mojito", description: "Vinho do Porto branco, tangerina, ginger ale, citrinos, hortelã", descriptionEn: "White Port wine, tangerine, ginger ale, citrus, mint", price: "12" },
-      { name: "Cerimónias Mule", description: "Vodka, ginger beer, citrinos, espuma de gengibre", descriptionEn: "Vodka, ginger beer, citrus, ginger foam", price: "13" },
-      { name: "New York Sour", description: "Whiskey, limão, vinho tinto", descriptionEn: "Whiskey, lemon, red wine", price: "14" },
     ],
     mocktails: [
       { name: "Raspberry Fizz", description: "Menta fresca, framboesa, sumo de limão e ginger-ale", descriptionEn: "Fresh mint, raspberry, lemon juice and ginger-ale", price: "7" },
