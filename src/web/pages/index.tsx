@@ -229,6 +229,9 @@ const menuData = {
       {
         regiao: "Alentejo", regiaoEn: "Alentejo",
         tipos: [
+          { tipo: "Branco", tipoEn: "White", vinhosData: [
+            { name: "Esporão Reserva", price: "40" },
+          ]},
           { tipo: "Rosé", tipoEn: "Rosé", vinhosData: [
             { name: "Quinta do Paral", price: "25" },
           ]},
