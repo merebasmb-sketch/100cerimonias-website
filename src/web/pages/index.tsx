@@ -216,6 +216,7 @@ const menuData = {
             { name: "Solar dos Dragos Colheita", price: "24" },
             { name: "Grous", price: "37" },
             { name: "Look's Grande Reserva", price: "60" },
+            { name: "Chryseia", price: "118" },
           ]},
         ]
       },
