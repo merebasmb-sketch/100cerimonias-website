@@ -246,7 +246,7 @@ const menuData = {
         regiao: "Dão", regiaoEn: "Dão",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Cruzado", price: "36" },
+            { name: "Encruzado", price: "36" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Casa Mouraz", price: "27" },
