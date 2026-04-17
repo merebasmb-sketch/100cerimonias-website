@@ -212,7 +212,6 @@ const menuData = {
             { name: "ZIP Unoaked", price: "20" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "Chryseia", price: "118" },
             { name: "Look's Grande Reserva", price: "60" },
             { name: "Solar dos Dragos Colheita", price: "24" },
             { name: "ZIP Unoaked", price: "20" },
