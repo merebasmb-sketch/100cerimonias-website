@@ -191,7 +191,7 @@ const menuData = {
     { name: "Bola de Gelado 100 Cerimónias", nameEn: "100 Cerimónias Ice Cream", description: "", descriptionEn: "", price: "5" },
     { name: "Surpresa de Maracujá", nameEn: "Passion Fruit Surprise", description: "", descriptionEn: "", price: "12" },
     { name: "Livin' on Caramel", nameEn: "Livin' on Caramel", description: "Fondant de doce de leite, gelado de noz pecã e caramelo toffee", descriptionEn: "Dulce de leche fondant, pecan ice cream and toffee caramel", price: "13" },
-    { name: "Brownie de Chocolate e Frutos Secos", nameEn: "Chocolate and Nut Brownie", description: "E gelado de stracciatella", descriptionEn: "With stracciatella ice cream", price: "13" },
+    { name: "Nothing Else Matters (Chocolate Edition)", nameEn: "Nothing Else Matters (Chocolate Edition)", description: "Brownie de chocolate negro e frutos secos, gelado de stracciatella", descriptionEn: "Dark chocolate and nut brownie, stracciatella ice cream", price: "13" },
   ],
   vinhos: {
     regioes: [
