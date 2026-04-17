@@ -233,6 +233,7 @@ const menuData = {
             { name: "Esporão Reserva", price: "40" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
+            { name: "Cartuxa", price: "47" },
             { name: "Grous", price: "37" },
             { name: "Quinta do Paral", price: "32" },
           ]},
