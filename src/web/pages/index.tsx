@@ -430,7 +430,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
             </span>
           )}
           {item.isNew && (
-            <span className="text-[10px] uppercase tracking-widest bg-sky-500 text-white px-2 py-0.5 font-medium">
+            <span className="text-[10px] uppercase tracking-widest bg-orange-500 text-white px-2 py-0.5 font-medium">
               New
             </span>
           )}
