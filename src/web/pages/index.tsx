@@ -191,7 +191,7 @@ const menuData = {
     { name: "Here Comes the Sun", nameEn: "Here Comes the Sun", description: "Maracujá do Brasil, merengue e sorvete de manga", descriptionEn: "Brazilian passion fruit, meringue and mango sorbet", price: "12" },
     { name: "Livin' on Caramel", nameEn: "Livin' on Caramel", description: "Fondant de doce de leite, gelado de noz pecã, caramelo e toffee", descriptionEn: "Dulce de leche fondant, pecan ice cream, caramel and toffee", price: "13" },
     { name: "Nothing Else Matters (Chocolate Edition)", nameEn: "Nothing Else Matters (Chocolate Edition)", description: "Brownie de chocolate negro e frutos secos, gelado de stracciatella", descriptionEn: "Dark chocolate and nut brownie, stracciatella ice cream", price: "12" },
-    { name: "Digging the Dancing Queen", nameEn: "Digging the Dancing Queen", description: "Pudim abade de priscos, gel de limão e tuille de baunilha", descriptionEn: "Abade de Priscos pudding, lemon gel and vanilla tuille", price: "13" },
+    { name: "Digging the Dancing Queen", nameEn: "Digging the Dancing Queen", description: "Pudim abade de priscos, gel de limão e tuille de baunilha", descriptionEn: "Abade de Priscos pudding, lemon gel and vanilla tuille", price: "13", isNew: true },
   ],
   vinhos: {
     regioes: [
@@ -222,6 +222,7 @@ const menuData = {
         regiao: "Tejo", regiaoEn: "Tejo",
         tipos: [
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
+            { name: "Quinta da Lapa Pinot Noir Reserva", price: "28" },
             { name: "Quinta da Lapa Reserva Cabernet Sauvignon", price: "28" },
           ]},
         ]
@@ -362,6 +363,7 @@ interface MenuItem {
   signature?: boolean;
   bestseller?: boolean;
   veggie?: boolean;
+  isNew?: boolean;
 }
 
 const PersonIcon = () => (
@@ -425,6 +427,11 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
           {item.veggie && (
             <span className="text-[10px] uppercase tracking-widest bg-emerald-600 text-white px-2 py-0.5 font-medium">
               Veggie
+            </span>
+          )}
+          {item.isNew && (
+            <span className="text-[10px] uppercase tracking-widest bg-sky-500 text-white px-2 py-0.5 font-medium">
+              New
             </span>
           )}
         </div>
