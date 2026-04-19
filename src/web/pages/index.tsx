@@ -299,7 +299,9 @@ const menuData = {
         { name: "Bombay", price: "9" },
       ],
       whisky: [
+        { name: "James Martini 30 anos", price: "60" },
         { name: "Cutty Sark 50 anos", price: "50" },
+        { name: "Martin's Fine & Rare 20 anos", price: "45" },
         { name: "J&B 15 anos", price: "14" },
         { name: "Cutty Sark 18 anos", price: "13" },
         { name: "Ballantine's 12 anos", price: "13" },
@@ -324,10 +326,7 @@ const menuData = {
         { name: "Patrón", price: "13" },
         { name: "José Cuervo", price: "8" },
       ],
-      raridades: [
-        { name: "James Martini 30 anos", price: "60" },
-        { name: "Martin's Fine & Rare 20 anos", price: "45" },
-      ],
+      raridades: [],
     },
     cervejas: [
       { name: "Leffe Blond", price: "5,50" },
@@ -1287,13 +1286,14 @@ function Index() {
                         <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                       ))}
                     </div>
-                    {/* Raridades */}
+                    {menuData.bebidas.destilados.raridades.length > 0 && (
                     <div>
                       <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.raridades}</h4>
                       {menuData.bebidas.destilados.raridades.map((item, i) => (
                         <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                       ))}
                     </div>
+                    )}
                   </div>
                 </CollapsibleDrinkSection>
 
