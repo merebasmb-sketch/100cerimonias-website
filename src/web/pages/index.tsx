@@ -68,6 +68,7 @@ const translations = {
         cognac: "CONHAQUE",
         vermouth: "VERMUTES",
         tequila: "TEQUILA",
+        raridades: "RARIDADES",
       },
       vatNote: "Todos os preços incluem IVA à taxa legal em vigor",
     },
@@ -133,6 +134,7 @@ const translations = {
         cognac: "COGNAC",
         vermouth: "VERMOUTH",
         tequila: "TEQUILA",
+        raridades: "RARITIES",
       },
       vatNote: "All prices include VAT",
     },
@@ -279,37 +281,52 @@ const menuData = {
   bebidas: {
     destilados: {
       vodka: [
-        { name: "Grey Goose", price: "10" },
-        { name: "Cîroc", price: "10" },
+        { name: "Grey Goose", price: "15" },
+        { name: "Cîroc", price: "13" },
+        { name: "Sipsmith Vodka", price: "9" },
       ],
       rum: [
         { name: "Bacardi 8", price: "12" },
         { name: "Bacardi Carta Blanca", price: "8" },
       ],
       gin: [
-        { name: "Monkey 47", price: "15" },
-        { name: "Bombay Premier Cru", price: "13" },
-        { name: "Hendrick's", price: "12" },
+        { name: "Monkey 47", price: "18" },
+        { name: "Hendrick's", price: "13" },
+        { name: "Bombay Bramble", price: "12" },
+        { name: "Bombay Pressé", price: "12" },
         { name: "Bulldog", price: "11" },
-        { name: "Bombay Sapphire", price: "10" },
-        { name: "Bombay Pressé", price: "10" },
-        { name: "Bombay Bramble", price: "10" },
+        { name: "Bombay Sapphire", price: "11" },
+        { name: "Bombay", price: "9" },
       ],
       whisky: [
-        { name: "Cutty Sark Discovery 18", price: "13" },
-        { name: "Jack Daniel's Single Barrel", price: "12" },
-        { name: "Jack Daniel's Apple", price: "10" },
-        { name: "Jack Daniel's Honey", price: "10" },
-        { name: "Jack Daniel's Tennessee", price: "10" },
-        { name: "Johnnie Walker Red Label", price: "8" },
+        { name: "Cutty Sark 50 anos", price: "50" },
+        { name: "J&B 15 anos", price: "14" },
+        { name: "Cutty Sark 18 anos", price: "13" },
+        { name: "Ballantine's 12 anos", price: "13" },
+        { name: "Chivas Regal 12 anos", price: "13" },
+        { name: "Jack Daniel's Apple", price: "12" },
+        { name: "Jack Daniel's Fire", price: "12" },
+        { name: "Grant's 12 anos", price: "11" },
+        { name: "Jack Daniel's", price: "11" },
+        { name: "Jameson", price: "9" },
+        { name: "Johnnie Walker Red Label", price: "9" },
+        { name: "Grant's", price: "8" },
       ],
-      cognac: [],
+      cognac: [
+        { name: "Hennessy", price: "25" },
+      ],
       vermouth: [
         { name: "Martini Special Rubino", price: "8" },
         { name: "Martini Special Ambrato", price: "8" },
       ],
       tequila: [
-        { name: "Patrón Silver", price: "10" },
+        { name: "Casa Maestri 1965", price: "15" },
+        { name: "Patrón", price: "13" },
+        { name: "José Cuervo", price: "8" },
+      ],
+      raridades: [
+        { name: "James Martini 30 anos", price: "60" },
+        { name: "Martin's Fine & Rare 20 anos", price: "45" },
       ],
     },
     cervejas: [
@@ -1267,6 +1284,13 @@ function Index() {
                     <div>
                       <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.tequila}</h4>
                       {menuData.bebidas.destilados.tequila.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Raridades */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.raridades}</h4>
+                      {menuData.bebidas.destilados.raridades.map((item, i) => (
                         <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                       ))}
                     </div>
