@@ -67,6 +67,7 @@ const translations = {
         whisky: "WHISKY",
         cognac: "CONHAQUE",
         vermouth: "VERMUTES",
+        licores: "LICORES",
         tequila: "TEQUILA",
         raridades: "RARIDADES",
       },
@@ -133,6 +134,7 @@ const translations = {
         whisky: "WHISKY",
         cognac: "COGNAC",
         vermouth: "VERMOUTH",
+        licores: "LIQUEURS",
         tequila: "TEQUILA",
         raridades: "RARITIES",
       },
@@ -318,8 +320,13 @@ const menuData = {
         { name: "Hennessy", price: "25" },
       ],
       vermouth: [
+        { name: "Martini Gold Dolce & Gabbana", price: "12" },
         { name: "Martini Special Rubino", price: "8" },
         { name: "Martini Special Ambrato", price: "8" },
+        { name: "CRF", price: "8" },
+      ],
+      licores: [
+        { name: "Licor Beirão", price: "8" },
       ],
       tequila: [
         { name: "Casa Maestri 1965", price: "15" },
@@ -1282,6 +1289,13 @@ function Index() {
                     <div>
                       <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.tequila}</h4>
                       {menuData.bebidas.destilados.tequila.map((item, i) => (
+                        <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
+                      ))}
+                    </div>
+                    {/* Licores */}
+                    <div>
+                      <h4 className="text-amber-500 text-sm font-medium tracking-wider mb-2">{t.menu.categories.licores}</h4>
+                      {menuData.bebidas.destilados.licores.map((item, i) => (
                         <DrinkItem key={i} name={item.name} price={item.price} lang={lang} />
                       ))}
                     </div>
