@@ -283,7 +283,6 @@ const menuData = {
       vodka: [
         { name: "Grey Goose", price: "15" },
         { name: "Cîroc", price: "13" },
-        { name: "Sipsmith Vodka", price: "9" },
       ],
       rum: [
         { name: "Bacardi 8", price: "12" },
@@ -296,6 +295,7 @@ const menuData = {
         { name: "Bombay Pressé", price: "12" },
         { name: "Bulldog", price: "11" },
         { name: "Bombay Sapphire", price: "11" },
+        { name: "Sipsmith", price: "9" },
         { name: "Bombay", price: "9" },
       ],
       whisky: [
