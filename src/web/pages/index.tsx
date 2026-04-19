@@ -236,7 +236,6 @@ const menuData = {
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Cartuxa", price: "47" },
             { name: "Grous", price: "37" },
-            { name: "Quinta do Paral", price: "32" },
           ]},
           { tipo: "Rosé", tipoEn: "Rosé", vinhosData: [
             { name: "Quinta do Paral", price: "25" },
