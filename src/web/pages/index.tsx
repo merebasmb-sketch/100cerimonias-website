@@ -323,7 +323,6 @@ const menuData = {
       ],
       tequila: [
         { name: "Casa Maestri 1965", price: "15" },
-        { name: "Patrón", price: "13" },
         { name: "José Cuervo", price: "8" },
       ],
       raridades: [],
