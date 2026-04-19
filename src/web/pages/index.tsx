@@ -155,11 +155,11 @@ const translations = {
 // Menu data
 const menuData = {
   entradas: [
-    { name: "Camarão 100 Cerimónias", nameEn: "100 Cerimónias Shrimp", description: "Camarão panado e maionese de sriracha", descriptionEn: "Breaded shrimp with sriracha mayonnaise", price: "11" },
-    { name: "Croquetes de Alheira", nameEn: "Alheira Croquettes", description: "Croquetes de alheira de Mirandela e queijo da serra", descriptionEn: "Alheira croquettes from Mirandela with serra cheese", price: "12.50" },
-    { name: "Tiborna de Tomate Seco e Avelã", nameEn: "Sun-dried Tomato and Hazelnut Tiborna", description: "Tosta de pão artesanal, tomate seco, avelã tostada, maionese de salsa e parmesão", descriptionEn: "Artisan bread toast, sun-dried tomato, toasted hazelnut, parsley mayonnaise and parmesan", price: "13.50" },
-    { name: "Huevos Rotos com Trufa", nameEn: "Huevos Rotos with Truffle", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle", price: "17" },
-    { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras", descriptionEn: "Pickles, radish and homemade toast", price: "18" },
+    { name: "Camarão 100 Cerimónias", nameEn: "100 Cerimónias Shrimp", description: "Camarão panado e maionese de sriracha | 1-2 Pax", descriptionEn: "Breaded shrimp with sriracha mayonnaise | 1-2 Pax", price: "11" },
+    { name: "Croquetes de Alheira", nameEn: "Alheira Croquettes", description: "Croquetes de alheira de Mirandela e queijo da serra | 1-2 Pax", descriptionEn: "Alheira croquettes from Mirandela with serra cheese | 1-2 Pax", price: "12.50" },
+    { name: "Tiborna de Tomate Seco e Avelã", nameEn: "Sun-dried Tomato and Hazelnut Tiborna", description: "Tosta de pão artesanal, tomate seco, avelã tostada, maionese de salsa e parmesão | 2 Pax", descriptionEn: "Artisan bread toast, sun-dried tomato, toasted hazelnut, parsley mayonnaise and parmesan | 2 Pax", price: "13.50" },
+    { name: "Huevos Rotos com Trufa", nameEn: "Huevos Rotos with Truffle", description: "Batata frita caseira, linguiça, presunto nove meses de cura e trufa | 2-4 Pax", descriptionEn: "Homemade fries, sausage, nine-month cured ham and truffle | 2-4 Pax", price: "17" },
+    { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras | 1-2 Pax", descriptionEn: "Pickles, radish and homemade toast | 1-2 Pax", price: "18" },
   ],
   naBrasa: [
     { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "Tenro e suculento!", descriptionEn: "Tender and juicy!", price: "34", prices: [{ label: "250g | 1 Pax", labelEn: "250g | 1 Pax", price: "34" }, { label: "500g | 1-2 Pax", labelEn: "500g | 1-2 Pax", price: "66" }] },
