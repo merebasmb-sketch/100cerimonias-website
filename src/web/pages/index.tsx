@@ -1599,6 +1599,11 @@ function Index() {
                     +351 936 337 848
                   </a>
                 </p>
+                <p>
+                  <a href="mailto:reservas@100cerimonias.me" className="hover:text-amber-400 transition-colors">
+                    reservas@100cerimonias.me
+                  </a>
+                </p>
               </div>
             </div>
 
