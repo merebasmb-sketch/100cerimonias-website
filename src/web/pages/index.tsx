@@ -195,7 +195,7 @@ const menuData = {
     { name: "Here Comes the Sun", nameEn: "Here Comes the Sun", description: "Maracujá do Brasil, merengue e sorvete de manga", descriptionEn: "Brazilian passion fruit, meringue and mango sorbet", price: "12" },
     { name: "Livin' on Caramel", nameEn: "Livin' on Caramel", description: "Fondant de doce de leite, gelado de noz pecã, caramelo e toffee", descriptionEn: "Dulce de leche fondant, pecan ice cream, caramel and toffee", price: "13" },
     { name: "Nothing Else Matters (Chocolate Edition)", nameEn: "Nothing Else Matters (Chocolate Edition)", description: "Brownie de chocolate negro e frutos secos, gelado de stracciatella, ganache de chocolate negro e whiskey", descriptionEn: "Dark chocolate and nut brownie, stracciatella ice cream, dark chocolate and whiskey ganache", price: "12" },
-    { name: "Digging the Dancing Queen", nameEn: "Digging the Dancing Queen", description: "Pudim abade de priscos, gel de limão e tuille de baunilha", descriptionEn: "Abade de Priscos pudding, lemon gel and vanilla tuille", price: "13", isNew: true },
+    { name: "Digging the Dancing Queen", nameEn: "Digging the Dancing Queen", description: "Pudim abade de priscos, gel de limão e tuille de baunilha", descriptionEn: "Abade de Priscos pudding, lemon gel and vanilla tuille", price: "9", isNew: true },
   ],
   vinhos: {
     regioes: [
