@@ -226,7 +226,6 @@ const menuData = {
         regiao: "Tejo", regiaoEn: "Tejo",
         tipos: [
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "Quinta da Lapa Pinot Noir Reserva", price: "28" },
             { name: "Quinta da Lapa Reserva Cabernet Sauvignon", price: "28" },
           ]},
         ]
