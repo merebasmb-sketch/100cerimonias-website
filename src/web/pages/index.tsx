@@ -174,12 +174,12 @@ const menuData = {
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
   ],
   acompanhamentos: [
-    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5", veggie: true },
     { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "4.50", veggie: true },
-    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
+    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5", veggie: true },
     { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "", descriptionEn: "", price: "5.50", veggie: true },
-    { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50", veggie: true },
     { name: "Legumes Grelhados com Redução de Vinho do Porto", nameEn: "Grilled Vegetables with Port Wine Reduction", description: "", descriptionEn: "", price: "5.50", veggie: true },
+    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
+    { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50", veggie: true },
   ],
   pasta: [
     { 
