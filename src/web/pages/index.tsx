@@ -174,12 +174,12 @@ const menuData = {
     { name: "Wagyu", description: "300g | 1-2 Pax | A melhor experiência", descriptionEn: "300g | 1-2 Pax | The best experience", price: "85" },
   ],
   acompanhamentos: [
-    { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "4.50", veggie: true },
-    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5", veggie: true },
-    { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "", descriptionEn: "", price: "5.50", veggie: true },
-    { name: "Legumes Grelhados com Redução de Vinho do Porto", nameEn: "Grilled Vegetables with Port Wine Reduction", description: "", descriptionEn: "", price: "5.50", veggie: true },
+    { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "4.50" },
+    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5" },
+    { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "", descriptionEn: "", price: "5.50" },
+    { name: "Legumes Grelhados com Redução de Vinho do Porto", nameEn: "Grilled Vegetables with Port Wine Reduction", description: "", descriptionEn: "", price: "5.50" },
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
-    { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50", veggie: true },
+    { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50" },
   ],
   pasta: [
     { 
@@ -192,10 +192,10 @@ const menuData = {
     }
   ],
   sobremesas: [
-    { name: "Here Comes the Sun", nameEn: "Here Comes the Sun", description: "Maracujá do Brasil, merengue e sorvete de manga", descriptionEn: "Brazilian passion fruit, meringue and mango sorbet", price: "12" },
-    { name: "Livin' on Caramel", nameEn: "Livin' on Caramel", description: "Fondant de doce de leite, gelado de noz pecã, caramelo e toffee", descriptionEn: "Dulce de leche fondant, pecan ice cream, caramel and toffee", price: "13" },
-    { name: "Nothing Else Matters (Chocolate Edition)", nameEn: "Nothing Else Matters (Chocolate Edition)", description: "Brownie de chocolate negro e frutos secos, gelado de stracciatella, ganache de chocolate negro e whiskey", descriptionEn: "Dark chocolate and nut brownie, stracciatella ice cream, dark chocolate and whiskey ganache", price: "12" },
     { name: "Digging the Dancing Queen", nameEn: "Digging the Dancing Queen", description: "Pudim abade de priscos, gel de limão e tuille de baunilha", descriptionEn: "Abade de Priscos pudding, lemon gel and vanilla tuille", price: "9", isNew: true },
+    { name: "Here Comes the Sun", nameEn: "Here Comes the Sun", description: "Maracujá do Brasil, merengue e sorvete de manga", descriptionEn: "Brazilian passion fruit, meringue and mango sorbet", price: "12" },
+    { name: "Nothing Else Matters (Chocolate Edition)", nameEn: "Nothing Else Matters (Chocolate Edition)", description: "Brownie de chocolate negro e frutos secos, gelado de stracciatella, ganache de chocolate negro e whiskey", descriptionEn: "Dark chocolate and nut brownie, stracciatella ice cream, dark chocolate and whiskey ganache", price: "12" },
+    { name: "Livin' on Caramel", nameEn: "Livin' on Caramel", description: "Fondant de doce de leite, gelado de noz pecã, caramelo e toffee", descriptionEn: "Dulce de leche fondant, pecan ice cream, caramel and toffee", price: "13" },
   ],
   vinhos: {
     regioes: [
