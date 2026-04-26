@@ -61,6 +61,8 @@ const translations = {
         cervejas: "CERVEJAS",
         refrigerantes: "REFRIGERANTES",
         sangrias: "SANGRIAS",
+        champagne: "CHAMPAGNE",
+        champagne: "CHAMPAGNE",
         vodka: "VODKA",
         rum: "RUM",
         gin: "GIN",
@@ -128,6 +130,8 @@ const translations = {
         cervejas: "BEERS",
         refrigerantes: "SOFT DRINKS",
         sangrias: "SANGRIAS",
+        champagne: "CHAMPAGNE",
+        champagne: "CHAMPAGNE",
         vodka: "VODKA",
         rum: "RUM",
         gin: "GIN",
@@ -343,6 +347,9 @@ const menuData = {
       { name: "Lipton", price: "3,50" },
       { name: "Água Tónica", price: "3,50" },
       { name: "Ginger Beer", price: "3,50" },
+    ],
+    champagne: [
+      { name: "Moët & Chandon Brut Impérial*", nameEn: "Moët & Chandon Brut Impérial*", description: "Methuselah 6L | Sob reserva", descriptionEn: "Methuselah 6L | Under reservation", price: "1750" },
     ],
     sangrias: [
       { name: "Sangria de Maracujá", nameEn: "Passion Fruit Sangria", description: "Espumante", descriptionEn: "Sparkling wine", price: "37" },
@@ -1225,6 +1232,13 @@ function Index() {
                 {/* Mocktails */}
                 <CollapsibleDrinkSection title={t.menu.categories.mocktails} icon={<JuiceIcon />}>
                   {menuData.bebidas.mocktails.map((item, i) => (
+                    <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
+                  ))}
+                </CollapsibleDrinkSection>
+
+                {/* Champagne */}
+                <CollapsibleDrinkSection title={t.menu.categories.champagne} icon={<BottleIcon />}>
+                  {menuData.bebidas.champagne.map((item, i) => (
                     <DrinkItem key={i} name={item.name} price={item.price} description={item.description} descriptionEn={item.descriptionEn} lang={lang} />
                   ))}
                 </CollapsibleDrinkSection>
