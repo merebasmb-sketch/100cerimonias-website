@@ -341,6 +341,7 @@ const menuData = {
       { name: "Leffe Blond", price: "5,50" },
       { name: "Franziskaner", price: "5,50" },
       { name: "Stella Artois", price: "3,50" },
+      { name: "Superbock 0%", price: "3,50" },
     ],
     refrigerantes: [
       { name: "Coca Cola", price: "3,50" },
