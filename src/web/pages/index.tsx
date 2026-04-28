@@ -219,7 +219,7 @@ const menuData = {
             { name: "ZIP Unoaked", price: "20" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "Quinta da Romaneira 2021", price: "70" },
+            { name: "Quinta da Romaneira", vintage: "2021", price: "70" },
             { name: "Look's Grande Reserva", price: "60" },
             { name: "Solar dos Dragos Colheita", price: "24" },
             { name: "ZIP Unoaked", price: "20" },
@@ -391,6 +391,7 @@ interface MenuItem {
   bestseller?: boolean;
   veggie?: boolean;
   isNew?: boolean;
+  vintage?: string;
 }
 
 const PersonIcon = () => (
@@ -680,10 +681,15 @@ const CollapsibleDrinkSection = ({
 };
 
 // Simple drink item
-const DrinkItem = ({ name, price, description, descriptionEn, lang }: { name: string; price: string; description?: string; descriptionEn?: string; lang: Language }) => (
+const DrinkItem = ({ name, price, description, descriptionEn, lang, vintage }: { name: string; price: string; description?: string; descriptionEn?: string; lang: Language; vintage?: string }) => (
   <div className="flex justify-between items-start py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2 group">
     <div>
-      <span className="text-amber-100 group-hover:text-amber-300 transition-colors">{name}</span>
+      <div className="flex items-baseline gap-2">
+        <span className="text-amber-100 group-hover:text-amber-300 transition-colors">{name}</span>
+        {vintage && (
+          <span className="text-amber-700 text-xs italic">{vintage}</span>
+        )}
+      </div>
       {(description || descriptionEn) && (
         <p className="text-amber-200/50 text-xs mt-0.5">{lang === "pt" ? description : descriptionEn}</p>
       )}
@@ -1192,7 +1198,10 @@ function Index() {
                           <p className="text-amber-600/80 text-xs uppercase tracking-widest mb-2">{lang === "en" ? t.tipoEn : t.tipo}</p>
                           {t.vinhosData.map((item, i) => (
                             <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
-                              <span className="text-amber-100">{item.name}</span>
+                              <span className="text-amber-100 flex gap-2 items-baseline">
+                                {item.name}
+                                {item.vintage && <span className="text-amber-700 italic text-sm">{item.vintage}</span>}
+                              </span>
                               <span className="text-amber-400">€{item.price}</span>
                             </div>
                           ))}
