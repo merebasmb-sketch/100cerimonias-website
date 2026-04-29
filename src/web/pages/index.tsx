@@ -228,14 +228,6 @@ const menuData = {
         ]
       },
       {
-        regiao: "Tejo", regiaoEn: "Tejo",
-        tipos: [
-          { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-
-          ]},
-        ]
-      },
-      {
         regiao: "Alentejo", regiaoEn: "Alentejo",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
