@@ -217,7 +217,7 @@ const menuData = {
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "Dote Simplesmente Batonnage", price: "22" },
-            { name: "ZIP Unoaked", price: "20" },
+            { name: "ZIP Unoaked", price: "17" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Quinta da Romaneira", vintage: "2021", price: "60" },
