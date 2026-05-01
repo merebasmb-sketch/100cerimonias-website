@@ -271,7 +271,7 @@ const menuData = {
     copo: [
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
       { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
-      { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
+      { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "6" },
       { name: "Quinta do Paral", region: "Rosé Alentejo", price: "6" },
     ],
   },
