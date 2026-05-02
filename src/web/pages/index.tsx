@@ -181,7 +181,7 @@ const menuData = {
     { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "4.50" },
     { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5" },
     { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "", descriptionEn: "", price: "5.50" },
-    { name: "Legumes Grelhados com Redução de Vinho do Porto", nameEn: "Grilled Vegetables with Port Wine Reduction", description: "", descriptionEn: "", price: "5.50" },
+
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
     { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50" },
   ],
