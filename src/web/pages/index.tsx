@@ -222,7 +222,7 @@ const menuData = {
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Quinta da Romaneira", vintage: "2021", price: "60" },
             { name: "Look's Grande Reserva", price: "50" },
-            { name: "Solar dos Dragos Colheita", price: "24" },
+
             { name: "ZIP Unoaked", price: "20" },
           ]},
         ]
