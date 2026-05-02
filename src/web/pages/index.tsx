@@ -223,6 +223,7 @@ const menuData = {
             { name: "Quinta da Romaneira", vintage: "2021", price: "60" },
             { name: "Look's Grande Reserva", price: "50" },
             { name: "Solar dos Dragos Colheita", price: "24" },
+            { name: "ZIP Unoaked", price: "20" },
           ]},
         ]
       },
@@ -271,7 +272,7 @@ const menuData = {
     copo: [
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
       { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
-      { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "6" },
+      { name: "Zip Unoaked", region: "Maduro Tinto Douro", price: "6" },
       { name: "Quinta do Paral", region: "Rosé Alentejo", price: "6" },
     ],
   },
