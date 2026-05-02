@@ -170,7 +170,7 @@ const menuData = {
     { name: "Tártaro de Novilho", nameEn: "Beef Tartare", description: "Pickles, rabanete e tostas caseiras | 1-2 Pax", descriptionEn: "Pickles, radish and homemade toast | 1-2 Pax", price: "18" },
   ],
   naBrasa: [
-    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "Tenro e suculento!", descriptionEn: "Tender and juicy!", price: "34", prices: [{ label: "250g | 1 Pax", labelEn: "250g | 1 Pax", price: "34" }, { label: "500g | 1-2 Pax", labelEn: "500g | 1-2 Pax", price: "66" }] },
+    { name: "Vazia Black Angus", nameEn: "Black Angus Sirloin", description: "Tenro e suculento!", descriptionEn: "Tender and juicy!", price: "34", prices: [{ label: "250g | 1 Pax", labelEn: "250g | 1 Pax", price: "34" }] },
     { name: "Costeleta Vazia Baixa", nameEn: "Low Rib Sirloin", description: "500g | 1-2 Pax | 31 dias de maturação", descriptionEn: "500g | 1-2 Pax | 31-day aged", price: "59" },
     { name: "Ribeye Premium", nameEn: "Ribeye Premium", description: "500g | 1-2 Pax | Ponto ideal entre sabor e textura | 31 dias de maturação", descriptionEn: "500g | 1-2 Pax | Perfect balance between flavor and texture | 31 days aged", price: "69" },
     { name: "El Txuletón", nameEn: "El Txuletón", description: "1kg | 2-3 Pax | 31 dias de maturação", descriptionEn: "1kg | 2-3 Pax | 31-day aged", price: "85" },
