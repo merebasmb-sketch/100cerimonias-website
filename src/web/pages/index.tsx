@@ -179,11 +179,11 @@ const menuData = {
     { name: "Wagyu", nameEn: "Wagyu", description: "A melhor experiência", descriptionEn: "The best experience", price: "85", prices: [{ label: "300g | 1-2 Pax", labelEn: "300g | 1-2 Pax", price: "85" }] },
   ],
   acompanhamentos: [
-    { name: "Salada Mista", nameEn: "Mixed Salad", description: "", descriptionEn: "", price: "4.50" },
-    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5" },
-    { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "", descriptionEn: "", price: "5.50" },
+    { name: "Salada Mista", nameEn: "Mixed Salad", description: "Tomate cherry e pickles de cebola roxa caseiros", descriptionEn: "Cherry tomato and homemade red onion pickles", price: "4.50" },
+    { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "Com chalota e cebolinho", descriptionEn: "With shallot and chives", price: "5" },
+    { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "Parmesão, cheddar e mozzarella", descriptionEn: "Parmesan, cheddar and mozzarella", price: "5.50" },
 
-    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "", descriptionEn: "", price: "6" },
+    { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "Linguiça e chouriço", descriptionEn: "Linguiça and chorizo", price: "6" },
     { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50" },
   ],
   pasta: [
