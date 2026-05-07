@@ -179,7 +179,7 @@ const menuData = {
     { name: "Wagyu", nameEn: "Wagyu", description: "A melhor experiência", descriptionEn: "The best experience", price: "85", prices: [{ label: "300g | 1-2 Pax", labelEn: "300g | 1-2 Pax", price: "85" }] },
   ],
   acompanhamentos: [
-    { name: "Salada", nameEn: "Salad", description: "", descriptionEn: "", price: "4.50" },
+    { name: "Salada Mista", nameEn: "Mixed Salad", description: "", descriptionEn: "", price: "4.50" },
     { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "", descriptionEn: "", price: "5" },
     { name: "Mac'n'Cheese", nameEn: "Mac'n'Cheese", description: "", descriptionEn: "", price: "5.50" },
 
