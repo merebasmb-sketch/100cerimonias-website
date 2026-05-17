@@ -182,7 +182,6 @@ const menuData = {
     { name: "Mac'n'Cheese Trufado", nameEn: "Truffle Mac'n'Cheese", description: "Parmesão, cheddar, mozzarella e trufa", descriptionEn: "Parmesan, cheddar, mozzarella and truffle", price: "5.50" },
     { name: "Espargos Grelhados com Queijo de Cabra", nameEn: "Grilled Asparagus with Goat Cheese", description: "", descriptionEn: "", price: "5.50" },
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "Linguiça e chouriço", descriptionEn: "Linguiça and chorizo", price: "6" },
-    { name: "Puré Cremoso de Batata Trufada", nameEn: "Creamy Truffle Mashed Potato", description: "", descriptionEn: "", price: "6.50" },
   ],
   pasta: [
     { 
