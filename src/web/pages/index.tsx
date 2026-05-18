@@ -708,6 +708,10 @@ function Index() {
   const [currentHeroImage, setCurrentHeroImage] = useState(0);
   const [currentMenuBgImage, setCurrentMenuBgImage] = useState(0);
   const [showReviewPopup, setShowReviewPopup] = useState(false);
+  const [showNewsletterPopup, setShowNewsletterPopup] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterName, setNewsletterName] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -723,6 +727,39 @@ function Index() {
       return () => clearTimeout(timer);
     }
   }, []);
+
+  // Newsletter popup — mostra após 5 segundos (apenas uma vez por sessão)
+  useEffect(() => {
+    const alreadySeen = sessionStorage.getItem("newsletter-popup-seen");
+    if (!alreadySeen) {
+      const timer = setTimeout(() => {
+        setShowNewsletterPopup(true);
+        sessionStorage.setItem("newsletter-popup-seen", "true");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    setNewsletterStatus("loading");
+    try {
+      const res = await fetch("https://spooky-synthesis477.runable.site/api/contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: newsletterName || newsletterEmail.split("@")[0], email: newsletterEmail, tag: "Lead" }),
+      });
+      if (res.ok) {
+        setNewsletterStatus("success");
+        setTimeout(() => setShowNewsletterPopup(false), 2500);
+      } else {
+        setNewsletterStatus("error");
+      }
+    } catch {
+      setNewsletterStatus("error");
+    }
+  };
 
   const t = translations[lang];
 
@@ -1776,6 +1813,80 @@ function Index() {
 
       {/* Global Styles */}
       {/* Google Review Popup */}
+      {/* Newsletter Popup */}
+      {showNewsletterPopup && (
+        <div className="fixed inset-0 z-[160] flex items-end sm:items-center justify-center px-4 pb-6 sm:pb-0">
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowNewsletterPopup(false)}
+          />
+          <div className="relative w-full max-w-sm bg-[#111] border border-amber-600/40 p-6 shadow-2xl animate-fade-in">
+            <button
+              onClick={() => setShowNewsletterPopup(false)}
+              className="absolute top-3 right-3 text-amber-400/60 hover:text-amber-400 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div className="flex justify-center mb-4">
+              <img src="./logo-transparent.png" alt="100 Cerimónias" className="w-14 h-14 object-contain" />
+            </div>
+
+            {newsletterStatus === "success" ? (
+              <div className="text-center py-4">
+                <div className="text-amber-400 text-3xl mb-3">✓</div>
+                <h3 className="font-serif text-xl text-amber-400 tracking-wide mb-2">Obrigado!</h3>
+                <p className="text-amber-200/70 text-sm">Vai receber as nossas novidades em breve.</p>
+              </div>
+            ) : (
+              <>
+                <h3 className="font-serif text-xl text-amber-400 text-center mb-2 tracking-wide">
+                  Fique sempre a par
+                </h3>
+                <p className="text-amber-200/70 text-sm text-center mb-5 leading-relaxed">
+                  Inscreva-se e receba ofertas exclusivas, novidades do menu e eventos especiais.
+                </p>
+                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                  <input
+                    type="text"
+                    placeholder="Nome"
+                    value={newsletterName}
+                    onChange={(e) => setNewsletterName(e.target.value)}
+                    className="w-full bg-black/50 border border-amber-600/30 text-amber-50 placeholder-amber-200/30 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email *"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                    className="w-full bg-black/50 border border-amber-600/30 text-amber-50 placeholder-amber-200/30 px-4 py-3 text-sm focus:outline-none focus:border-amber-400 transition-colors"
+                  />
+                  {newsletterStatus === "error" && (
+                    <p className="text-red-400 text-xs">Erro ao inscrever. Tente novamente.</p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={newsletterStatus === "loading"}
+                    className="w-full py-3 bg-amber-400 text-black font-medium tracking-[0.15em] text-sm hover:bg-amber-300 transition-colors disabled:opacity-60"
+                  >
+                    {newsletterStatus === "loading" ? "A INSCREVER..." : "INSCREVER"}
+                  </button>
+                </form>
+                <button
+                  onClick={() => setShowNewsletterPopup(false)}
+                  className="block w-full text-center mt-3 text-amber-200/40 text-xs hover:text-amber-200/70 transition-colors"
+                >
+                  Agora não
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
       {showReviewPopup && (
         <div className="fixed inset-0 z-[150] flex items-end sm:items-center justify-center px-4 pb-6 sm:pb-0">
           {/* Backdrop */}
