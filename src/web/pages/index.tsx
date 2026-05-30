@@ -179,7 +179,7 @@ const menuData = {
   acompanhamentos: [
     { name: "Salada Mista", nameEn: "Mixed Salad", description: "Tomate cherry e pickles de cebola roxa caseiros", descriptionEn: "Cherry tomato and homemade red onion pickles", price: "4.50" },
     { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "Com chalota e cebolinho", descriptionEn: "With shallot and chives", price: "5" },
-    { name: "Mac'n'Cheese Trufado", nameEn: "Truffle Mac'n'Cheese", description: "Parmesão, cheddar, mozzarella e trufa", descriptionEn: "Parmesan, cheddar, mozzarella and truffle", price: "5.50" },
+    { name: "Mac'n'Cheese Trufado", nameEn: "Truffle Mac'n'Cheese", description: "Parmesão, cheddar, mozzarella e trufa", descriptionEn: "Parmesan, cheddar, mozzarella and truffle", price: "5.50", image: "./pratos/mac-n-cheese.jpg" },
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "Linguiça e chouriço", descriptionEn: "Linguiça and chorizo", price: "6" },
     { name: "Espargos Grelhados com Queijo de Cabra", nameEn: "Grilled Asparagus with Goat Cheese", description: "", descriptionEn: "", price: "5.50" },
   ],
@@ -383,6 +383,7 @@ interface MenuItem {
   veggie?: boolean;
   isNew?: boolean;
   vintage?: string;
+  image?: string;
 }
 
 const PersonIcon = () => (
@@ -425,6 +426,11 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
     }`}
   >
     <div className="flex justify-between items-center gap-4">
+      {item.image && (
+        <div className="flex-shrink-0 w-20 h-20 overflow-hidden border border-amber-900/30">
+          <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+      )}
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="font-serif text-xl text-amber-50 group-hover:text-amber-400 transition-colors">
