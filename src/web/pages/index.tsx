@@ -179,7 +179,7 @@ const menuData = {
   acompanhamentos: [
     { name: "Salada Mista", nameEn: "Mixed Salad", description: "Tomate cherry e pickles de cebola roxa caseiros", descriptionEn: "Cherry tomato and homemade red onion pickles", price: "4.50" },
     { name: "Batata Frita Rústica", nameEn: "Rustic French Fries", description: "Com chalota e cebolinho", descriptionEn: "With shallot and chives", price: "5" },
-    { name: "Mac'n'Cheese Trufado", nameEn: "Truffle Mac'n'Cheese", description: "Parmesão, cheddar, mozzarella e trufa", descriptionEn: "Parmesan, cheddar, mozzarella and truffle", price: "5.50", image: "./pratos/mac-n-cheese.jpg" },
+    { name: "Mac'n'Cheese Trufado", nameEn: "Truffle Mac'n'Cheese", description: "Parmesão, cheddar, mozzarella e trufa", descriptionEn: "Parmesan, cheddar, mozzarella and truffle", price: "5.50" },
     { name: "Arroz de Forno de Enchidos", nameEn: "Oven-baked Sausage Rice", description: "Linguiça e chouriço", descriptionEn: "Linguiça and chorizo", price: "6" },
     { name: "Espargos Grelhados com Queijo de Cabra", nameEn: "Grilled Asparagus with Goat Cheese", description: "", descriptionEn: "", price: "5.50" },
   ],
