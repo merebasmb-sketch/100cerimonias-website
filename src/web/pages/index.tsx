@@ -267,6 +267,7 @@ const menuData = {
     espumante: [],
     copo: [
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
+      { name: "ZIP Unoaked", region: "Branco Douro", price: "6" },
 
       { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "6" },
       { name: "Quinta do Paral", region: "Rosé Alentejo", price: "6" },
