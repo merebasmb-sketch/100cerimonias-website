@@ -214,7 +214,6 @@ const menuData = {
         regiao: "Douro", regiaoEn: "Douro",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Dote Simplesmente Batonnage", price: "20" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Chryseia", price: "140" },
@@ -268,7 +267,7 @@ const menuData = {
     espumante: [],
     copo: [
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
-      { name: "Dote Simplesmente Batonnage", region: "Maduro Branco Douro", price: "6" },
+
       { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "6" },
       { name: "Quinta do Paral", region: "Rosé Alentejo", price: "6" },
     ],
