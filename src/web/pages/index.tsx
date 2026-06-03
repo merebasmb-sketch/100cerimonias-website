@@ -215,7 +215,6 @@ const menuData = {
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "Dote Simplesmente Batonnage", price: "20" },
-            { name: "ZIP Unoaked", price: "17" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Chryseia", price: "140" },
