@@ -214,6 +214,7 @@ const menuData = {
         regiao: "Douro", regiaoEn: "Douro",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
+            { name: "Quinta do Crasto", price: "27" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Chryseia", price: "140" },
