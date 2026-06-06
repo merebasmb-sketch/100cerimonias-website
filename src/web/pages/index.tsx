@@ -185,10 +185,10 @@ const menuData = {
   ],
   pasta: [
     { 
-      name: "Tagliatelle do Bosque", 
-      nameEn: "Forest Tagliatelle",
-      description: "Molho pesto com legumes", 
-      descriptionEn: "Pesto sauce with vegetables", 
+      name: "Tagliatelle de Pesto", 
+      nameEn: "Pesto Tagliatelle",
+      description: "Pesto caseiro e parmesão", 
+      descriptionEn: "Homemade pesto and parmesan", 
       price: "25", 
       veggie: true 
     }
