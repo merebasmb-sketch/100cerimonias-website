@@ -206,7 +206,6 @@ const menuData = {
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "Contacto Alvarinho", price: "28" },
-            { name: "Vale do Homem Arinto", price: "20" },
           ]},
         ]
       },
