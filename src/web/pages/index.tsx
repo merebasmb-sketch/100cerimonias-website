@@ -256,7 +256,7 @@ const menuData = {
             { name: "Quinta da Lagoa Velha", vintage: "2021", price: "45" },
           ]},
           { tipo: "Espumante", tipoEn: "Sparkling", vinhosData: [
-            { name: "Lagoa Velha", price: "22" },
+            { name: "Quinta da Lagoa Velha", vintage: "2023", price: "22" },
           ]},
         ]
       },
@@ -1231,9 +1231,9 @@ function Index() {
                           <p className="text-amber-600/80 text-xs uppercase tracking-widest mb-2">{lang === "en" ? t.tipoEn : t.tipo}</p>
                           {t.vinhosData.map((item, i) => (
                             <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
-                              <span className="text-amber-100 flex gap-2 items-baseline">
-                                {item.name}
-                                {item.vintage && <span className="text-amber-700 italic text-sm">{item.vintage}</span>}
+                              <span className="text-amber-100 flex flex-col">
+                                <span>{item.name}</span>
+                                {item.vintage && <span className="text-amber-700 italic text-xs">{item.vintage}</span>}
                               </span>
                               <span className="text-amber-400">€{item.price}</span>
                             </div>
