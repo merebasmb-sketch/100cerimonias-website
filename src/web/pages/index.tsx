@@ -213,13 +213,13 @@ const menuData = {
         regiao: "Douro", regiaoEn: "Douro",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Quinta do Crasto", price: "27" },
+            { name: "Quinta do Crasto", vintage: "2025", price: "27" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "Chryseia", price: "140" },
-            { name: "Quinta da Romaneira", vintage: "2021", price: "60" },
-            { name: "Look's Grande Reserva", price: "50" },
-            { name: "Solar dos Dragos Colheita", price: "24" },
+            { name: "Chryseia", vintage: "2023", price: "140" },
+            { name: "Quinta da Romaneira Dona Clara", vintage: "2021", price: "60" },
+            { name: "Look's Grande Reserva", vintage: "2022", price: "50" },
+            { name: "Solar dos Dragos Colheita", vintage: "2024", price: "24" },
           ]},
         ]
       },
@@ -227,11 +227,11 @@ const menuData = {
         regiao: "Alentejo", regiaoEn: "Alentejo",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Esporão Reserva", price: "40" },
+            { name: "Esporão Reserva", vintage: "2024", price: "40" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "Cartuxa", price: "47" },
-            { name: "Grous", price: "37" },
+            { name: "Cartuxa", vintage: "2022", price: "47" },
+            { name: "Herdade dos Grous", vintage: "2024", price: "37" },
           ]},
           { tipo: "Rosé", tipoEn: "Rosé", vinhosData: [
             { name: "Quinta do Paral", price: "25" },
@@ -242,10 +242,10 @@ const menuData = {
         regiao: "Dão", regiaoEn: "Dão",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Casa Mouraz Encruzado", price: "36" },
+            { name: "Casa Mouraz Encruzado", vintage: "2023", price: "36" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
-            { name: "Casa Mouraz", price: "27" },
+            { name: "Casa Mouraz", vintage: "2021", price: "27" },
           ]},
         ]
       },
@@ -253,7 +253,7 @@ const menuData = {
         regiao: "Bairrada", regiaoEn: "Bairrada",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Quinta da Lagoa Velha", price: "45" },
+            { name: "Quinta da Lagoa Velha", vintage: "2021", price: "45" },
           ]},
           { tipo: "Espumante", tipoEn: "Sparkling", vinhosData: [
             { name: "Lagoa Velha", price: "22" },
