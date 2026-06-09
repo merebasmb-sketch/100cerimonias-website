@@ -1457,7 +1457,7 @@ function Index() {
             {atmosphereImages.map((img, i) => (
               <div
                 key={i}
-                className="relative aspect-[4/5] overflow-hidden group cursor-pointer"
+                className="relative aspect-[3/4] overflow-hidden group cursor-pointer"
                 onClick={() => openLightbox(i)}
               >
                 <img
