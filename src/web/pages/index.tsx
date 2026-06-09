@@ -1247,6 +1247,27 @@ function Index() {
                   </div>
                 ))}
 
+                {/* Rosé */}
+                {menuData.vinhos.rose.length > 0 && (
+                  <div>
+                    <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                      <WineGlassIcon />
+                      {t.menu.categories.rose}
+                    </h3>
+                    <div className="space-y-0 pl-2">
+                      {menuData.vinhos.rose.map((item, i) => (
+                        <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                          <span className="text-amber-100 flex flex-col">
+                            <span>{item.name}</span>
+                            {item.vintage && <span className="text-amber-700 italic text-xs">{item.vintage}</span>}
+                          </span>
+                          <span className="text-amber-400">€{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Wine by the Glass */}
                 <div>
                   <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
