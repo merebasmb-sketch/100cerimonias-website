@@ -205,7 +205,7 @@ const menuData = {
         regiao: "Vinho Verde", regiaoEn: "Vinho Verde",
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
-            { name: "Contacto Alvarinho", price: "28" },
+            { name: "Contacto Alvarinho", price: "23" },
             { name: "Muros Antigos Alvarinho", price: "28" },
           ]},
         ]
