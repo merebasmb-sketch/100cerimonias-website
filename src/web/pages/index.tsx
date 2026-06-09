@@ -364,12 +364,18 @@ const menuData = {
 };
 
 const atmosphereImages = [
-  "./0d3ca745-bfea-410b-969b-7df83d9607af.jpg",
-  "./85045d6c-1f52-42a3-8a59-565b62ec4b13.jpg",
-  "./39e5e286-7685-49e6-893a-385744302fdb.jpg",
-  "./99620f26-b610-42b4-a5bf-d0d7df4b54d9.jpg",
-  "./1277703a-2b54-4bf2-ac50-a3cddc437347.jpg",
-  "./a5e37b97-57ed-4949-8d6c-84ecde77bf38.jpg",
+  "./new_img_1.jpg",
+  "./new_img_2.jpg",
+  "./new_img_3.jpg",
+  "./new_img_4.jpg",
+  "./new_img_5.jpg",
+  "./new_img_6.jpg",
+  "./new_img_7.jpg",
+  "./new_img_8.jpg",
+  "./new_img_9.jpg",
+  "./new_img_10.jpg",
+  "./1b2d7f29-bff0-4c2e-98b4-14c29160e462.jpg",
+  "./1b8daf33-f44a-4004-9a78-9ac0575641d1.jpg",
 ];
 
 interface MenuItem {
@@ -1447,7 +1453,7 @@ function Index() {
             {t.atmosfera.title}
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {atmosphereImages.map((img, i) => (
               <div
                 key={i}
