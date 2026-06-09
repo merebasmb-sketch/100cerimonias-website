@@ -269,11 +269,11 @@ const menuData = {
     ],
     espumante: [],
     copo: [
-      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "6" },
-      { name: "ZIP Unoaked", region: "Branco Douro", price: "6" },
+      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "7.50" },
+      { name: "ZIP Unoaked", region: "Branco Douro", price: "7.50" },
 
-      { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "6" },
-      { name: "Quinta do Paral", region: "Rosé Alentejo", price: "6" },
+      { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "7.50" },
+      { name: "Quinta do Paral", region: "Rosé Alentejo", price: "7.50" },
     ],
   },
   bebidas: {
