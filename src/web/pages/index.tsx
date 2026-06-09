@@ -206,7 +206,7 @@ const menuData = {
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "Contacto Alvarinho", price: "23" },
-            { name: "Muros Antigos Alvarinho", price: "28" },
+            { name: "Muros Antigos Alvarinho", vintage: "2025", price: "28" },
           ]},
         ]
       },
@@ -265,7 +265,7 @@ const menuData = {
     brancos: [],
     tintos: [],
     rose: [
-      { name: "Vallado Rosé", price: "28" },
+      { name: "Vallado Rosé", vintage: "2024", price: "28" },
     ],
     espumante: [],
     copo: [
