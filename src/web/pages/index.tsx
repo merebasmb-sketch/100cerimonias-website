@@ -276,7 +276,7 @@ const menuData = {
       { name: "Graham's 1952", price: "90" },
     ],
     copo: [
-      { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "7.50" },
+      { name: "Muros Antigos Alvarinho", region: "Vinho Verde", price: "7.50" },
       { name: "ZIP Unoaked", region: "Branco Douro", price: "7.50" },
 
       { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "7.50" },
