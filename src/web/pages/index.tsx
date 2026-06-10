@@ -271,9 +271,9 @@ const menuData = {
     ],
     espumante: [],
     porto: [
-      { name: "Graham's 10 Anos", vintage: "10 Anos", price: "7" },
-      { name: "Graham's 20 Anos", vintage: "20 Anos", price: "9" },
-      { name: "Graham's Colheita", vintage: "1952", price: "90" },
+      { name: "Graham's 10 Anos", price: "7" },
+      { name: "Graham's 20 Anos", price: "9" },
+      { name: "Graham's 1952", price: "90" },
     ],
     copo: [
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "7.50" },
