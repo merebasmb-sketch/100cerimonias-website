@@ -54,6 +54,7 @@ const translations = {
         tintos: "VINHOS TINTOS",
         rose: "ROSÉ",
         espumante: "ESPUMANTE",
+        porto: "VINHO DO PORTO",
         copo: "VINHO A COPO",
         assinatura: "COCKTAILS DE ASSINATURA",
         mocktails: "MOCKTAILS",
@@ -122,6 +123,7 @@ const translations = {
         tintos: "RED WINES",
         rose: "ROSÉ",
         espumante: "SPARKLING",
+        porto: "PORT WINE",
         copo: "WINE BY THE GLASS",
         assinatura: "SIGNATURE COCKTAILS",
         mocktails: "MOCKTAILS",
@@ -268,6 +270,11 @@ const menuData = {
       { name: "Vallado Rosé", vintage: "2024", price: "28" },
     ],
     espumante: [],
+    porto: [
+      { name: "Graham's 10 Anos", vintage: "10 Anos", price: "7" },
+      { name: "Graham's 20 Anos", vintage: "20 Anos", price: "9" },
+      { name: "Graham's Colheita", vintage: "1952", price: "90" },
+    ],
     copo: [
       { name: "Vale do Homem Arinto", region: "Vinho Verde", price: "7.50" },
       { name: "ZIP Unoaked", region: "Branco Douro", price: "7.50" },
@@ -1290,6 +1297,27 @@ function Index() {
                     </div>
                   ))}
                 </div>
+
+                {/* Vinho do Porto */}
+                {menuData.vinhos.porto.length > 0 && (
+                  <div>
+                    <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
+                      <WineGlassIcon />
+                      {t.menu.categories.porto}
+                    </h3>
+                    <div className="space-y-0 pl-2">
+                      {menuData.vinhos.porto.map((item, i) => (
+                        <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
+                          <span className="text-amber-100 flex flex-col">
+                            <span>{item.name}</span>
+                            {item.vintage && <span className="text-amber-700 italic text-xs">{item.vintage}</span>}
+                          </span>
+                          <span className="text-amber-400">€{item.price}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
