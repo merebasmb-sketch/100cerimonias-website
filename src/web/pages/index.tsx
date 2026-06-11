@@ -1826,7 +1826,7 @@ function Index() {
             <p className="text-amber-200/30 text-xs">
               {t.contactos.copyright}
             </p>
-            <div className="flex gap-8 text-xs tracking-[0.15em]">
+            <div className="flex gap-8 text-xs tracking-[0.15em] items-center">
               {navLinks.map((link) => (
                 link.isPage ? (
                   <Link
@@ -1846,6 +1846,14 @@ function Index() {
                   </button>
                 )
               ))}
+              <a
+                href="https://revista.100cerimonias.me"
+                target="_blank"
+                rel="noopener"
+                className="text-amber-400/60 hover:text-amber-400 transition-all hover:scale-110 border border-amber-900/40 hover:border-amber-400/60 px-3 py-1 rounded-sm"
+              >
+                {lang === "pt" ? "REVISTA" : "MAGAZINE"}
+              </a>
             </div>
           </div>
         </div>
