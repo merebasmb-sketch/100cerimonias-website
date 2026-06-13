@@ -158,6 +158,75 @@ const translations = {
       complaints: "Complaints Book",
     },
   },
+  fr: {
+    nav: {
+      sobreNos: "À PROPOS",
+      menu: "MENU",
+      atmosfera: "ATMOSPHÈRE",
+      contactos: "CONTACT",
+    },
+    hero: {
+      slogan: "L'art de la viande, servi avec élégance",
+      premium: "STEAKHOUSE PREMIUM",
+    },
+    about: {
+      title: "À PROPOS DU RESTAURANT",
+      text1: "Nous sommes un groupe de personnes réunies qui essaient de faire de la vie quelque chose de précieux, de la meilleure façon possible. Complètement différents, nous avons trouvé notre équilibre et chaque soir nous servons des repas dont l'objectif est toujours un sourire sur le visage des gens.",
+      text2: "Nous avons créé un espace élégant et confortable, sans cérémonies inutiles, où l'accent est mis sur le partage de la nourriture, des émotions et des moments.",
+      text3: "Nous nous inspirons des grandes steakhouses internationales, mais nous gardons une identité propre, ancrée dans Porto, une ville de caractère, de tradition et d'authenticité. Nous croyons que l'excellence n'a pas besoin d'excès, elle a besoin de cohérence, de savoir-faire et de passion.",
+      reserveButton: "RÉSERVER UNE TABLE",
+    },
+    menu: {
+      title: "MENU",
+      tabs: {
+        entradas: "Entrées",
+        naBrasa: "Coupes",
+        acompanhamentos: "Accompagnements",
+        pasta: "Pâtes",
+        sobremesas: "Desserts",
+        vinhos: "Vins",
+        bebidas: "Boissons",
+      },
+      categories: {
+        brancos: "VINS BLANCS",
+        tintos: "VINS ROUGES",
+        rose: "ROSÉ",
+        espumante: "PÉTILLANT",
+        porto: "VIN DE PORTO",
+        copo: "VIN AU VERRE",
+        assinatura: "COCKTAILS SIGNATURE",
+        mocktails: "MOCKTAILS",
+        destilados: "SPIRITUEUX",
+        cervejas: "BIÈRES",
+        refrigerantes: "SODAS",
+        sangrias: "SANGRIAS",
+        champagne: "CHAMPAGNE",
+        vodka: "VODKA",
+        rum: "RHUM",
+        gin: "GIN",
+        whisky: "WHISKY",
+        cognac: "COGNAC",
+        vermouth: "VERMOUTH",
+        licores: "LIQUEURS",
+        tequila: "TEQUILA",
+        raridades: "RARETÉS",
+      },
+      vatNote: "Tous les prix incluent la TVA",
+    },
+    atmosfera: {
+      title: "ATMOSPHÈRE",
+    },
+    contactos: {
+      title: "CONTACT",
+      followUs: "SUIVEZ-NOUS",
+      established: "Steakhouse Premium • Établi en 2023",
+      hours: "Mardi au Dimanche | 19h00 – 00h00",
+      closed: "Fermé le Lundi",
+      copyright: "© 2023 100 Cerimónias Steakhouse. Tous droits réservés.",
+      reviews: "Avis Google",
+      complaints: "Livre de Réclamations",
+    },
+  },
 };
 
 // Menu data
@@ -448,7 +517,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
       <div className="flex-1">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="font-serif text-xl text-amber-50 group-hover:text-amber-400 transition-colors">
-            {lang === "en" && item.nameEn ? item.nameEn : item.name}
+            {lang !== "pt" && item.nameEn ? item.nameEn : item.name}
           </span>
           {item.weight && (
             <span className="text-amber-600 text-sm">({item.weight})</span>
@@ -485,7 +554,7 @@ const MenuItemRow = ({ item, lang, isVisible }: { item: MenuItem; lang: Language
           <div className="flex flex-col gap-1 items-end">
             {item.prices.map((p, i) => (
               <div key={i} className="flex items-center gap-2">
-                <span className="text-amber-200/50 text-base"><RenderDescription text={lang === "en" && p.labelEn ? p.labelEn : p.label} /></span>
+                <span className="text-amber-200/50 text-base"><RenderDescription text={lang !== "pt" && p.labelEn ? p.labelEn : p.label} /></span>
                 <span className="font-serif text-2xl text-amber-400 whitespace-nowrap group-hover:scale-110 transition-transform">€{p.price}</span>
               </div>
             ))}
@@ -801,11 +870,10 @@ function Index() {
   ];
 
   // Language toggle
-  const toggleLanguage = useCallback(() => {
-    const newLang = lang === "pt" ? "en" : "pt";
+  const toggleLanguage = useCallback((newLang: "pt" | "en" | "fr") => {
     setLang(newLang);
     localStorage.setItem("100cerimonias-lang", newLang);
-  }, [lang]);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -958,22 +1026,40 @@ function Index() {
             ))}
             
             {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="ml-4 px-3 py-1 border border-amber-600/50 text-amber-400 text-sm tracking-wider hover:bg-amber-600/20 hover:border-amber-400 transition-all hover:scale-105"
-            >
-              {lang === "pt" ? "EN" : "PT"}
-            </button>
+            <div className="ml-4 flex items-center gap-1">
+              {(["pt", "en", "fr"] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => toggleLanguage(l)}
+                  className={`px-2.5 py-1 text-xs tracking-wider transition-all ${
+                    lang === l
+                      ? "border border-amber-400 text-amber-400 bg-amber-600/20"
+                      : "border border-amber-900/40 text-amber-200/40 hover:text-amber-400 hover:border-amber-600/50"
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Mobile menu button + language toggle */}
           <div className="lg:hidden flex items-center gap-3">
-            <button
-              onClick={toggleLanguage}
-              className="px-2 py-1 border border-amber-600/50 text-amber-400 text-xs tracking-wider"
-            >
-              {lang === "pt" ? "EN" : "PT"}
-            </button>
+            <div className="flex items-center gap-1">
+              {(["pt", "en", "fr"] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => toggleLanguage(l)}
+                  className={`px-2 py-0.5 text-[10px] tracking-wider transition-all ${
+                    lang === l
+                      ? "border border-amber-400 text-amber-400"
+                      : "border border-amber-900/40 text-amber-200/40"
+                  }`}
+                >
+                  {l.toUpperCase()}
+                </button>
+              ))}
+            </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-amber-400 p-2"
@@ -1237,13 +1323,13 @@ function Index() {
                     {/* Região */}
                     <h3 className="text-amber-400 font-serif text-xl mb-4 tracking-wider flex items-center gap-3">
                       <WineGlassIcon />
-                      {lang === "en" ? r.regiaoEn : r.regiao}
+                      {lang !== "pt" ? r.regiaoEn : r.regiao}
                     </h3>
                     <div className="space-y-4 pl-2">
                       {r.tipos.map((t, ti) => (
                         <div key={ti}>
                           {/* Tipo */}
-                          <p className="text-amber-600/80 text-xs uppercase tracking-widest mb-2">{lang === "en" ? t.tipoEn : t.tipo}</p>
+                          <p className="text-amber-600/80 text-xs uppercase tracking-widest mb-2">{lang !== "pt" ? t.tipoEn : t.tipo}</p>
                           {t.vinhosData.map((item, i) => (
                             <div key={i} className="flex justify-between py-2 border-b border-amber-900/20 hover:bg-amber-950/20 transition-colors px-2 -mx-2">
                               <span className="text-amber-100 flex flex-col">
@@ -1541,10 +1627,10 @@ function Index() {
           {/* Título */}
           <div className="text-center mb-20">
             <p className="text-amber-600 text-xs tracking-[0.4em] uppercase mb-4">
-              {lang === "pt" ? "O melhor steakhouse do Porto" : "Porto's finest steakhouse"}
+              {lang === "fr" ? "Le meilleur steakhouse de Porto" : lang === "pt" ? "O melhor steakhouse do Porto" : "Porto's finest steakhouse"}
             </p>
             <h2 className="font-serif text-5xl md:text-6xl text-amber-400 tracking-wide">
-              {lang === "pt" ? "PORQUE NOS ESCOLHER" : "WHY CHOOSE US"}
+              {lang === "fr" ? "POURQUOI NOUS CHOISIR" : lang === "pt" ? "PORQUE NOS ESCOLHER" : "WHY CHOOSE US"}
             </h2>
             <div className="flex items-center justify-center mt-6 gap-4">
               <div className="h-px w-24 bg-gradient-to-r from-transparent to-amber-600/50" />
@@ -1563,8 +1649,10 @@ function Index() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
                   </svg>
                 ),
-                title: lang === "pt" ? "Brasa Viva" : "Live Grill",
-                text: lang === "pt" 
+                title: lang === "fr" ? "Braise Vivante" : lang === "pt" ? "Brasa Viva" : "Live Grill",
+                text: lang === "fr"
+                  ? "Des coupes préparées sur braise vive pour une saveur et une texture parfaites dans chaque assiette."
+                  : lang === "pt" 
                   ? "Cortes preparados na brasa viva para o sabor e textura perfeitos em cada prato." 
                   : "Cuts prepared on a live grill for perfect flavor and texture in every dish.",
               },
@@ -1574,8 +1662,10 @@ function Index() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
                   </svg>
                 ),
-                title: lang === "pt" ? "Cortes Premium" : "Premium Cuts",
-                text: lang === "pt" 
+                title: lang === "fr" ? "Coupes Premium" : lang === "pt" ? "Cortes Premium" : "Premium Cuts",
+                text: lang === "fr"
+                  ? "T-Bone, El Txuletón et Wagyu — sélectionnés pour une expérience gastronomique unique."
+                  : lang === "pt" 
                   ? "T-Bone, El Txuletón e Wagyu — selecionados para uma experiência gastronómica única." 
                   : "T-Bone, El Txuletón and Wagyu — selected for a unique gastronomic experience.",
               },
@@ -1585,8 +1675,10 @@ function Index() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                   </svg>
                 ),
-                title: lang === "pt" ? "Jantares de Grupo" : "Group Dinners",
-                text: lang === "pt" 
+                title: lang === "fr" ? "Dîners de Groupe" : lang === "pt" ? "Jantares de Grupo" : "Group Dinners",
+                text: lang === "fr"
+                  ? "L'espace idéal pour les dîners de groupe et d'entreprise à Porto. Une expérience mémorable pour toute l'équipe."
+                  : lang === "pt"
                   ? "O espaço ideal para jantares de grupo e empresa no Porto. Uma experiência memorável para toda a equipa." 
                   : "The ideal space for group and corporate dinners in Porto. A memorable experience for the whole team.",
               },
@@ -1613,16 +1705,16 @@ function Index() {
                 ))}
               </div>
               <p className="text-amber-200/40 text-xs tracking-[0.3em] uppercase">
-                {lang === "pt" ? "Avaliações Google" : "Google Reviews"}
+                {lang === "fr" ? "Avis Google" : lang === "pt" ? "Avaliações Google" : "Google Reviews"}
               </p>
             </div>
 
             {/* Cards avaliações */}
             <div className="grid md:grid-cols-3 gap-5">
               {[
-                { name: "João M.", text: lang === "pt" ? "Uma experiência incrível! O T-Bone estava perfeito e o ambiente é simplesmente espetacular. Voltarei certamente." : "An incredible experience! The T-Bone was perfect and the atmosphere is simply spectacular. I will definitely return.", date: "Jan 2025" },
-                { name: "Ana S.", text: lang === "pt" ? "O melhor steakhouse do Porto, sem dúvida. Cortes de qualidade excepcional e um serviço irrepreensível. Recomendo a todos!" : "The best steakhouse in Porto, without a doubt. Exceptional quality cuts and impeccable service. I recommend to everyone!", date: "Fev 2025" },
-                { name: "Carlos R.", text: lang === "pt" ? "Fizemos um jantar de grupo aqui e foi memorável. O espaço, a comida e a atenção ao detalhe fazem deste lugar algo único no Porto." : "We had a group dinner here and it was memorable. The space, food and attention to detail make this place unique in Porto.", date: "Mar 2025" },
+                { name: "João M.", text: lang === "fr" ? "Une expérience incroyable ! Le T-Bone était parfait et l'ambiance est tout simplement spectaculaire. Je reviendrai certainement." : lang === "pt" ? "Uma experiência incrível! O T-Bone estava perfeito e o ambiente é simplesmente espetacular. Voltarei certamente." : "An incredible experience! The T-Bone was perfect and the atmosphere is simply spectacular. I will definitely return.", date: "Jan 2025" },
+                { name: "Ana S.", text: lang === "fr" ? "Le meilleur steakhouse de Porto, sans aucun doute. Des coupes de qualité exceptionnelle et un service irréprochable. Je le recommande à tous !" : lang === "pt" ? "O melhor steakhouse do Porto, sem dúvida. Cortes de qualidade excepcional e um serviço irrepreensível. Recomendo a todos!" : "The best steakhouse in Porto, without a doubt. Exceptional quality cuts and impeccable service. I recommend to everyone!", date: "Fev 2025" },
+                { name: "Carlos R.", text: lang === "fr" ? "Nous avons organisé un dîner de groupe ici et c'était mémorable. L'espace, la nourriture et l'attention aux détails font de cet endroit quelque chose d'unique à Porto." : lang === "pt" ? "Fizemos um jantar de grupo aqui e foi memorável. O espaço, a comida e a atenção ao detalhe fazem deste lugar algo único no Porto." : "We had a group dinner here and it was memorable. The space, food and attention to detail make this place unique in Porto.", date: "Mar 2025" },
               ].map((review, i) => (
                 <div key={i} className="relative border border-amber-900/20 p-7 bg-gradient-to-b from-amber-950/10 to-transparent hover:border-amber-800/40 transition-all duration-500 group">
                   {/* Quote mark */}
@@ -1658,7 +1750,7 @@ function Index() {
                   <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                   <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                 </svg>
-                {lang === "pt" ? "Ver todas as avaliações" : "See all reviews"}
+                {lang === "fr" ? "Voir tous les avis" : lang === "pt" ? "Ver todas as avaliações" : "See all reviews"}
               </a>
             </div>
           </div>
@@ -1804,7 +1896,7 @@ function Index() {
           {/* Google Maps */}
           <div className="mb-12">
             <h4 className="font-serif text-amber-400 text-lg mb-4 tracking-wider text-center">
-              {lang === "pt" ? "COMO CHEGAR" : "HOW TO GET THERE"}
+              {lang === "fr" ? "COMMENT Y ALLER" : lang === "pt" ? "COMO CHEGAR" : "HOW TO GET THERE"}
             </h4>
             <div className="w-full h-64 md:h-80 border border-amber-900/30 overflow-hidden">
               <iframe
@@ -1851,7 +1943,7 @@ function Index() {
                 rel="noopener"
                 className="text-amber-400/60 hover:text-amber-400 transition-all hover:scale-110 border border-amber-900/40 hover:border-amber-400/60 px-3 py-1 rounded-sm"
               >
-                {lang === "pt" ? "REVISTA" : "MAGAZINE"}
+                {lang === "fr" ? "MAGAZINE" : lang === "pt" ? "REVISTA" : "MAGAZINE"}
               </a>
             </div>
           </div>
