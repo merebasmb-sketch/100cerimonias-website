@@ -256,10 +256,10 @@ const menuData = {
   ],
   pasta: [
     { 
-      name: "Tagliatelle de Pesto", 
-      nameEn: "Pesto Tagliatelle",
-      description: "Pesto caseiro e parmesão", 
-      descriptionEn: "Homemade pesto and parmesan", 
+      name: "Tagliatelle de Molho de Tomate e Parmesão", 
+      nameEn: "Tagliatelle with Tomato Sauce and Parmesan",
+      description: "Molho de tomate caseiro, parmesão ralado e manjericão fresco", 
+      descriptionEn: "Homemade tomato sauce, grated parmesan and fresh basil", 
       price: "25", 
       veggie: true 
     }
