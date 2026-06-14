@@ -258,8 +258,8 @@ const menuData = {
     { 
       name: "Tagliatelle de Molho de Tomate e Parmesão", 
       nameEn: "Tagliatelle with Tomato Sauce and Parmesan",
-      description: "Molho de tomate caseiro, parmesão ralado e manjericão fresco", 
-      descriptionEn: "Homemade tomato sauce, grated parmesan and fresh basil", 
+      description: "Molho de tomate caseiro e parmesão ralado", 
+      descriptionEn: "Homemade tomato sauce and grated parmesan", 
       price: "25", 
       veggie: true 
     }
