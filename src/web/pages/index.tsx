@@ -245,7 +245,8 @@ const menuData = {
 
     { name: "El Txuletón", nameEn: "El Txuletón", description: "31 dias de maturação", descriptionEn: "31-day aged", price: "89", prices: [{ label: "1kg | 2-3 Pax", labelEn: "1kg | 2-3 Pax", price: "89" }] },
     { name: "T-Bone", nameEn: "T-Bone", description: "Vazia e lombo com osso | 31 dias de maturação", descriptionEn: "Sirloin and tenderloin with bone | 31 days aged", price: "90", prices: [{ label: "1kg | 2-3 Pax", labelEn: "1kg | 2-3 Pax", price: "90" }] },
-    { name: "Wagyu", nameEn: "Wagyu", description: "A melhor experiência", descriptionEn: "The best experience", price: "85", prices: [{ label: "300g | 1-2 Pax", labelEn: "300g | 1-2 Pax", price: "85" }] },
+    { name: "Wagyu A5 Japão", nameEn: "Wagyu A5 Japan", description: "A melhor experiência | 500g", descriptionEn: "The best experience | 500g", price: "210", prices: [{ label: "500g | 3-4 Pax", labelEn: "500g | 3-4 Pax", price: "210" }] },
+    { name: "Wagyu A5 Japão", nameEn: "Wagyu A5 Japan", description: "A melhor experiência | 250g", descriptionEn: "The best experience | 250g", price: "120", prices: [{ label: "250g | 1-2 Pax", labelEn: "250g | 1-2 Pax", price: "120" }] },
   ],
   acompanhamentos: [
     { name: "Salada Mista", nameEn: "Mixed Salad", description: "Tomate cherry e pickles de cebola roxa caseiros", descriptionEn: "Cherry tomato and homemade red onion pickles", price: "4.50" },
