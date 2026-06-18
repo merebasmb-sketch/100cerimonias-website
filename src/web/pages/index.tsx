@@ -821,16 +821,9 @@ function Index() {
     }
   }, []);
 
-  // Newsletter popup — mostra após 5 segundos (apenas uma vez por sessão)
+  // Newsletter popup — desativado
   useEffect(() => {
-    const alreadySeen = sessionStorage.getItem("newsletter-popup-seen");
-    if (!alreadySeen) {
-      const timer = setTimeout(() => {
-        setShowNewsletterPopup(true);
-        sessionStorage.setItem("newsletter-popup-seen", "true");
-      }, 5000);
-      return () => clearTimeout(timer);
-    }
+    // popup desativado
   }, []);
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
