@@ -2351,8 +2351,10 @@ function Index() {
           opacity: 0;
         }
 
-        html {
+        html, body {
           scroll-behavior: smooth;
+          overflow-x: hidden;
+          overscroll-behavior-x: none;
         }
 
         /* Custom transition duration for smooth crossfade */
