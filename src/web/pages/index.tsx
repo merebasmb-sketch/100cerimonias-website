@@ -287,6 +287,7 @@ const menuData = {
         tipos: [
           { tipo: "Branco", tipoEn: "White", vinhosData: [
             { name: "Crasto", vintage: "2025", price: "27" },
+            { name: "ZIP Unoaked", price: "20" },
           ]},
           { tipo: "Tinto", tipoEn: "Red", vinhosData: [
             { name: "Chryseia", vintage: "2023", price: "140" },
@@ -348,6 +349,7 @@ const menuData = {
     copo: [
       { name: "Contacto", region: "Vinho Verde", price: "7.50" },
       { name: "Quinta da Lagoa Velha", region: "Branco Bairrada", price: "7.50" },
+      { name: "ZIP Unoaked", region: "Branco Douro", price: "7.50" },
 
       { name: "Solar dos Dragos Colheita", region: "Tinto Douro", price: "7.50" },
       { name: "Quinta do Paral", region: "Rosé Alentejo", price: "7.50" },
